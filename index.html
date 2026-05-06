@@ -3,685 +3,763 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ドライブレコーダーおすすめ5選【2026年最新版】</title>
+<title>DRIVE GEAR LAB | 車・ガジェット 楽天おすすめレビュー</title>
+<meta name="description" content="ドライブをもっと楽しく、もっと快適に。ドラレコ・カーナビ・カーグッズ・ガジェットを実際に使って正直レビュー。楽天で買えるおすすめアイテム情報。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --black: #0d0d0d;
-    --white: #fafaf8;
-    --cream: #f5f3ee;
-    --accent: #e8360a;
-    --accent2: #ff6b35;
-    --gold: #c8a04a;
-    --gray: #6b6b6b;
-    --border: #d8d5cf;
-    --card-bg: #ffffff;
+    --c-bg: #0a0c0f;
+    --c-surface: #13171e;
+    --c-surface2: #1c2230;
+    --c-border: rgba(255,255,255,0.08);
+    --c-border2: rgba(255,255,255,0.15);
+    --c-accent: #e8412a;
+    --c-accent2: #ff6b4a;
+    --c-gold: #f5a623;
+    --c-text: #f0f2f5;
+    --c-muted: #8a95a3;
+    --c-dim: #555f6e;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-sub: 'Oswald', sans-serif;
+    --font-body: 'Noto Sans JP', sans-serif;
   }
 
   html { scroll-behavior: smooth; }
-
   body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background: var(--cream);
-    color: var(--black);
+    background: var(--c-bg);
+    color: var(--c-text);
+    font-family: var(--font-body);
+    font-size: 15px;
     line-height: 1.7;
     overflow-x: hidden;
   }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(13,13,13,0.97);
-    backdrop-filter: blur(8px);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 2rem; height: 56px;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .nav-logo {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.4rem;
-    color: var(--white);
-    letter-spacing: 0.12em;
-  }
-  .nav-logo span { color: var(--accent); }
-  .nav-badge {
-    font-size: 0.7rem; font-weight: 700;
-    background: var(--accent); color: white;
-    padding: 3px 10px; border-radius: 2px;
-    letter-spacing: 0.05em;
-  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; height: auto; display: block; }
 
-  /* HERO */
+  /* ─── HEADER ─── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,12,15,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .header-inner {
+    max-width: 1100px; margin: 0 auto;
+    padding: 0 20px;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px;
+  }
+  .logo {
+    font-family: var(--font-display);
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: var(--c-text);
+    line-height: 1;
+  }
+  .logo span { color: var(--c-accent); }
+  nav { display: flex; gap: 4px; }
+  nav a {
+    font-family: var(--font-sub);
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 6px 12px;
+    color: var(--c-muted);
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+  }
+  nav a:hover { color: var(--c-text); background: rgba(255,255,255,0.06); }
+  .nav-cta {
+    background: var(--c-accent) !important;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .nav-cta:hover { background: var(--c-accent2) !important; }
+
+  /* ─── HERO ─── */
   .hero {
-    margin-top: 56px;
-    min-height: 88vh;
-    background: var(--black);
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 5rem 2rem 4rem;
     position: relative;
     overflow: hidden;
+    padding: 80px 20px 70px;
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
   }
   .hero::before {
     content: '';
     position: absolute; inset: 0;
-    background: 
-      radial-gradient(ellipse 60% 60% at 80% 50%, rgba(232,54,10,0.12) 0%, transparent 70%),
-      linear-gradient(135deg, rgba(200,160,74,0.05) 0%, transparent 60%);
+    background:
+      radial-gradient(ellipse 60% 80% at 70% 50%, rgba(232,65,42,0.12) 0%, transparent 70%),
+      repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.015) 40px, rgba(255,255,255,0.015) 41px);
+    pointer-events: none;
   }
-  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(232,54,10,0.15);
-    border: 1px solid rgba(232,54,10,0.4);
-    border-radius: 2px;
-    padding: 6px 14px;
-    font-size: 0.75rem; font-weight: 700;
-    color: var(--accent2);
-    letter-spacing: 0.08em;
-    margin-bottom: 1.8rem;
-    animation: fadeInUp 0.6s ease both;
-  }
-  .hero-tag::before {
-    content: '';
+  .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+  .hero-badge {
     display: inline-block;
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse 1.5s infinite;
+    font-family: var(--font-sub);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--c-accent);
+    border: 1px solid var(--c-accent);
+    padding: 4px 12px;
+    border-radius: 2px;
+    margin-bottom: 18px;
   }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 8vw, 96px);
+    line-height: 0.95;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
   }
-  h1 {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 900;
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
-    line-height: 1.2;
-    color: var(--white);
-    margin-bottom: 0.4rem;
-    animation: fadeInUp 0.6s 0.1s ease both;
-  }
-  h1 em {
-    font-style: normal;
-    color: var(--accent);
-    -webkit-text-stroke: 1px var(--accent);
-  }
+  .hero h1 em { font-style: normal; color: var(--c-accent); }
   .hero-sub {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    color: rgba(250,250,248,0.55);
-    margin-bottom: 2.5rem;
-    animation: fadeInUp 0.6s 0.2s ease both;
+    font-size: 15px;
+    color: var(--c-muted);
+    max-width: 520px;
+    margin-bottom: 32px;
+    line-height: 1.8;
   }
-  .hero-buttons {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    animation: fadeInUp 0.6s 0.3s ease both;
+  .hero-stats {
+    display: flex; gap: 32px; flex-wrap: wrap;
+    margin-bottom: 36px;
   }
+  .hero-stat-num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    line-height: 1;
+    color: var(--c-text);
+  }
+  .hero-stat-label { font-size: 11px; color: var(--c-muted); letter-spacing: 1px; margin-top: 2px; }
+  .hero-stat-sep { width: 1px; background: var(--c-border2); }
   .btn-primary {
     display: inline-flex; align-items: center; gap: 8px;
-    background: var(--accent);
-    color: white; font-weight: 700; font-size: 0.95rem;
-    padding: 14px 28px; border-radius: 3px;
-    text-decoration: none;
+    background: var(--c-accent);
+    color: #fff;
+    font-family: var(--font-sub);
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    padding: 14px 28px;
+    border-radius: 3px;
     transition: background 0.2s, transform 0.15s;
-    letter-spacing: 0.03em;
   }
-  .btn-primary:hover { background: #c42d08; transform: translateY(-1px); }
-  .btn-secondary {
+  .btn-primary:hover { background: var(--c-accent2); transform: translateY(-1px); }
+  .btn-outline {
     display: inline-flex; align-items: center; gap: 8px;
-    background: transparent;
-    color: var(--white); font-weight: 500; font-size: 0.9rem;
-    padding: 14px 24px; border-radius: 3px;
-    border: 1px solid rgba(255,255,255,0.25);
-    text-decoration: none;
-    transition: border-color 0.2s, background 0.2s;
+    border: 1px solid var(--c-border2);
+    color: var(--c-muted);
+    font-family: var(--font-sub);
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 14px 24px;
+    border-radius: 3px;
+    transition: border-color 0.2s, color 0.2s;
   }
-  .btn-secondary:hover { border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.05); }
-  .arrow { font-size: 1.1rem; }
+  .btn-outline:hover { border-color: var(--c-text); color: var(--c-text); }
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-label {
+    position: absolute; right: 0; top: 0;
+    font-family: var(--font-display);
+    font-size: clamp(80px, 15vw, 180px);
+    color: rgba(255,255,255,0.025);
+    line-height: 1;
+    letter-spacing: 8px;
+    pointer-events: none;
+    user-select: none;
+  }
 
-  /* PAIN POINTS */
-  .pain {
-    background: var(--white);
-    padding: 5rem 2rem;
-    border-top: 1px solid var(--border);
-  }
-  .pain-inner { max-width: 860px; margin: 0 auto; }
+  /* ─── SECTION ─── */
+  .section { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
   .section-label {
-    font-size: 0.72rem; font-weight: 700;
-    letter-spacing: 0.15em;
-    color: var(--accent);
-    text-transform: uppercase;
-    margin-bottom: 0.6rem;
+    font-family: var(--font-sub);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--c-accent);
+    margin-bottom: 8px;
   }
   .section-title {
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
-    font-weight: 900;
-    line-height: 1.3;
-    margin-bottom: 2.5rem;
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 48px);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
   }
-  .pain-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1px; background: var(--border);
-    border: 1px solid var(--border);
+  .section-desc {
+    font-size: 13px;
+    color: var(--c-muted);
+    margin-bottom: 32px;
+    line-height: 1.7;
   }
-  .pain-item {
-    background: var(--white);
-    padding: 2rem 1.5rem;
-    position: relative;
-  }
-  .pain-icon {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    display: block;
-  }
-  .pain-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
-  .pain-item p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
-  .pain-solve {
-    margin-top: 2.5rem;
-    padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
-    border-left: 4px solid var(--accent);
-    border-radius: 3px;
-    color: var(--white);
-    font-size: 1.05rem; font-weight: 700;
-  }
-  .pain-solve span { color: var(--accent2); }
 
-  /* PRODUCTS */
-  .products {
-    padding: 5rem 2rem;
-    background: var(--cream);
-  }
-  .products-inner { max-width: 900px; margin: 0 auto; }
-  .rank-list { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
-
-  .rank-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    transition: box-shadow 0.2s, transform 0.15s;
-    animation: fadeInUp 0.5s ease both;
-  }
-  .rank-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-2px); }
-  .rank-card.top-pick { border-color: var(--accent); border-width: 2px; }
-
-  .rank-number {
-    background: var(--black);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    padding: 1.5rem 0;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.5rem;
-    color: rgba(255,255,255,0.15);
-    position: relative;
-  }
-  .rank-card.top-pick .rank-number { background: var(--accent); }
-  .rank-card.top-pick .rank-number .num { color: white; }
-  .num { color: rgba(255,255,255,0.5); }
-  .rank-badge-small {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 0.55rem; font-weight: 700;
-    color: rgba(255,255,255,0.7);
-    letter-spacing: 0.05em;
-    text-align: center;
-    line-height: 1;
-    margin-top: 4px;
-  }
-  .rank-card.top-pick .rank-badge-small { color: rgba(255,255,255,0.9); }
-
-  .rank-body { padding: 1.5rem; }
-  .rank-meta {
-    display: flex; align-items: center; gap: 8px;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
-  }
-  .badge {
-    font-size: 0.68rem; font-weight: 700;
-    padding: 3px 8px; border-radius: 2px;
-    letter-spacing: 0.05em;
-  }
-  .badge-hot { background: #fef3f0; color: var(--accent); border: 1px solid #fcc8bb; }
-  .badge-quality { background: #f0f4ff; color: #3a5bd9; border: 1px solid #b8c8f8; }
-  .badge-value { background: #f0fcf4; color: #1a7a43; border: 1px solid #a8dfc0; }
-  .badge-balanced { background: #fffbf0; color: #9a6200; border: 1px solid #f5d87a; }
-  .badge-premium { background: #f5f0ff; color: #5e3ab8; border: 1px solid #c8b0f5; }
-
-  .rank-body h3 { font-size: 1.15rem; font-weight: 900; margin-bottom: 0.6rem; }
-  .rank-features {
+  /* ─── FILTER TABS ─── */
+  .cat-tabs {
     display: flex; gap: 6px; flex-wrap: wrap;
-    list-style: none;
+    margin-bottom: 36px;
   }
-  .rank-features li {
-    font-size: 0.78rem; color: var(--gray);
-    background: var(--cream);
-    border: 1px solid var(--border);
-    padding: 3px 10px; border-radius: 2px;
+  .cat-tab {
+    font-family: var(--font-sub);
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 7px 16px;
+    border: 1px solid var(--c-border2);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--c-muted);
+    background: transparent;
+  }
+  .cat-tab:hover, .cat-tab.active {
+    border-color: var(--c-accent);
+    color: var(--c-text);
+    background: rgba(232,65,42,0.1);
   }
 
-  .rank-cta {
-    padding: 1.5rem;
-    display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
-    gap: 0.5rem;
-    border-left: 1px solid var(--border);
+  /* ─── PRODUCT GRID ─── */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1px;
+    background: var(--c-border);
+    border: 1px solid var(--c-border);
   }
-  .cta-link {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--accent);
-    color: white; font-size: 0.82rem; font-weight: 700;
-    padding: 10px 16px; border-radius: 3px;
-    text-decoration: none; white-space: nowrap;
+  .product-card {
+    background: var(--c-surface);
+    padding: 24px;
     transition: background 0.2s;
-  }
-  .cta-link:hover { background: #c42d08; }
-  .rank-card.top-pick .cta-link { background: var(--accent); }
-  .cta-sub {
-    font-size: 0.7rem; color: var(--gray); text-align: right;
-  }
-
-  /* COMPARISON TABLE */
-  .comparison {
-    padding: 5rem 2rem;
-    background: var(--black);
-    color: var(--white);
-  }
-  .comparison-inner { max-width: 900px; margin: 0 auto; }
-  .comparison .section-label { color: var(--accent2); }
-  .comparison .section-title { color: var(--white); }
-
-  .table-wrap { overflow-x: auto; margin-top: 2rem; }
-  table {
-    width: 100%; border-collapse: collapse;
-    font-size: 0.9rem;
-  }
-  thead th {
-    background: #1a1a1a;
-    padding: 12px 16px;
-    text-align: left;
-    font-size: 0.78rem; font-weight: 700;
-    letter-spacing: 0.05em;
-    color: rgba(250,250,248,0.5);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    white-space: nowrap;
-  }
-  thead th:first-child { border-radius: 4px 0 0 0; }
-  thead th:last-child { border-radius: 0 4px 0 0; }
-  tbody tr { border-bottom: 1px solid rgba(255,255,255,0.06); transition: background 0.15s; }
-  tbody tr:hover { background: rgba(255,255,255,0.04); }
-  tbody tr.highlight { background: rgba(232,54,10,0.08); }
-  tbody td {
-    padding: 14px 16px;
-    color: rgba(250,250,248,0.85);
-    vertical-align: middle;
-  }
-  tbody td:first-child { font-weight: 700; color: var(--white); }
-  .score { font-weight: 700; }
-  .score.high { color: #4ade80; }
-  .score.mid { color: #facc15; }
-  .score.low { color: var(--gray); }
-  .price-tag {
-    display: inline-block;
-    font-size: 0.75rem; font-weight: 700;
-    padding: 2px 8px; border-radius: 2px;
-  }
-  .price-budget { background: rgba(74,222,128,0.15); color: #4ade80; }
-  .price-mid { background: rgba(250,204,21,0.15); color: #facc15; }
-  .price-high { background: rgba(248,113,113,0.15); color: #f87171; }
-  .winner-badge {
-    display: inline-flex; align-items: center; gap: 4px;
-    font-size: 0.68rem; font-weight: 700;
-    background: var(--accent); color: white;
-    padding: 2px 8px; border-radius: 2px; margin-left: 8px;
-  }
-
-  /* SUMMARY */
-  .summary {
-    padding: 5rem 2rem;
-    background: var(--white);
-  }
-  .summary-inner {
-    max-width: 860px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-    align-items: center;
-  }
-  .summary-text {}
-  .summary-box {
-    background: var(--black);
-    padding: 2.5rem;
-    border-radius: 6px;
-    color: var(--white);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
-  .summary-box::before {
+  .product-card:hover { background: var(--c-surface2); }
+  .product-card::after {
     content: '';
-    position: absolute; top: -30px; right: -30px;
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    background: rgba(232,54,10,0.15);
+    position: absolute; left: 0; top: 0;
+    width: 3px; height: 0;
+    background: var(--c-accent);
+    transition: height 0.25s;
   }
-  .summary-box h3 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2rem; letter-spacing: 0.05em;
-    margin-bottom: 0.3rem;
-    color: var(--accent2);
-  }
-  .summary-box .model { font-size: 1.4rem; font-weight: 900; margin-bottom: 1rem; }
-  .summary-box p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1.2rem; }
-  .summary-box .btn-primary { width: 100%; justify-content: center; }
+  .product-card:hover::after { height: 100%; }
 
-  @media (max-width: 640px) {
-    .summary-inner { grid-template-columns: 1fr; }
-    .rank-card { grid-template-columns: 60px 1fr; }
-    .rank-cta { display: none; }
-    .rank-body { padding: 1rem; }
-    .rank-body::after {
-      content: '楽天で見る →';
-      display: block;
-      margin-top: 0.8rem;
-      font-size: 0.8rem; font-weight: 700;
-      color: var(--accent);
-    }
+  /* カード非表示アニメーション */
+  .product-card.hidden {
+    display: none;
   }
 
-  /* FOOTER */
-  footer {
-    background: #0a0a0a;
-    padding: 2rem;
-    text-align: center;
-    font-size: 0.78rem; color: rgba(255,255,255,0.3);
-    border-top: 1px solid rgba(255,255,255,0.06);
+  .card-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-family: var(--font-sub);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    width: fit-content;
   }
-  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
-  footer p + p { margin-top: 0.4rem; }
+  .badge-new { background: rgba(232,65,42,0.2); color: var(--c-accent2); border: 1px solid rgba(232,65,42,0.3); }
+  .badge-sale { background: rgba(245,166,35,0.15); color: var(--c-gold); border: 1px solid rgba(245,166,35,0.3); }
+  .badge-pick { background: rgba(255,255,255,0.06); color: var(--c-muted); border: 1px solid var(--c-border2); }
+  .badge-rank { background: rgba(245,166,35,0.15); color: var(--c-gold); border: 1px solid rgba(245,166,35,0.3); }
 
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
+  .card-img-wrap {
+    width: 100%; aspect-ratio: 4/3;
+    background: var(--c-surface2);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid var(--c-border);
   }
-  .rank-card:nth-child(1) { animation-delay: 0s; }
-  .rank-card:nth-child(2) { animation-delay: 0.07s; }
-  .rank-card:nth-child(3) { animation-delay: 0.14s; }
-  .rank-card:nth-child(4) { animation-delay: 0.21s; }
-  .rank-card:nth-child(5) { animation-delay: 0.28s; }
+  .card-img-wrap img {
+    width: 100%; height: 100%; object-fit: contain;
+    padding: 12px;
+    transition: transform 0.3s;
+  }
+  .product-card:hover .card-img-wrap img { transform: scale(1.04); }
+  .card-cat {
+    font-family: var(--font-sub);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--c-dim);
+    margin-bottom: 6px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    color: var(--c-text);
+  }
+  .card-desc {
+    font-size: 13px;
+    color: var(--c-muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+  .card-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid var(--c-border);
+    padding-top: 14px;
+    margin-top: auto;
+  }
+  .card-price {
+    font-family: var(--font-sub);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--c-text);
+    letter-spacing: 1px;
+  }
+  .card-price span {
+    font-size: 12px;
+    color: var(--c-muted);
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .card-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--font-sub);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--c-accent);
+    border: 1px solid var(--c-accent);
+    padding: 6px 12px;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .card-link:hover { background: var(--c-accent); color: #fff; }
+
+  /* 商品件数表示 */
+  .item-count {
+    font-family: var(--font-sub);
+    font-size: 12px;
+    color: var(--c-dim);
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .item-count span { color: var(--c-accent); font-size: 16px; }
+
+  /* ─── FEATURE BANNER ─── */
+  .feature-banner {
+    background: var(--c-surface);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+    padding: 60px 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  .feature-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 100% at 90% 50%, rgba(232,65,42,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .feature-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+  }
+  .feature-kicker { font-family: var(--font-sub); font-size: 11px; letter-spacing: 3px; color: var(--c-accent); margin-bottom: 12px; }
+  .feature-h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 52px); letter-spacing: 2px; line-height: 1.05; margin-bottom: 20px; }
+  .feature-body { font-size: 14px; color: var(--c-muted); line-height: 1.9; margin-bottom: 28px; }
+  .feature-points { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+  .feature-points li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--c-muted); }
+  .feature-points li::before { content: ''; display: inline-block; width: 6px; height: 6px; background: var(--c-accent); border-radius: 50%; flex-shrink: 0; }
+  .feature-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .fv-card { background: var(--c-surface2); border: 1px solid var(--c-border); padding: 20px 16px; border-radius: 3px; transition: border-color 0.2s; }
+  .fv-card:hover { border-color: var(--c-border2); }
+  .fv-icon { font-size: 24px; margin-bottom: 10px; }
+  .fv-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .fv-sub { font-size: 11px; color: var(--c-muted); }
+  .fv-card.span2 { grid-column: span 2; }
+
+  /* ─── ARTICLES ─── */
+  .article-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+  .article-main { background: var(--c-surface); border: 1px solid var(--c-border); overflow: hidden; transition: border-color 0.2s; }
+  .article-main:hover { border-color: var(--c-border2); }
+  .article-main-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--c-surface2); display: flex; align-items: center; justify-content: center; font-size: 60px; }
+  .article-main-body { padding: 24px; }
+  .article-tag { display: inline-block; font-family: var(--font-sub); font-size: 10px; letter-spacing: 2px; color: var(--c-accent); margin-bottom: 10px; }
+  .article-h3 { font-size: 18px; font-weight: 700; line-height: 1.4; margin-bottom: 10px; }
+  .article-excerpt { font-size: 13px; color: var(--c-muted); line-height: 1.7; margin-bottom: 16px; }
+  .article-date { font-size: 11px; color: var(--c-dim); letter-spacing: 1px; }
+  .article-sub-list { display: flex; flex-direction: column; gap: 1px; background: var(--c-border); border: 1px solid var(--c-border); }
+  .article-sub { background: var(--c-surface); padding: 16px 18px; display: flex; gap: 12px; align-items: flex-start; transition: background 0.2s; }
+  .article-sub:hover { background: var(--c-surface2); }
+  .article-sub-num { font-family: var(--font-display); font-size: 22px; color: var(--c-dim); flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .article-sub-title { font-size: 13px; font-weight: 700; line-height: 1.4; margin-bottom: 4px; }
+  .article-sub-meta { font-size: 11px; color: var(--c-dim); }
+
+  /* ─── AFFILIATE NOTICE ─── */
+  .affiliate-notice { background: var(--c-surface); border: 1px solid var(--c-border); padding: 14px 20px; border-radius: 3px; font-size: 12px; color: var(--c-dim); line-height: 1.6; }
+  .affiliate-notice strong { color: var(--c-muted); }
+
+  /* ─── FOOTER ─── */
+  footer { border-top: 1px solid var(--c-border); background: var(--c-surface); padding: 48px 20px 32px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
+  .footer-logo { font-family: var(--font-display); font-size: 22px; letter-spacing: 2px; margin-bottom: 12px; }
+  .footer-logo span { color: var(--c-accent); }
+  .footer-desc { font-size: 13px; color: var(--c-muted); line-height: 1.8; max-width: 300px; }
+  .footer-nav-title { font-family: var(--font-sub); font-size: 11px; letter-spacing: 2px; color: var(--c-dim); margin-bottom: 14px; }
+  .footer-nav a { display: block; font-size: 13px; color: var(--c-muted); padding: 4px 0; transition: color 0.2s; }
+  .footer-nav a:hover { color: var(--c-text); }
+  .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--c-border); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .footer-copy { font-size: 11px; color: var(--c-dim); letter-spacing: 1px; }
+
+  /* ─── TICKER ─── */
+  .ticker-bar { background: var(--c-accent); padding: 8px 0; overflow: hidden; white-space: nowrap; }
+  .ticker-track { display: inline-block; animation: ticker 30s linear infinite; }
+  .ticker-track span { font-family: var(--font-sub); font-size: 12px; letter-spacing: 2px; color: #fff; padding: 0 40px; }
+  .ticker-track span::before { content: '◆'; margin-right: 16px; opacity: 0.6; }
+  @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { display: none; }
+    .hero { padding: 48px 20px 52px; }
+    .hero-stats { gap: 20px; }
+    .hero-stat-sep { display: none; }
+    .feature-inner { grid-template-columns: 1fr; gap: 40px; }
+    .article-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .product-grid { grid-template-columns: 1fr; }
+  }
+
+  .divider { height: 1px; background: var(--c-border); max-width: 1100px; margin: 0 auto; }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">DRIVE<span>REC</span> GUIDE</div>
-  <div class="nav-badge">2026 最新版</div>
-</nav>
+<!-- TICKER -->
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track">
+    <span>楽天お買い物マラソン開催中</span>
+    <span>ドライブレコーダー特集 最新モデルをレビュー</span>
+    <span>カーナビ・スマートミラー比較2025</span>
+    <span>スマホホルダー 楽天1位アイテム入荷</span>
+    <span>車内Wi-Fi・充電グッズ人気ランキング更新</span>
+    <span>楽天お買い物マラソン開催中</span>
+    <span>ドライブレコーダー特集 最新モデルをレビュー</span>
+    <span>カーナビ・スマートミラー比較2025</span>
+    <span>スマホホルダー 楽天1位アイテム入荷</span>
+    <span>車内Wi-Fi・充電グッズ人気ランキング更新</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">DRIVE<span>GEAR</span>LAB</a>
+    <nav>
+      <a href="#products">アイテム</a>
+      <a href="https://www.rakuten.co.jp/" target="_blank" rel="noopener" class="nav-cta">楽天で見る →</a>
+    </nav>
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">
-      楽天の実売データをもとに厳選
+    <div class="hero-badge">DRIVE GEAR LAB — 車・ガジェット専門</div>
+    <h1>UPGRADE<br>YOUR <em>DRIVE</em></h1>
+    <p class="hero-sub">
+      ドライブをもっと快適に、もっと安全に。<br>
+      ドラレコ・カーナビ・カーアクセサリー・ガジェットを実際に使って正直レビュー。楽天で買えるおすすめアイテムだけを厳選。
+    </p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">120<small style="font-size:20px">+</small></div>
+        <div class="hero-stat-label">REVIEWED ITEMS</div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div>
+        <div class="hero-stat-num">4.8</div>
+        <div class="hero-stat-label">AVG RATING</div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div>
+        <div class="hero-stat-num">毎週<small style="font-size:20px">更新</small></div>
+        <div class="hero-stat-label">WEEKLY UPDATE</div>
+      </div>
     </div>
-    <h1>ドライブレコーダー<br>おすすめ<em>5選</em></h1>
-    <p class="hero-sub">後悔しない選び方も徹底解説 ｜ 2026年最新版</p>
-    <div class="hero-buttons">
-      <a href="#products" class="btn-primary">おすすめモデルを見る <span class="arrow">↓</span></a>
-      <a href="#comparison" class="btn-secondary">比較表を見る</a>
+    <div class="hero-btns">
+      <a href="#products" class="btn-primary">おすすめ商品を見る →</a>
+      <a href="#articles" class="btn-outline">レビュー記事を読む</a>
     </div>
+    <div class="hero-label" aria-hidden="true">GEAR</div>
   </div>
 </section>
 
-<!-- PAIN POINTS -->
-<section class="pain">
-  <div class="pain-inner">
-    <p class="section-label">こんな不安ありませんか？</p>
-    <h2 class="section-title">ドライブ中の<br>不安を解消したい</h2>
-    <div class="pain-grid">
-      <div class="pain-item">
-        <span class="pain-icon">😰</span>
-        <h3>あおり運転が怖い</h3>
-        <p>証拠映像があれば警察への届け出や保険請求がスムーズに進みます。</p>
+<!-- ========================================
+     PRODUCTS（カテゴリフィルター＋グリッド一覧）
+     ======================================== -->
+<section id="products">
+  <div class="section">
+    <div class="section-label">FEATURED ITEMS</div>
+    <div class="section-title">厳選アイテム一覧</div>
+    <p class="section-desc">実際に購入・使用したアイテムのみ掲載。タブでカテゴリを絞り込めます。</p>
+
+    <!-- フィルタータブ -->
+    <div class="cat-tabs">
+      <button class="cat-tab active" data-filter="all">すべて</button>
+      <button class="cat-tab" data-filter="drive-recorder">ドライブレコーダー</button>
+      <button class="cat-tab" data-filter="car-navi">カーナビ・ミラー</button>
+      <button class="cat-tab" data-filter="charger">充電・電源</button>
+      <button class="cat-tab" data-filter="interior">車内インテリア</button>
+      <button class="cat-tab" data-filter="gadget">ガジェット</button>
+      <button class="cat-tab" data-filter="smartphone-holder">スマホホルダー</button>
+      <button class="cat-tab" data-filter="car-care">カーケア</button>
+      <button class="cat-tab" data-filter="battery">バッテリー</button>
+    </div>
+
+    <!-- 件数表示 -->
+    <div class="item-count" id="itemCount"><span id="countNum">9</span> アイテム表示中</div>
+
+    <!-- 商品グリッド -->
+    <div class="product-grid" id="productGrid">
+
+      <!-- 商品①：ドライブレコーダー -->
+      <div class="product-card" data-category="drive-recorder">
+        <span class="card-badge badge-new">● NEW REVIEW</span>
+        <div class="card-img-wrap">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53094347.3320387b.53094348.683093cd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyumenomori%2Fb1jlh26he%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+            <img src="https://hbb.afl.rakuten.co.jp/hgb/53094347.3320387b.53094348.683093cd/?me_id=1370914&item_id=10000183&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fyumenomori%2Fcabinet%2F09856724%2Fh26yh4780.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="ドライブレコーダー 前後2カメラ SONYセンサー" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:12px;">
+          </a>
+        </div>
+        <div class="card-cat">DRIVE RECORDER</div>
+        <h3 class="card-title">ドライブレコーダー 前後2カメラ SONYセンサー搭載</h3>
+        <p class="card-desc">SONYセンサー採用で夜間も鮮明。前後同時録画で万が一の事故記録もバッチリ。駐車監視・Gセンサー搭載。取り付け簡単な人気モデル。</p>
+        <div class="card-meta">
+          <div class="card-price">¥5,980<span>送料無料</span></div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53094347.3320387b.53094348.683093cd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyumenomori%2Fb1jlh26he%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="noopener nofollow" class="card-link">楽天で見る →</a>
+        </div>
       </div>
-      <div class="pain-item">
-        <span class="pain-icon">📷</span>
-        <h3>事故の証拠が残らない</h3>
-        <p>もし事故になったとき、映像があると過失割合の交渉で有利になります。</p>
+
+      <!-- 商品②：ワイヤレスイヤホン -->
+      <div class="product-card" data-category="gadget">
+        <span class="card-badge badge-sale">▼ 81% OFF</span>
+        <div class="card-img-wrap">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53171983.551c1929.53171984.9e8f7607/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-x1%2F&link_type=pict&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0Iiwic2l6ZSI6IjMwMHgzMDAiLCJuYW0iOjEsIm5hbXAiOiJyaWdodCIsImNvbSI6MSwiY29tcCI6ImRvd24iLCJwcmljZSI6MSwiYm9yIjoxLCJjb2wiOjEsImJidG4iOjEsInByb2QiOjAsImFtcCI6ZmFsc2V9" target="_blank" rel="nofollow sponsored noopener">
+            <img src="https://hbb.afl.rakuten.co.jp/hgb/53171983.551c1929.53171984.9e8f7607/?me_id=1411453&item_id=10000003&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fgracevally%2Fcabinet%2F09355687%2F09355695%2F12855263%2Fx1front-2026old.jpg%3F_ex%3D300x300&s=300x300&t=pict" alt="ワイヤレスイヤホン Bluetooth5.4 ノイズキャンセリング" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:12px;">
+          </a>
+        </div>
+        <div class="card-cat">GADGET / EARPHONES</div>
+        <h3 class="card-title">ワイヤレスイヤホン Bluetooth 5.4 ノイズキャンセリング</h3>
+        <p class="card-desc">最新Bluetooth 5.4対応でドライブ中も途切れにくい。ノイキャン搭載で車内のロードノイズをカット。ハンズフリー通話にも最適。</p>
+        <div class="card-meta">
+          <div class="card-price">¥2,780<span>送料無料</span></div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53171983.551c1929.53171984.9e8f7607/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-x1%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="noopener nofollow" class="card-link">楽天で見る →</a>
+        </div>
       </div>
-      <div class="pain-item">
-        <span class="pain-icon">🚗</span>
-        <h3>当て逃げされたら？</h3>
-        <p>駐車監視機能付きなら、停車中の当て逃げも記録できます。</p>
+
+      <!-- 商品③：サンシェード -->
+      <div class="product-card" data-category="interior">
+        <span class="card-badge badge-sale">▼ 40% OFF</span>
+        <div class="card-img-wrap">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53172883.bfce0356.53172884.a53d115d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcreaswing%2Fcar-311-0005%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+            <img src="https://hbb.afl.rakuten.co.jp/hgb/53172883.bfce0356.53172884.a53d115d/?me_id=1423993&item_id=10000036&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fcreaswing%2Fcabinet%2Fcwrt50%2Fcar-311-0005.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="傘型サンシェード 車用フロントサンシェード CREAS WING" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:12px;">
+          </a>
+        </div>
+        <div class="card-cat">CAR INTERIOR</div>
+        <h3 class="card-title">傘型サンシェード 全7サイズ 年間ランキング1位【CREAS WING】</h3>
+        <p class="card-desc">ワンタッチで開閉できる傘型タイプ。XS〜XXLまで全7サイズ展開で軽自動車からハイエースまで対応。夏の車内温度上昇を強力カット。</p>
+        <div class="card-meta">
+          <div class="card-price">期間限定<span>40% OFF</span></div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/53172883.bfce0356.53172884.a53d115d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcreaswing%2Fcar-311-0005%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" class="card-link">楽天で見る →</a>
+        </div>
+      </div>
+
+      <!-- 商品④：スマホホルダー -->
+      <div class="product-card" data-category="smartphone-holder">
+        <span class="card-badge badge-rank">🏆 楽天1位</span>
+        <div class="card-img-wrap">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/533f80b2.657d94ac.533f80b3.559b3ac4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcreamchic%2Fgs-smp-0045%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+            <img src="https://hbb.afl.rakuten.co.jp/hgb/533f80b2.657d94ac.533f80b3.559b3ac4/?me_id=1435289&item_id=10000255&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fcreamchic%2Fcabinet%2Fsmp%2Fsmp_004%2Fsmp-0045_00.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="楽天1位 真空吸着マグネット スマホホルダー MagSafe対応" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:12px;">
+          </a>
+        </div>
+        <div class="card-cat">SMARTPHONE HOLDER</div>
+        <h3 class="card-title">真空吸着マグネット スマホホルダー｜MagSafe対応・360°回転</h3>
+        <p class="card-desc">真空吸着＋超強力マグネットのW固定でズレ・落下ゼロ。片手ワンタッチ着脱。ダッシュボード・ドリンクホルダー・エアコン口の3way対応。iPhone MagSafe・Android全機種OK。</p>
+        <div class="card-meta">
+          <div class="card-price" style="font-size:15px; line-height:1.3;">最大42%OFF<span>クーポンあり</span></div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/533f80b2.657d94ac.533f80b3.559b3ac4/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fcreamchic%2Fgs-smp-0045%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" class="card-link">楽天で見る →</a>
+        </div>
+      </div>
+
+      <!-- 商品⑤：エアーダスター -->
+      <div class="product-card" data-category="gadget">
+        <span class="card-badge badge-rank">🏆 楽天1位</span>
+        <div class="card-img-wrap">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a7540.5fa10eb0.531a7541.8e6b5ae5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgmy-japan%2Fs-p70%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+            <img src="https://hbb.afl.rakuten.co.jp/hgb/531a7540.5fa10eb0.531a7541.8e6b5ae5/?me_id=1425182&item_id=10000080&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fgmy-japan%2Fcabinet%2F250902%2F1011.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="充電式エアーダスター ブロワー" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:12px;">
+          </a>
+        </div>
+        <div class="card-cat">AIR DUSTER / GADGET</div>
+        <h3 class="card-title">充電式エアーダスター ブロワー 200000RPM・4段階風量調整</h3>
+        <p class="card-desc">コンプレッサー不要で200000RPMの圧倒的な風力。車内清掃・エアコンフィルター掃除に大活躍。LCD電量表示・TYPE-C急速充電対応。LEDライト付きで暗所でも使える。</p>
+        <div class="card-meta">
+          <div class="card-price">¥3,980<span>2000円OFF</span></div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a7540.5fa10eb0.531a7541.8e6b5ae5/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgmy-japan%2Fs-p70%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" class="card-link">楽天で見る →</a>
+        </div>
+      </div>
+
+      <!-- 商品⑥：モバイルバッテリー -->
+      <div class="product-card" data-category="charger">
+        <span class="card-badge badge-rank">🏆 楽天1位14冠</span>
+        <div class="card-img-wrap">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a7b25.98c23a5d.531a7b26.d195a2ed/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffurumiyashop%2Fcdb00p60%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+            <img src="https://hbb.afl.rakuten.co.jp/hgb/531a7b25.98c23a5d.531a7b26.d195a2ed/?me_id=1399329&item_id=10000146&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Ffurumiyashop%2Fcabinet%2Fzt%2Fp60-2380-2.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="モバイルバッテリー 23600mAh" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:12px;">
+          </a>
+        </div>
+        <div class="card-cat">MOBILE BATTERY</div>
+        <h3 class="card-title">大容量モバイルバッテリー 23600mAh｜PD22.5W・4本ケーブル内蔵</h3>
+        <p class="card-desc">Lightning・Type-C・Microなど4本のケーブルが本体内蔵でケーブル忘れゼロ。PD22.5W急速充電対応。ドライブ中のナビ&充電の同時使いに最適。PSE認証済で安心。</p>
+        <div class="card-meta">
+          <div class="card-price">¥2,380〜<span>クーポン適用時</span></div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a7b25.98c23a5d.531a7b26.d195a2ed/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffurumiyashop%2Fcdb00p60%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" class="card-link">楽天で見る →</a>
+        </div>
+      </div>
+
+      <!-- 商品⑦：カーナビ -->
+      <div class="product-card" data-category="car-navi">
+        <span class="card-badge badge-rank">🏆 楽天1位</span>
+        <div class="card-img-wrap">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a804a.3288cd7c.531a804b.fd40ea08/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffamous2017%2Ff7g210pe-al%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+            <img src="https://hbb.afl.rakuten.co.jp/hgb/531a804a.3288cd7c.531a804b.fd40ea08/?me_id=1380380&item_id=10000689&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Ffamous2017%2Fcabinet%2F08758553%2Fimgrc0095748973.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="ATOTO A6 カーナビ 9インチ" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:12px;">
+          </a>
+        </div>
+        <div class="card-cat">CAR NAVIGATION</div>
+        <h3 class="card-title">ATOTO A6 カーナビ 9インチ｜CarPlay・Android Auto対応</h3>
+        <p class="card-desc">Apple CarPlay・Android Auto対応の2DINカーナビ。iPhoneのマップやSpotifyをそのまま9インチ大画面で使える。Bluetoothハンズフリー通話対応。純正ナビの買い替えや後付けに最適。</p>
+        <div class="card-meta">
+          <div class="card-price" style="font-size:14px;">楽天で価格確認</div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a804a.3288cd7c.531a804b.fd40ea08/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffamous2017%2Ff7g210pe-al%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" class="card-link">楽天で見る →</a>
+        </div>
+      </div>
+
+      <!-- 商品⑧：ガラスコーティング -->
+      <div class="product-card" data-category="car-care">
+        <span class="card-badge badge-sale">超撥水 3ヶ月持続</span>
+        <div class="card-img-wrap">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a83ef.1a44ea68.531a83f0.63257d66/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fzepancar%2Fquick-coating%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+            <img src="https://hbb.afl.rakuten.co.jp/hgb/531a83ef.1a44ea68.531a83f0.63257d66/?me_id=1414487&item_id=10000005&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fzepancar%2Fcabinet%2F10636932%2Fzt%2Fzepancar-spl-ss.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="ガラスコーティング剤" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:12px;">
+          </a>
+        </div>
+        <div class="card-cat">CAR CARE</div>
+        <h3 class="card-title">ガラスコーティング剤｜超撥水スプレータイプ 3ヶ月持続</h3>
+        <p class="card-desc">スプレーして拭くだけの簡単施工で約3ヶ月の艶・撥水効果が持続。タオル・スポンジ付属ですぐ使える。紫外線・傷・汚れからボディを保護。車・バイク両方に対応。</p>
+        <div class="card-meta">
+          <div class="card-price" style="font-size:14px;">楽天で価格確認</div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a83ef.1a44ea68.531a83f0.63257d66/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fzepancar%2Fquick-coating%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" class="card-link">楽天で見る →</a>
+        </div>
+      </div>
+
+      <!-- 商品⑨：ハンディファン -->
+      <div class="product-card" data-category="gadget">
+        <span class="card-badge badge-rank">🏆 楽天1位・TV紹介</span>
+        <div class="card-img-wrap">
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a8501.50356f72.531a8502.a40446dd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fazusa%2F0302%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+            <img src="https://hbb.afl.rakuten.co.jp/hgb/531a8501.50356f72.531a8502.a40446dd/?me_id=1398321&item_id=10000130&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fazusa%2Fcabinet%2Fh8fan%2Fh08pro_main01.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="ハンディファン 冷却プレート付き" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:12px;">
+          </a>
+        </div>
+        <div class="card-cat">GADGET / COOLING</div>
+        <h3 class="card-title">ハンディファン 冷却プレート付き｜120段階・5000mAh大容量</h3>
+        <p class="card-desc">テレビ紹介の話題商品。冷却プレートが直接肌を冷やすため夏の車移動・屋外に最適。120段階の細かい風量調整と5000mAhの大容量で1日中安心して使える。卓上スタンドとしても使用可。</p>
+        <div class="card-meta">
+          <div class="card-price">¥1,490〜<span>クーポン適用時</span></div>
+          <a href="https://hb.afl.rakuten.co.jp/ichiba/531a8501.50356f72.531a8502.a40446dd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fazusa%2F0302%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow sponsored noopener" class="card-link">楽天で見る →</a>
+        </div>
+      </div>
+
+    </div><!-- /#productGrid -->
+
+    <div style="margin-top: 24px;">
+      <div class="affiliate-notice">
+        <strong>【広告表示】</strong> 当ブログは楽天アフィリエイトプログラムを利用しています。記事内のリンクから商品をご購入いただいた際、当ブログに一定の報酬が発生する場合があります。紹介する商品・価格・在庫状況は掲載時点の情報であり、変動する場合があります。必ず楽天市場の販売ページにてご確認ください。
       </div>
     </div>
-    <div class="pain-solve">
-      ✅ ドライブレコーダー1台で、<span>これらすべての不安が解決</span>できます。
-    </div>
+
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products" id="products">
-  <div class="products-inner">
-    <p class="section-label">おすすめランキング</p>
-    <h2 class="section-title">2026年 おすすめ<br>ドライブレコーダー5選</h2>
 
-    <div class="rank-list">
 
-      <!-- 1位 -->
-      <div class="rank-card top-pick">
-        <div class="rank-number">
-          <div class="num">1</div>
-          <div class="rank-badge-small">NO.1</div>
-        </div>
-        <div class="rank-body">
-          <div class="rank-meta">
-            <span class="badge badge-hot">🏆 迷ったらこれ</span>
-            <span class="badge badge-hot">楽天売上No.1</span>
-          </div>
-          <h3>コムテック ZDR018</h3>
-          <ul class="rank-features">
-            <li>前後2カメラ</li>
-            <li>駐車監視対応</li>
-            <li>高画質</li>
-            <li>初心者向け</li>
-          </ul>
-        </div>
-        <div class="rank-cta">
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5353e37d.ac989129.5353e37e.aab598ba/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fainekusu%2Fzdr018%2F&link_type=picttext" class="cta-link" target="_blank" rel="nofollow">楽天で見る →</a>
-          <div class="cta-sub">アフィリエイトリンク</div>
-        </div>
-      </div>
 
-      <!-- 2位 -->
-      <div class="rank-card">
-        <div class="rank-number">
-          <div class="num">2</div>
-          <div class="rank-badge-small">HIGH</div>
-        </div>
-        <div class="rank-body">
-          <div class="rank-meta">
-            <span class="badge badge-quality">🎥 高画質＆安定</span>
-            <span class="badge badge-quality">3年保証</span>
-          </div>
-          <h3>ケンウッド DRV-G50W</h3>
-          <ul class="rank-features">
-            <li>国内メーカー</li>
-            <li>前後2カメラ</li>
-            <li>高安定画質</li>
-            <li>長期使用向け</li>
-          </ul>
-        </div>
-        <div class="rank-cta">
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5353e7bb.553d8d16.5353e7bc.f8998376/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdrivemarket%2Fkedrvg50w%2F&link_type=picttext" class="cta-link" target="_blank" rel="nofollow">楽天で見る →</a>
-          <div class="cta-sub">アフィリエイトリンク</div>
-        </div>
-      </div>
-
-      <!-- 3位 -->
-      <div class="rank-card">
-        <div class="rank-number">
-          <div class="num">3</div>
-          <div class="rank-badge-small">VALUE</div>
-        </div>
-        <div class="rank-body">
-          <div class="rank-meta">
-            <span class="badge badge-value">💴 コスパ重視</span>
-            <span class="badge badge-value">SD付き</span>
-          </div>
-          <h3>ケンウッド DRV-R30S</h3>
-          <ul class="rank-features">
-            <li>リーズナブル</li>
-            <li>フルHD・GPS</li>
-            <li>SDカード32GB付</li>
-            <li>3年保証</li>
-          </ul>
-        </div>
-        <div class="rank-cta">
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5353eb55.dd0d17bf.5353eb56.08aa32f7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fautobacs-ec%2F4975514066223%2F&link_type=picttext" class="cta-link" target="_blank" rel="nofollow">楽天で見る →</a>
-          <div class="cta-sub">アフィリエイトリンク</div>
-        </div>
-      </div>
-
-      <!-- 4位 -->
-      <div class="rank-card">
-        <div class="rank-number">
-          <div class="num">4</div>
-          <div class="rank-badge-small">BALANCE</div>
-        </div>
-        <div class="rank-body">
-          <div class="rank-meta">
-            <span class="badge badge-balanced">⚖️ バランス型</span>
-            <span class="badge badge-balanced">360°撮影</span>
-          </div>
-          <h3>コムテック ZDR-850R</h3>
-          <ul class="rank-features">
-            <li>360°＋リアカメラ</li>
-            <li>価格と機能のバランス</li>
-            <li>駐車監視ケーブル付</li>
-          </ul>
-        </div>
-        <div class="rank-cta">
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5353eb55.dd0d17bf.5353eb56.08aa32f7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fautobacs-ec%2F9502100023793%2F&link_type=picttext" class="cta-link" target="_blank" rel="nofollow">楽天で見る →</a>
-          <div class="cta-sub">アフィリエイトリンク</div>
-        </div>
-      </div>
-
-      <!-- 5位 -->
-      <div class="rank-card">
-        <div class="rank-number">
-          <div class="num">5</div>
-          <div class="rank-badge-small">PRO</div>
-        </div>
-        <div class="rank-body">
-          <div class="rank-meta">
-            <span class="badge badge-premium">🪞 ミラー型</span>
-            <span class="badge badge-premium">高機能</span>
-          </div>
-          <h3>ケンウッド DRV-EM4800</h3>
-          <ul class="rank-features">
-            <li>デジタルミラー型</li>
-            <li>12型IPS液晶</li>
-            <li>駐車監視あり</li>
-          </ul>
-        </div>
-        <div class="rank-cta">
-          <a href="https://hb.afl.rakuten.co.jp/ichiba/5353eb55.dd0d17bf.5353eb56.08aa32f7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fautobacs-ec%2F4975514064595%2F&link_type=picttext" class="cta-link" target="_blank" rel="nofollow">楽天で見る →</a>
-          <div class="cta-sub">アフィリエイトリンク</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
-<section class="comparison" id="comparison">
-  <div class="comparison-inner">
-    <p class="section-label">5モデル一覧</p>
-    <h2 class="section-title">比較表</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>モデル名</th>
-            <th>前後カメラ</th>
-            <th>画質</th>
-            <th>駐車監視</th>
-            <th>価格帯</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="highlight">
-            <td>ZDR018 <span class="winner-badge">No.1</span></td>
-            <td><span class="score high">◎</span></td>
-            <td><span class="score high">高</span></td>
-            <td><span class="score high">○</span></td>
-            <td><span class="price-tag price-mid">中</span></td>
-          </tr>
-          <tr>
-            <td>DRV-G50W</td>
-            <td><span class="score mid">○</span></td>
-            <td><span class="score high">高</span></td>
-            <td><span class="score mid">○</span></td>
-            <td><span class="price-tag price-high">中〜高</span></td>
-          </tr>
-          <tr>
-            <td>DRV-R30S</td>
-            <td><span class="score mid">○</span></td>
-            <td><span class="score mid">普通</span></td>
-            <td><span class="score low">△</span></td>
-            <td><span class="price-tag price-budget">安</span></td>
-          </tr>
-          <tr>
-            <td>ZDR-850R</td>
-            <td><span class="score high">◎</span></td>
-            <td><span class="score high">高</span></td>
-            <td><span class="score mid">○</span></td>
-            <td><span class="price-tag price-mid">中</span></td>
-          </tr>
-          <tr>
-            <td>DRV-EM4800</td>
-            <td><span class="score high">◎</span></td>
-            <td><span class="score high">高</span></td>
-            <td><span class="score high">◎</span></td>
-            <td><span class="price-tag price-high">高</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- SUMMARY / CTA -->
-<section class="summary">
-  <div class="summary-inner">
-    <div class="summary-text">
-      <p class="section-label">まとめ</p>
-      <h2 class="section-title">迷ったら<br>これ一択！</h2>
-      <p style="color: var(--gray); line-height: 1.8; margin-bottom: 1rem;">
-        前後カメラ＋高画質のドライブレコーダーを選べば、日常のほぼすべてのシーンに対応できます。初めての方には楽天売上1位の <strong>ZDR018</strong> が最もおすすめです。
-      </p>
-      <p style="font-size: 0.82rem; color: var(--gray);">
-        ※本ページには楽天アフィリエイトリンクが含まれます。
-      </p>
-    </div>
-    <div class="summary-box">
-      <h3>BEST PICK</h3>
-      <div class="model">コムテック ZDR018</div>
-      <p>楽天で一番売れているモデル。前後2カメラ、駐車監視機能、高画質を兼ね備えた初心者〜中級者向けの定番モデルです。</p>
-      <a href="https://hb.afl.rakuten.co.jp/ichiba/5353e37d.ac989129.5353e37e.aab598ba/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fainekusu%2Fzdr018%2F&link_type=picttext" class="btn-primary" target="_blank" rel="nofollow">楽天で詳細を見る →</a>
-    </div>
-  </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 DRIVEREC GUIDE. All rights reserved.</p>
-  <p>本サイトには楽天アフィリエイトリンクが含まれます。</p>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">DRIVE<span>GEAR</span>LAB</div>
+      <p class="footer-desc">
+        ドライブをもっと快適に、もっと安全に。楽天市場で買える車用品・ガジェットを実際に使って正直レビューするアフィリエイトブログです。
+      </p>
+    </div>
+    <div>
+      <div class="footer-nav-title">CATEGORY</div>
+      <nav class="footer-nav">
+        <a href="#products">ドライブレコーダー</a>
+        <a href="#products">カーナビ・ミラー</a>
+        <a href="#products">充電・電源グッズ</a>
+        <a href="#products">車内インテリア</a>
+        <a href="#products">ガジェット</a>
+        <a href="#products">スマホホルダー</a>
+        <a href="#products">カーケア</a>
+        <a href="#products">バッテリー</a>
+      </nav>
+    </div>
+    <div>
+      <div class="footer-nav-title">INFO</div>
+      <nav class="footer-nav">
+        <a href="#about">このブログについて</a>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">免責事項</a>
+        <a href="#">お問い合わせ</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2024 DRIVE GEAR LAB · 楽天アフィリエイトブログ</div>
+    <div class="footer-copy">楽天アフィリエイトプログラム利用</div>
+  </div>
 </footer>
 
+<script>
+  // ─── カテゴリフィルター（件数表示つき）───
+  const tabs = document.querySelectorAll('.cat-tab');
+  const cards = document.querySelectorAll('.product-card');
+  const countNum = document.getElementById('countNum');
+
+  function updateCount() {
+    const visible = [...cards].filter(c => c.style.display !== 'none').length;
+    countNum.textContent = visible;
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filter = tab.dataset.filter;
+      cards.forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
+      });
+      updateCount();
+    });
+  });
+
+  // 初期件数表示
+  updateCount();
+</script>
 </body>
 </html>
