@@ -166,6 +166,36 @@
   }
   .btn-outline:hover { border-color: var(--c-text); color: var(--c-text); }
   .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* ─── HERO COMMENT ─── */
+  .hero-comment {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 32px;
+    padding: 18px 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--c-border2);
+    border-left: 3px solid var(--c-accent);
+    max-width: 560px;
+  }
+  .hero-comment-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .hero-comment-label {
+    font-family: var(--font-sub);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: var(--c-accent);
+    margin-bottom: 6px;
+  }
+  .hero-comment-body p {
+    font-size: 13px;
+    color: var(--c-muted);
+    line-height: 1.85;
+  }
   .hero-label {
     position: absolute; right: 0; top: 0;
     font-family: var(--font-display);
@@ -494,8 +524,17 @@
     </div>
     <div class="hero-btns">
       <a href="#products" class="btn-primary">おすすめ商品を見る →</a>
-      <a href="#articles" class="btn-outline">レビュー記事を読む</a>
     </div>
+
+    <!-- 自己紹介コメント -->
+    <div class="hero-comment">
+      <div class="hero-comment-icon">👤</div>
+      <div class="hero-comment-body">
+        <div class="hero-comment-label">EDITOR'S NOTE</div>
+        <p>車好き・ガジェット好きが高じて、気づいたら楽天で年間100件以上レビューしてました。このサイトは「実際に自分で買って、本当に良かったもの」だけを載せています。忖度なし、正直に。ドライブがもっと楽しくなるアイテム、一緒に探しましょう。</p>
+      </div>
+    </div>
+
     <div class="hero-label" aria-hidden="true">GEAR</div>
   </div>
 </section>
