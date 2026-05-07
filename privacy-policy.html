@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー・免責事項 | DRIVE GEAR LAB</title>
+<meta name="description" content="DRIVE GEAR LABのプライバシーポリシー・免責事項ページです。個人情報の取り扱い、アフィリエイトプログラム、Cookieの使用についてご説明します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --c-bg: #0a0c0f;
+    --c-surface: #13171e;
+    --c-surface2: #1c2230;
+    --c-border: rgba(255,255,255,0.08);
+    --c-border2: rgba(255,255,255,0.15);
+    --c-accent: #e8412a;
+    --c-accent2: #ff6b4a;
+    --c-gold: #f5a623;
+    --c-text: #f0f2f5;
+    --c-muted: #8a95a3;
+    --c-dim: #555f6e;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-sub: 'Oswald', sans-serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--c-bg);
+    color: var(--c-text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* ─── HEADER ─── */
+  header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,12,15,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .header-inner {
+    max-width: 1100px; margin: 0 auto;
+    padding: 0 20px; height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 20px;
+  }
+  .logo { font-family: var(--font-display); font-size: 26px; letter-spacing: 2px; line-height: 1; }
+  .logo span { color: var(--c-accent); }
+  nav { display: flex; gap: 4px; }
+  nav a {
+    font-family: var(--font-sub); font-size: 13px; letter-spacing: 1px;
+    padding: 6px 12px; color: var(--c-muted); border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+  }
+  nav a:hover { color: var(--c-text); background: rgba(255,255,255,0.06); }
+  .nav-cta {
+    background: var(--c-accent) !important; color: #fff !important;
+    font-weight: 600; padding: 6px 14px; border-radius: 4px; font-size: 12px;
+  }
+  .nav-cta:hover { background: var(--c-accent2) !important; }
+
+  /* ─── PAGE HERO ─── */
+  .page-hero {
+    background: var(--c-surface);
+    border-bottom: 1px solid var(--c-border);
+    padding: 52px 20px 44px;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 80% at 80% 50%, rgba(232,65,42,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page-hero-inner { max-width: 800px; margin: 0 auto; position: relative; }
+  .breadcrumb {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--font-sub); font-size: 11px; letter-spacing: 1.5px;
+    color: var(--c-dim); margin-bottom: 18px;
+  }
+  .breadcrumb a { color: var(--c-muted); transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--c-accent); }
+  .page-eyebrow {
+    font-family: var(--font-sub); font-size: 10px; letter-spacing: 3px;
+    color: var(--c-accent); margin-bottom: 10px;
+  }
+  .page-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: 2px; line-height: 1.1; margin-bottom: 14px;
+  }
+  .page-hero-desc {
+    font-size: 13px; color: var(--c-muted); line-height: 1.8;
+  }
+  .page-updated {
+    display: inline-block;
+    font-family: var(--font-sub); font-size: 11px; letter-spacing: 1px;
+    color: var(--c-dim); margin-top: 14px;
+  }
+
+  /* ─── CONTENT ─── */
+  .content-wrap {
+    max-width: 800px; margin: 0 auto;
+    padding: 52px 20px 80px;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-left: 3px solid var(--c-accent);
+    padding: 22px 26px;
+    margin-bottom: 48px;
+  }
+  .toc-title {
+    font-family: var(--font-sub); font-size: 10px; letter-spacing: 2.5px;
+    color: var(--c-dim); margin-bottom: 12px;
+  }
+  .toc ol { padding-left: 18px; }
+  .toc li { margin-bottom: 7px; }
+  .toc a { font-size: 13px; color: var(--c-muted); transition: color 0.2s; }
+  .toc a:hover { color: var(--c-accent); }
+
+  /* セクション */
+  .policy-section { margin-bottom: 52px; }
+  .policy-section:last-child { margin-bottom: 0; }
+
+  .section-num {
+    font-family: var(--font-display); font-size: 11px; letter-spacing: 2px;
+    color: var(--c-accent); margin-bottom: 6px;
+  }
+  .policy-section h2 {
+    font-family: var(--font-display);
+    font-size: 26px; letter-spacing: 2px;
+    border-left: 4px solid var(--c-accent);
+    padding-left: 14px; margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .policy-section h3 {
+    font-size: 14px; font-weight: 700;
+    color: var(--c-text); margin: 20px 0 8px;
+    padding-left: 10px;
+    border-left: 2px solid var(--c-dim);
+  }
+  .policy-section p {
+    font-size: 14px; color: var(--c-muted);
+    line-height: 1.9; margin-bottom: 14px;
+  }
+  .policy-section ul, .policy-section ol {
+    padding-left: 20px; margin-bottom: 14px;
+  }
+  .policy-section li {
+    font-size: 14px; color: var(--c-muted);
+    line-height: 1.85; margin-bottom: 6px;
+  }
+  .policy-section a { color: var(--c-accent); text-decoration: underline; }
+  .policy-section a:hover { color: var(--c-accent2); }
+
+  /* ハイライトボックス */
+  .highlight-box {
+    background: var(--c-surface);
+    border: 1px solid var(--c-border);
+    padding: 18px 20px;
+    margin: 16px 0;
+    font-size: 13px; color: var(--c-muted); line-height: 1.8;
+  }
+  .highlight-box strong { color: var(--c-text); }
+
+  /* 区切り線 */
+  .divider { height: 1px; background: var(--c-border); margin: 48px 0; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--c-border);
+    background: var(--c-surface);
+    padding: 48px 20px 32px;
+  }
+  .footer-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px; margin-bottom: 40px;
+  }
+  .footer-logo { font-family: var(--font-display); font-size: 22px; letter-spacing: 2px; margin-bottom: 12px; }
+  .footer-logo span { color: var(--c-accent); }
+  .footer-desc { font-size: 13px; color: var(--c-muted); line-height: 1.8; max-width: 300px; }
+  .footer-nav-title { font-family: var(--font-sub); font-size: 11px; letter-spacing: 2px; color: var(--c-dim); margin-bottom: 14px; }
+  .footer-nav a { display: block; font-size: 13px; color: var(--c-muted); padding: 4px 0; transition: color 0.2s; }
+  .footer-nav a:hover { color: var(--c-text); }
+  .footer-bottom {
+    max-width: 1100px; margin: 0 auto;
+    border-top: 1px solid var(--c-border); padding-top: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .footer-copy { font-size: 11px; color: var(--c-dim); letter-spacing: 1px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    nav { display: none; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">DRIVE<span>GEAR</span>LAB</a>
+    <nav>
+      <a href="/#products">アイテム</a>
+      <a href="https://www.rakuten.co.jp/" target="_blank" rel="noopener" class="nav-cta">楽天で見る →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="/">HOME</a>
+      <span>/</span>
+      <span>プライバシーポリシー・免責事項</span>
+    </div>
+    <div class="page-eyebrow">LEGAL / POLICY</div>
+    <h1>プライバシーポリシー<br>・免責事項</h1>
+    <p class="page-hero-desc">
+      当ブログ「DRIVE GEAR LAB」における個人情報の取り扱い、アフィリエイトプログラムの利用、および免責事項について説明します。
+    </p>
+    <span class="page-updated">最終更新：2025年4月23日</span>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">CONTENTS — 目次</div>
+    <ol>
+      <li><a href="#about">運営者情報</a></li>
+      <li><a href="#affiliate">アフィリエイトについて（広告表示）</a></li>
+      <li><a href="#privacy">個人情報の取り扱い</a></li>
+      <li><a href="#cookie">Cookieの使用について</a></li>
+      <li><a href="#analytics">アクセス解析ツールについて</a></li>
+      <li><a href="#disclaimer">免責事項</a></li>
+      <li><a href="#copyright">著作権について</a></li>
+      <li><a href="#contact">お問い合わせ</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. 運営者情報 -->
+  <div class="policy-section" id="about">
+    <div class="section-num">01</div>
+    <h2>運営者情報</h2>
+    <div class="highlight-box">
+      <strong>サイト名：</strong>DRIVE GEAR LAB<br>
+      <strong>URL：</strong><a href="https://emire15.github.io/">https://emire15.github.io/</a><br>
+      <strong>運営者：</strong>個人運営<br>
+      <strong>ジャンル：</strong>車用品・ガジェット 楽天アフィリエイトブログ
+    </div>
+    <p>当ブログは個人が運営する楽天アフィリエイトブログです。実際に購入・使用した商品を中心に、車用品・ガジェットのレビューや紹介を行っています。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 2. アフィリエイト -->
+  <div class="policy-section" id="affiliate">
+    <div class="section-num">02</div>
+    <h2>アフィリエイトについて</h2>
+    <p>当ブログは、<strong style="color:var(--c-text);">楽天アフィリエイトプログラム</strong>に参加しています。記事内に掲載している商品リンク・バナーは、アフィリエイトリンクです。</p>
+    <h3>アフィリエイトリンクとは</h3>
+    <p>読者の方がリンクをクリックして楽天市場で商品をご購入いただいた場合、当ブログに一定の報酬（紹介料）が発生する場合があります。購入者の方が追加でコストを負担することは一切ありません。</p>
+    <h3>紹介商品の選定方針</h3>
+    <p>当ブログで紹介する商品は、運営者が実際に購入・使用したもの、または品質・信頼性を確認したものを掲載しています。報酬の多寡によって紹介商品を選定することはありません。</p>
+    <div class="highlight-box">
+      <strong>【広告表示】</strong> 当ブログは楽天アフィリエイトプログラムを利用しています。記事内のリンクから商品をご購入いただいた際、当ブログに一定の報酬が発生する場合があります。紹介する商品・価格・在庫状況は掲載時点の情報であり、変動する場合があります。必ず楽天市場の販売ページにてご確認ください。
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3. 個人情報 -->
+  <div class="policy-section" id="privacy">
+    <div class="section-num">03</div>
+    <h2>個人情報の取り扱い</h2>
+    <p>当ブログでは、現在お問い合わせフォーム等による個人情報の収集は行っておりません。</p>
+    <p>今後お問い合わせ機能を設ける際は、以下の方針に従って個人情報を取り扱います。</p>
+    <ul>
+      <li>収集した個人情報は、お問い合わせへの返信・対応のみに使用します</li>
+      <li>第三者への提供・開示は、法令に基づく場合を除き行いません</li>
+      <li>個人情報は適切な方法で管理し、不正アクセス・漏洩の防止に努めます</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 4. Cookie -->
+  <div class="policy-section" id="cookie">
+    <div class="section-num">04</div>
+    <h2>Cookieの使用について</h2>
+    <p>当ブログおよびリンク先の楽天市場では、Cookieを使用しています。Cookieとは、ウェブサイトがブラウザに保存する小さなデータファイルです。</p>
+    <h3>Cookieの使用目的</h3>
+    <ul>
+      <li>アクセス解析・サイト改善のため</li>
+      <li>楽天アフィリエイトプログラムの計測のため</li>
+    </ul>
+    <h3>Cookieの無効化</h3>
+    <p>お使いのブラウザの設定からCookieを無効にすることができます。ただし、一部のサービスが正常に機能しない場合があります。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 5. アクセス解析 -->
+  <div class="policy-section" id="analytics">
+    <div class="section-num">05</div>
+    <h2>アクセス解析ツールについて</h2>
+    <p>当ブログでは、サイトの改善を目的としてアクセス解析ツールを使用する場合があります。解析ツールはCookieを使用してアクセス情報を収集しますが、個人を特定する情報は収集しません。</p>
+    <p>収集されたデータはサービス提供者のプライバシーポリシーに従って管理されます。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 6. 免責事項 -->
+  <div class="policy-section" id="disclaimer">
+    <div class="section-num">06</div>
+    <h2>免責事項</h2>
+    <h3>情報の正確性について</h3>
+    <p>当ブログに掲載している商品情報・価格・在庫状況は、記事執筆時点の情報です。楽天市場での実際の価格・在庫状況は変動する場合があります。購入前に必ず楽天市場の販売ページにてご確認ください。</p>
+    <h3>損害について</h3>
+    <p>当ブログの情報をもとに行われた購入・行動によって生じたいかなる損害についても、当ブログは責任を負いかねます。商品の選択・購入はご自身の判断と責任のもとで行ってください。</p>
+    <h3>リンク先について</h3>
+    <p>当ブログからリンクしている楽天市場のページ・外部サイトの内容については、当ブログは責任を負いかねます。リンク先のポリシーはそれぞれのサービスに従います。</p>
+    <h3>レビュー・評価について</h3>
+    <p>当ブログに掲載しているレビュー・評価は、運営者個人の主観に基づくものです。商品の効果・品質には個人差があります。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 7. 著作権 -->
+  <div class="policy-section" id="copyright">
+    <div class="section-num">07</div>
+    <h2>著作権について</h2>
+    <p>当ブログに掲載しているテキスト・デザインの著作権は、運営者に帰属します。無断転載・複製はご遠慮ください。</p>
+    <p>楽天アフィリエイトより取得した商品画像の著作権は、各ショップ・メーカーに帰属します。</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 8. お問い合わせ -->
+  <div class="policy-section" id="contact">
+    <div class="section-num">08</div>
+    <h2>お問い合わせ</h2>
+    <p>当ブログのプライバシーポリシー・免責事項に関するご質問、または掲載内容に関するお問い合わせは、下記よりご連絡ください。</p>
+    <div class="highlight-box">
+      <strong>お問い合わせ方法：</strong>準備中です。今後対応予定です。<br>
+      <strong>対応時間：</strong>個人運営のため、返信までにお時間をいただく場合があります。
+    </div>
+    <p style="margin-top:16px;">なお、商品に関するお問い合わせは、各ショップ（楽天市場の販売ページ）へ直接お問い合わせください。</p>
+  </div>
+
+  <!-- TOPへ戻るボタン -->
+  <div style="text-align:center; margin-top: 48px;">
+    <a href="/" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--font-sub);font-size:13px;letter-spacing:1.5px;color:var(--c-muted);border:1px solid var(--c-border2);padding:13px 28px;border-radius:3px;transition:color .2s,border-color .2s;" onmouseover="this.style.color='var(--c-text)';this.style.borderColor='var(--c-text)';" onmouseout="this.style.color='var(--c-muted)';this.style.borderColor='var(--c-border2)';">← DRIVE GEAR LAB トップへ戻る</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">DRIVE<span>GEAR</span>LAB</div>
+      <p class="footer-desc">ドライブをもっと快適に、もっと安全に。楽天市場で買える車用品・ガジェットを実際に使って正直レビューするアフィリエイトブログです。</p>
+    </div>
+    <div>
+      <div class="footer-nav-title">CATEGORY</div>
+      <nav class="footer-nav">
+        <a href="/#products">ドライブレコーダー</a>
+        <a href="/#products">カーナビ・ミラー</a>
+        <a href="/#products">充電・電源グッズ</a>
+        <a href="/#products">車内インテリア</a>
+        <a href="/#products">ガジェット</a>
+        <a href="/#products">スマホホルダー</a>
+        <a href="/#products">カーケア</a>
+      </nav>
+    </div>
+    <div>
+      <div class="footer-nav-title">INFO</div>
+      <nav class="footer-nav">
+        <a href="/#about">このブログについて</a>
+        <a href="/privacy-policy.html">プライバシーポリシー</a>
+        <a href="/privacy-policy.html#disclaimer">免責事項</a>
+        <a href="/privacy-policy.html#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 DRIVE GEAR LAB · 楽天アフィリエイトブログ</div>
+    <div class="footer-copy">楽天アフィリエイトプログラム利用</div>
+  </div>
+</footer>
+
+</body>
+</html>
