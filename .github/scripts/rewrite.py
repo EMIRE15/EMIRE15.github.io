@@ -21,7 +21,7 @@ def main():
     print(f"File loaded: {target_file} ({len(original_html)} chars)")
 
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-pro")
 
     prompt = f"""You are a professional web writer. Rewrite the following HTML.
 
