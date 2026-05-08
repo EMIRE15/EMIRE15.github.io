@@ -39,7 +39,7 @@ Instruction: {instruction}
 
     print("Sending request to Gemini API...")
     response = client.models.generate_content(
-        model="gemini-2.0-flash",
+        model=model="gemini-1.5-flash",
         contents=prompt
     )
 
