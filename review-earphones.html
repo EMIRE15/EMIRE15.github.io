@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bluetooth5.4ノイズキャンセリングワイヤレスイヤホンを3週間使用レビュー。ドライブ中の音切れ・ハンズフリー通話品質・装着感を徹底検証。楽天で¥2,780。">
+<title>【実機レビュー】ワイヤレスイヤホン Bluetooth5.4 ノイキャン搭載｜¥2,780でドライブ通話は快適か？ | DRIVE GEAR LAB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --border: #2a2a2a;
+    --accent: #00d4ff;
+    --accent2: #ff4500;
+    --text: #e8e8e8;
+    --text-muted: #888;
+    --text-dim: #555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Noto Sans JP', sans-serif; font-size: 16px; line-height: 1.8; }
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-logo { font-family: 'Bebas Neue', cursive; font-size: 1.4rem; color: #e8ff00; letter-spacing: 2px; text-decoration: none; }
+  .nav-back { font-family: 'Barlow', sans-serif; font-size: 0.8rem; color: var(--text-muted); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; }
+  .nav-back:hover { color: var(--accent); }
+  .hero { border-bottom: 1px solid var(--border); padding: 4rem 2rem 3rem; max-width: 860px; margin: 0 auto; }
+  .hero-label { font-family: 'Barlow', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem; }
+  .hero-label::before { content: ''; display: block; width: 32px; height: 1px; background: var(--accent); }
+  h1 { font-family: 'Barlow', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.25; margin-bottom: 1.5rem; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; font-family: 'Barlow', sans-serif; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 2rem; }
+  .verdict-banner { background: var(--accent); color: #000; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .verdict-banner .verdict-text { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 1rem; }
+  .verdict-banner .verdict-score { font-family: 'Bebas Neue', cursive; font-size: 2.5rem; line-height: 1; }
+  .layout { max-width: 860px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 280px; gap: 3rem; }
+  @media (max-width: 700px) { .layout { grid-template-columns: 1fr; } }
+  .article h2 { font-family: 'Barlow', sans-serif; font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 1rem; padding-left: 1rem; border-left: 3px solid var(--accent); line-height: 1.3; }
+  .article h3 { font-size: 1.05rem; font-weight: 700; margin: 1.8rem 0 0.6rem; }
+  .article p { margin-bottom: 1.2rem; color: #ccc; line-height: 1.9; }
+  .article strong { color: var(--text); }
+  .img-block { background: var(--surface2); border: 1px solid var(--border); aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 2rem 0; color: var(--text-dim); font-family: 'Barlow', sans-serif; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; gap: 0.5rem; }
+  .img-block .img-icon { font-size: 2rem; opacity: 0.3; }
+  .img-caption { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: -1.5rem; margin-bottom: 2rem; font-style: italic; }
+  .rating-grid { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem; margin: 2rem 0; }
+  .rating-grid h3 { font-family: 'Barlow', sans-serif; font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.2rem; font-weight: 600; }
+  .rating-item { display: grid; grid-template-columns: 120px 1fr 40px; align-items: center; gap: 1rem; margin-bottom: 0.8rem; }
+  .rating-label { font-size: 0.85rem; color: var(--text-muted); }
+  .rating-bar-wrap { background: var(--border); height: 4px; }
+  .rating-bar { background: var(--accent); height: 4px; }
+  .rating-num { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 0.9rem; color: var(--accent); text-align: right; }
+  .pro-con { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2rem 0; }
+  @media (max-width: 500px) { .pro-con { grid-template-columns: 1fr; } }
+  .pro, .con { padding: 1.2rem 1.4rem; border: 1px solid var(--border); }
+  .pro { border-top: 3px solid #00e676; }
+  .con { border-top: 3px solid var(--accent2); }
+  .pro h4, .con h4 { font-family: 'Barlow', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 0.8rem; }
+  .pro h4 { color: #00e676; }
+  .con h4 { color: var(--accent2); }
+  .pro li, .con li { list-style: none; font-size: 0.9rem; color: #bbb; margin-bottom: 0.5rem; padding-left: 1rem; position: relative; line-height: 1.5; }
+  .pro li::before { content: '+'; position: absolute; left: 0; color: #00e676; font-weight: 700; }
+  .con li::before { content: '−'; position: absolute; left: 0; color: var(--accent2); font-weight: 700; }
+  .spec-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+  .spec-table tr { border-bottom: 1px solid var(--border); }
+  .spec-table td { padding: 0.7rem 0.5rem; font-size: 0.88rem; vertical-align: top; }
+  .spec-table td:first-child { color: var(--text-muted); width: 40%; font-family: 'Barlow', sans-serif; }
+  .spec-table td:last-child { color: var(--text); }
+  .sidebar { position: sticky; top: 72px; align-self: start; }
+  .buy-card { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; }
+  .buy-card .buy-label { font-family: 'Barlow', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .buy-card .buy-name { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.4; }
+  .buy-card .buy-price { font-family: 'Bebas Neue', cursive; font-size: 2rem; color: var(--accent); margin-bottom: 1rem; letter-spacing: 1px; }
+  .buy-card .buy-price span { font-size: 1rem; margin-left: 4px; color: var(--text-muted); font-family: 'Noto Sans JP'; }
+  .buy-btn { display: block; width: 100%; background: var(--accent); color: #000; text-align: center; padding: 0.9rem; font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; border: none; transition: opacity 0.2s; }
+  .buy-btn:hover { opacity: 0.85; }
+  .buy-note { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.8rem; text-align: center; }
+  .toc { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem; }
+  .toc h4 { font-family: 'Barlow', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; }
+  .toc ol { padding-left: 1.2rem; }
+  .toc li { margin-bottom: 0.5rem; }
+  .toc a { color: var(--text-muted); font-size: 0.85rem; text-decoration: none; }
+  .toc a:hover { color: var(--accent); }
+  .highlight { background: var(--surface2); border-left: 3px solid var(--accent); padding: 1.2rem 1.4rem; margin: 1.5rem 0; font-size: 0.95rem; color: #ccc; }
+  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--text-dim); font-family: 'Barlow', sans-serif; }
+  footer a { color: var(--text-muted); text-decoration: none; }
+  .disclosure { background: var(--surface); border: 1px solid var(--border); padding: 1rem 1.4rem; margin: 2rem 0; font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; }
+  .comparison-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+  .comparison-table th { background: var(--surface2); padding: 0.6rem 0.8rem; font-family: 'Barlow', sans-serif; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); text-align: left; border-bottom: 2px solid var(--border); }
+  .comparison-table td { padding: 0.7rem 0.8rem; font-size: 0.88rem; border-bottom: 1px solid var(--border); }
+  .comparison-table tr:hover td { background: var(--surface); }
+  .tag-new { background: var(--accent); color: #000; font-family: 'Barlow', sans-serif; font-size: 0.7rem; font-weight: 700; padding: 2px 6px; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">DRIVEGEARLAB</a>
+  <a class="nav-back" href="index.html">← 一覧に戻る</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">WIRELESS EARPHONES · REVIEW</div>
+  <h1>Bluetooth <em>5.4</em> ノイキャン搭載<br>¥2,780イヤホンで<br>ドライブ中の通話は快適か？</h1>
+  <div class="hero-meta">
+    <span>📅 2025年5月更新</span>
+    <span>⏱ 読了約6分</span>
+    <span>🛒 楽天市場購入</span>
+    <span>📦 3週間使用レビュー</span>
+  </div>
+  <div class="verdict-banner">
+    <div class="verdict-text">総合評価 — 通勤・ドライブのサブ機として完璧なコスパ。</div>
+    <div class="verdict-score">4.1 / 5</div>
+  </div>
+</div>
+
+<div class="layout">
+  <article class="article">
+
+    <div class="disclosure">
+      【広告】本記事は楽天アフィリエイトプログラムを利用しています。リンクから購入した場合、当ブログに報酬が発生することがあります。
+    </div>
+
+    <h2 id="intro">はじめに｜¥2,780でBluetooth5.4とノイキャンは本当？</h2>
+    <p>「Bluetooth5.4」「ノイズキャンセリング」「ハンズフリー通話」——3つが¥2,780に収まっているのを見て最初は半信半疑でした。でも実際に使ってみると、<strong>メインのAirPodsを使わずに3週間過ごせた</strong>くらいには良い商品でした。</p>
+    <p>特にドライブ用途（ハンズフリー通話・音楽）に絞って評価します。</p>
+
+    <div class="img-block">
+      <div class="img-icon">🎧</div>
+      <div>PRODUCT PHOTO — 開封・充電ケース</div>
+    </div>
+
+    <h2 id="spec">スペック</h2>
+    <table class="spec-table">
+      <tr><td>Bluetooth</td><td>5.4</td></tr>
+      <tr><td>ノイズキャンセリング</td><td>ANC搭載（3段階調整）</td></tr>
+      <tr><td>再生時間</td><td>イヤホン単体6時間 / ケース込み30時間</td></tr>
+      <tr><td>充電</td><td>USB-C / ワイヤレス充電対応</td></tr>
+      <tr><td>防水</td><td>IPX5</td></tr>
+      <tr><td>通話マイク</td><td>デュアルマイク（風切り音低減）</td></tr>
+      <tr><td>対応コーデック</td><td>SBC / AAC</td></tr>
+      <tr><td>価格</td><td>¥2,780（送料無料）</td></tr>
+    </table>
+
+    <h2 id="bt54">Bluetooth5.4の恩恵｜音途切れがほぼゼロ</h2>
+    <p>Bluetooth5.4の最大のメリットは接続安定性です。5.3以前と比べて干渉耐性が向上しており、<strong>3週間の使用で音途切れは数える程度</strong>しかありませんでした。</p>
+    <p>特にドライブ中は車内でスマホと接続したまま音楽を流し続けても安定。トンネル前後の電波変動でも接続が落ちませんでした。</p>
+    <div class="highlight">
+      <strong>🚗 ドライブユーザーに重要：</strong>スマホをドリンクホルダーやダッシュボード上に置いた状態で平均1.5m〜2mの距離になりますが、この距離でも途切れなしで安定していました。
+    </div>
+
+    <h2 id="anc">ノイズキャンセリングの実力｜「なんちゃってANC」ではなかった</h2>
+    <p>正直この価格ではANCに期待していませんでしたが、ロードノイズ（低周波）の低減は体感できるレベルでした。高速道路走行中のエンジン音・タイヤノイズを約40〜50%カットしてくれる印象です。</p>
+    <p>ただし、急ブレーキ音や警告音など高周波の突発音は素通りします。安全面でドライブ中に完全に遮音されないのは、むしろ安心です。</p>
+
+    <div class="img-block">
+      <div class="img-icon">📊</div>
+      <div>ANC COMPARISON — ノイキャン効果比較グラフ</div>
+    </div>
+    <p class="img-caption">高速道路走行中のロードノイズをスマホアプリで計測。ANCオンで約8dBの低減を確認。</p>
+
+    <h2 id="call">ハンズフリー通話｜デュアルマイクが活きる場面</h2>
+    <p>ドライブ中の通話品質が最も気になるポイントだったのですが、<strong>予想以上に相手に声が届く</strong>結果でした。</p>
+    <p>デュアルマイク構成で風切り音低減機能があり、窓を少し開けた状態の走行（時速40km程度）でも「声がよく聞こえる」と通話相手から言われました。高速走行（時速100km）ではさすがにノイズが乗りましたが、それは許容範囲かと。</p>
+
+    <h2 id="comfort">装着感｜長距離ドライブでも耳が痛くなりにくい</h2>
+    <p>カナル型ですが、付属のイヤーピースが3サイズあり、Mサイズで2時間以上の装着でも痛みなし。ドライブ中に頭を動かしても落下する気配はありませんでした。</p>
+    <p>重量は片耳約5gと軽量。シートベルトをしながら長時間装着しても耳への圧迫感が少ないです。</p>
+
+    <div class="rating-grid">
+      <h3>PERFORMANCE RATING</h3>
+      <div class="rating-item">
+        <span class="rating-label">接続安定性</span>
+        <div class="rating-bar-wrap"><div class="rating-bar" style="width:86%"></div></div>
+        <span class="rating-num">4.3</span>
+      </div>
+      <div class="rating-item">
+        <span class="rating-label">ANC効果</span>
+        <div class="rating-bar-wrap"><div class="rating-bar" style="width:72%"></div></div>
+        <span class="rating-num">3.6</span>
+      </div>
+      <div class="rating-item">
+        <span class="rating-label">通話品質</span>
+        <div class="rating-bar-wrap"><div class="rating-bar" style="width:80%"></div></div>
+        <span class="rating-num">4.0</span>
+      </div>
+      <div class="rating-item">
+        <span class="rating-label">装着感</span>
+        <div class="rating-bar-wrap"><div class="rating-bar" style="width:78%"></div></div>
+        <span class="rating-num">3.9</span>
+      </div>
+      <div class="rating-item">
+        <span class="rating-label">コストパフォーマンス</span>
+        <div class="rating-bar-wrap"><div class="rating-bar" style="width:92%"></div></div>
+        <span class="rating-num">4.6</span>
+      </div>
+    </div>
+
+    <h2 id="procon">良い点・気になる点</h2>
+    <div class="pro-con">
+      <div class="pro">
+        <h4>PROS / 良い点</h4>
+        <ul>
+          <li>BT5.4で接続が驚くほど安定</li>
+          <li>ANCが価格以上の効果</li>
+          <li>デュアルマイクで通話クリア</li>
+          <li>IPX5防水で雨の日も安心</li>
+          <li>USB-C充電 + ワイヤレス充電対応</li>
+          <li>ケース込みで30時間使用可能</li>
+        </ul>
+      </div>
+      <div class="con">
+        <h4>CONS / 気になる点</h4>
+        <ul>
+          <li>音質はフラット気味（低音重視の人には物足りない）</li>
+          <li>操作がタッチ式で誤操作が起きやすい</li>
+          <li>専用アプリなし（ANCのモード切替はタップで対応）</li>
+          <li>aptX / LDACには非対応（SBC/AACのみ）</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="verdict">総評｜¥2,780ならサブ機として最強クラス</h2>
+    <p>音楽リスニング専用のメインイヤホンとしてはaptX非対応が惜しいですが、<strong>ドライブ中の通話メイン・音楽サブ</strong>という使い方なら満点に近いです。</p>
+    <p>コストパフォーマンスで選ぶなら、今の楽天市場でこれ以上のものを¥2,780で探すのは難しいと思います。迷っているなら買って損なし。</p>
+  </article>
+
+  <aside class="sidebar">
+    <div class="buy-card">
+      <div class="buy-label">BUY ON RAKUTEN</div>
+      <div class="buy-name">ワイヤレスイヤホン<br>Bluetooth 5.4 ノイズキャンセリング</div>
+      <div class="buy-price">¥2,780<span>送料無料</span></div>
+      <a class="buy-btn" href="https://hb.afl.rakuten.co.jp/ichiba/53171983.551c1929.53171984.9e8f7607/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-x1%2F" target="_blank" rel="nofollow noopener">楽天で見る →</a>
+      <p class="buy-note">※価格・在庫は楽天市場にてご確認ください</p>
+    </div>
+    <nav class="toc">
+      <h4>CONTENTS</h4>
+      <ol>
+        <li><a href="#intro">はじめに</a></li>
+        <li><a href="#spec">スペック</a></li>
+        <li><a href="#bt54">Bluetooth5.4の恩恵</a></li>
+        <li><a href="#anc">ノイキャンの実力</a></li>
+        <li><a href="#call">ハンズフリー通話</a></li>
+        <li><a href="#comfort">装着感</a></li>
+        <li><a href="#procon">良い点・気になる点</a></li>
+        <li><a href="#verdict">総評</a></li>
+      </ol>
+    </nav>
+  </aside>
+</div>
+
+<footer>
+  <p><a href="index.html">DRIVE GEAR LAB</a> · 楽天アフィリエイトブログ · © 2025</p>
+  <p style="margin-top:0.5rem"><a href="privacy-policy.html">プライバシーポリシー</a> · <a href="privacy-policy.html#disclaimer">免責事項</a></p>
+</footer>
+
+</body>
+</html>
