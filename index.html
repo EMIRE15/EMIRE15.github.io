@@ -118,9 +118,7 @@ nav {
   display: flex; gap: 3rem; justify-content: center;
   margin-bottom: 3rem; flex-wrap: wrap;
 }
-.stat {
-  text-align: center;
-}
+.stat { text-align: center; }
 .stat-num {
   font-family: 'Bebas Neue', cursive;
   font-size: 2.8rem; color: var(--accent);
@@ -277,8 +275,6 @@ nav {
   transition: background 0.2s;
 }
 .btn-rakuten:hover { background: #990000; }
-
-/* ===== レビューリンク（新規追加） ===== */
 .btn-review {
   display: block; text-align: center;
   background: transparent;
@@ -290,10 +286,7 @@ nav {
   transition: background 0.2s, color 0.2s;
   cursor: pointer;
 }
-.btn-review:hover {
-  background: var(--accent);
-  color: #000;
-}
+.btn-review:hover { background: var(--accent); color: #000; }
 .btn-review::before { content: '📝 '; }
 
 /* ===== DISCLOSURE ===== */
@@ -388,7 +381,7 @@ footer {
   <p class="hero-sub">ドライブをもっと快適に、もっと安全に。<br>車用品・ガジェット・電化製品・日常便利グッズを実際に使って正直レビュー。楽天で買えるおすすめアイテムだけを厳選。</p>
   <div class="hero-stats">
     <div class="stat">
-      <div class="stat-num">15+</div>
+      <div class="stat-num">18+</div>
       <div class="stat-label">REVIEWED ITEMS</div>
     </div>
     <div class="stat">
@@ -430,11 +423,11 @@ footer {
     <button class="filter-btn" onclick="filterCards('holder', this)">スマホホルダー</button>
     <button class="filter-btn" onclick="filterCards('care', this)">カーケア</button>
   </div>
-  <div class="filter-count" id="filter-count">15 アイテム表示中</div>
+  <div class="filter-count" id="filter-count">18 アイテム表示中</div>
 
   <div class="products-grid" id="products-grid">
 
-    <!-- 1. ドライブレコーダー ★レビューリンクあり -->
+    <!-- 1. ドライブレコーダー -->
     <div class="card" data-cat="dashcam">
       <span class="card-badge badge-new">● NEW REVIEW</span>
       <div class="card-img-wrap">
@@ -454,7 +447,7 @@ footer {
       </div>
     </div>
 
-    <!-- 2. ワイヤレスイヤホン ★レビューリンクあり -->
+    <!-- 2. ワイヤレスイヤホン -->
     <div class="card" data-cat="gadget">
       <span class="card-badge badge-sale">▼ 81% OFF</span>
       <div class="card-img-wrap">
@@ -474,7 +467,7 @@ footer {
       </div>
     </div>
 
-    <!-- 3. サンシェード ★レビューリンクあり -->
+    <!-- 3. サンシェード -->
     <div class="card" data-cat="interior">
       <span class="card-badge badge-sale">▼ 40% OFF</span>
       <div class="card-img-wrap">
@@ -494,7 +487,7 @@ footer {
       </div>
     </div>
 
-    <!-- 4. スマホホルダー ★レビューリンクあり -->
+    <!-- 4. スマホホルダー -->
     <div class="card" data-cat="holder">
       <span class="card-badge badge-rank">🏆 楽天1位</span>
       <div class="card-img-wrap">
@@ -531,7 +524,7 @@ footer {
       </div>
     </div>
 
-    <!-- 6. モバイルバッテリー ★レビューリンクあり -->
+    <!-- 6. モバイルバッテリー -->
     <div class="card" data-cat="charge">
       <span class="card-badge badge-rank">🏆 楽天1位14冠</span>
       <div class="card-img-wrap">
@@ -704,6 +697,63 @@ footer {
       </div>
     </div>
 
+    <!-- 16. HID屋 LEDフォグランプ -->
+    <div class="card" data-cat="care">
+      <span class="card-badge badge-new">● CAR LIGHT</span>
+      <div class="card-img-wrap">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/53937f7d.548cecfe.53937f7e.2891127d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-tradingtrade%2Fv_fog%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+          <img src="https://hbb.afl.rakuten.co.jp/hgb/53937f7d.548cecfe.53937f7e.2891127d/?me_id=1269833&item_id=10003942&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fauc-tradingtrade%2Fcabinet%2Ffoglamp%2Fv_fog%2Fr_v_fog_h8-1.jpg%3F_ex%3D240x240&s=240x240&t=picttext" alt="HID屋 LEDフォグランプ 2色切り替え Vシリーズ" loading="lazy">
+        </a>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">CAR CARE / LIGHT</div>
+        <h3 class="card-title">HID屋 LEDフォグランプ 2色切り替え Vシリーズ｜5600lm〜9900lm 車検対応</h3>
+        <p class="card-desc">ホワイト・イエロー・レモンイエロー・エメラルドグリーンに切り替え可能。5600lm〜9900lmの圧倒的明るさ。ハイエース・ヴェルファイア・アルファード等多車種対応。H8/H11/H16/HB4対応。</p>
+        <div class="card-price"><span class="price-note">楽天で価格確認</span></div>
+        <div class="card-actions">
+          <a class="btn-rakuten" href="https://hb.afl.rakuten.co.jp/ichiba/53937f7d.548cecfe.53937f7e.2891127d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-tradingtrade%2Fv_fog%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">楽天で見る →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17. HID屋 LEDヘッドライト -->
+    <div class="card" data-cat="care">
+      <span class="card-badge badge-new">● CAR LIGHT</span>
+      <div class="card-img-wrap">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/53937f7d.548cecfe.53937f7e.2891127d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-tradingtrade%2Ftt007_0017%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+          <img src="https://hbb.afl.rakuten.co.jp/hgb/53937f7d.548cecfe.53937f7e.2891127d/?me_id=1269833&item_id=10000295&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fauc-tradingtrade%2Fcabinet%2Flh%2Ftt007_0017%2Fr_search_head_q_h4.jpg%3F_ex%3D240x240&s=240x240&t=picttext" alt="HID屋 H4 LEDヘッドライト Qシリーズ プラチナ" loading="lazy">
+        </a>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">CAR CARE / LIGHT</div>
+        <h3 class="card-title">HID屋 H4 LEDヘッドライト Qシリーズ｜68400cd 爆光 車検対応</h3>
+        <p class="card-desc">68400cdの特注高性能LEDチップ搭載。H4 Hi/Lo切り替え対応でポン付け換装が可能。D2S・D4SのLED化にも対応。6500Kのクリアホワイト光で夜間視認性が大幅アップ。車検対応設計。</p>
+        <div class="card-price"><span class="price-note">楽天で価格確認</span></div>
+        <div class="card-actions">
+          <a class="btn-rakuten" href="https://hb.afl.rakuten.co.jp/ichiba/53937f7d.548cecfe.53937f7e.2891127d/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fauc-tradingtrade%2Ftt007_0017%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">楽天で見る →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18. CCウォーターゴールド -->
+    <div class="card" data-cat="care">
+      <span class="card-badge badge-rank">🏆 CM放映記念</span>
+      <div class="card-img-wrap">
+        <a href="https://hb.afl.rakuten.co.jp/ichiba/53938584.de0d254b.53938585.4cb90c2f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprostaff-shop%2Fs121%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">
+          <img src="https://hbb.afl.rakuten.co.jp/hgb/53938584.de0d254b.53938585.4cb90c2f/?me_id=1345824&item_id=10000000&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fprostaff-shop%2Fcabinet%2Fs121_p.jpg%3F_ex%3D240x240&s=240x240&t=picttext" alt="プロスタッフ CCウォーターゴールド 300ml" loading="lazy">
+        </a>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">CAR CARE / COATING</div>
+        <h3 class="card-title">プロスタッフ CCウォーターゴールド 300ml｜ガラス系コーティング クロス付き</h3>
+        <p class="card-desc">CM放映の人気カーコーティング剤。スプレーして拭くだけの超簡単施工。高撥水・艶出し・ツヤ出し効果。紫外線・雨染みから愛車を守る。全色対応でノーコンパウンドだから塗装を傷めない。</p>
+        <div class="card-price"><span class="price-note">楽天で価格確認</span></div>
+        <div class="card-actions">
+          <a class="btn-rakuten" href="https://hb.afl.rakuten.co.jp/ichiba/53938584.de0d254b.53938585.4cb90c2f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fprostaff-shop%2Fs121%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D" target="_blank" rel="nofollow sponsored noopener">楽天で見る →</a>
+        </div>
+      </div>
+    </div>
+
   </div><!-- /products-grid -->
 </section>
 
@@ -748,7 +798,6 @@ footer {
 </footer>
 
 <script>
-// カテゴリフィルター
 function filterCards(cat, btn) {
   const cards = document.querySelectorAll('.card');
   const countEl = document.getElementById('filter-count');
@@ -759,7 +808,6 @@ function filterCards(cat, btn) {
     if (match) count++;
   });
   countEl.textContent = count + ' アイテム表示中';
-  // ボタン状態
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   if (btn) btn.classList.add('active');
 }
