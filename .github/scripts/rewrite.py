@@ -1,51 +1,48 @@
 import os
 import sys
-import google.generativeai as genai
+from google import genai
 
 def main():
     api_key = os.environ.get("GEMINI_API_KEY")
     target_file = os.environ.get("TARGET_FILE", "guide-dashcam-howto-choose.html")
-    instruction = os.environ.get("REWRITE_INSTRUCTION", "最新情報に更新し、SEOを改善してください")
+    instruction = os.environ.get("REWRITE_INSTRUCTION", "Update to latest info and improve SEO")
 
     if not api_key:
-        print("❌ エラー: GEMINI_API_KEY が設定されていません")
+        print("Error: GEMINI_API_KEY is not set")
         sys.exit(1)
 
     if not os.path.exists(target_file):
-        print(f"❌ エラー: ファイルが見つかりません: {target_file}")
+        print(f"Error: File not found: {target_file}")
         sys.exit(1)
 
     with open(target_file, "r", encoding="utf-8") as f:
         original_html = f.read()
 
-    print(f"✅ ファイル読み込み完了: {target_file} ({len(original_html)} 文字)")
-    print(f"📝 リライト指示: {instruction}")
+    print(f"File loaded: {target_file} ({len(original_html)} chars)")
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(
-        model_name="gemini-1.5-flash",
-        system_instruction="""あなたはプロのWebライターです。
-与えられたHTMLファイルをリライトしてください。
+    client = genai.Client(api_key=api_key)
 
-ルール:
-- HTMLの構造・タグ・クラス名・id・リンク・アフィリエイトリンクは絶対に変更しないこと
-- テキストコンテンツのみを改善する（見出し・本文・テーブル内のテキストなど）
-- 日本語で自然に書き直す
-- 価格情報・年号（例:2025年→2026年）など古い情報は最新化する
-- meta description・og:description も更新する
-- 出力はHTMLのみ（説明文や```は不要）"""
-    )
+    prompt = f"""You are a professional web writer. Rewrite the following HTML.
 
-    prompt = f"""以下のHTMLをリライトしてください。
+Rules:
+- Do NOT change HTML structure, tags, class names, ids, links, or affiliate links
+- Only improve text content
+- Keep the language Japanese
+- Update outdated info like years and prices
+- Output HTML only, no explanation
 
-指示: {instruction}
+Instruction: {instruction}
 
-=== 対象HTML ===
+=== HTML ===
 {original_html}
 """
 
-    print("🤖 Gemini API にリクエスト送信中...")
-    response = model.generate_content(prompt)
+    print("Sending request to Gemini API...")
+    response = client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=prompt
+    )
+
     rewritten_html = response.text.strip()
 
     if rewritten_html.startswith("```"):
@@ -55,7 +52,7 @@ def main():
     with open(target_file, "w", encoding="utf-8") as f:
         f.write(rewritten_html)
 
-    print(f"✅ リライト完了: {target_file} ({len(rewritten_html)} 文字)")
+    print(f"Done: {target_file} ({len(rewritten_html)} chars)")
 
 if __name__ == "__main__":
     main()
