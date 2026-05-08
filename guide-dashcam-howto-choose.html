@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ドライブレコーダーの選び方を徹底解説。前後2カメラ・夜間画質・駐車監視・SDカードの選び方まで初心者にもわかりやすく解説。2025年おすすめモデルも紹介。">
+<title>ドライブレコーダーの選び方【2025年版】前後カメラ・夜間画質・駐車監視の失敗しない選び方 | DRIVE GEAR LAB</title>
+
+<!-- OGP -->
+<meta property="og:title" content="ドライブレコーダーの選び方【2025年版】失敗しない5つのポイント | DRIVE GEAR LAB">
+<meta property="og:description" content="前後2カメラ・夜間画質・駐車監視・SDカード…何を見ればいいか徹底解説。">
+<meta property="og:type" content="article">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a; --surface: #111; --surface2: #181818; --border: #242424;
+  --accent: #e8ff00; --red: #ff3b30; --green: #00e676;
+  --text: #ebebeb; --muted: #888; --dim: #444;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans JP',sans-serif;font-size:16px;line-height:1.85}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:56px}
+.nav-logo{font-family:'Bebas Neue',cursive;font-size:1.4rem;color:var(--accent);letter-spacing:2px}
+.nav-back{font-family:'Barlow',sans-serif;font-size:.8rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+.nav-back:hover{color:var(--accent)}
+
+/* HERO */
+.hero{padding:3.5rem 2rem 2.5rem;max-width:860px;margin:0 auto;border-bottom:1px solid var(--border)}
+.hero-cat{font-family:'Barlow',sans-serif;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+.hero-cat::before{content:'';display:block;width:28px;height:1px;background:var(--accent)}
+h1{font-family:'Barlow',sans-serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700;line-height:1.25;margin-bottom:1.2rem}
+h1 em{font-style:italic;color:var(--accent)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:1.2rem;font-family:'Barlow',sans-serif;font-size:.82rem;color:var(--muted)}
+.summary-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);padding:1.4rem 1.6rem;margin-top:2rem}
+.summary-box h2{font-family:'Barlow',sans-serif;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.summary-box ul{padding-left:1.2rem}
+.summary-box li{font-size:.92rem;color:#ccc;margin-bottom:.4rem}
+
+/* LAYOUT */
+.layout{max-width:860px;margin:0 auto;padding:3rem 2rem;display:grid;grid-template-columns:1fr 260px;gap:3rem;align-items:start}
+@media(max-width:700px){.layout{grid-template-columns:1fr}}
+
+/* ARTICLE */
+.article h2{font-family:'Barlow',sans-serif;font-size:1.35rem;font-weight:700;margin:2.5rem 0 1rem;padding-left:1rem;border-left:3px solid var(--accent);line-height:1.3}
+.article h3{font-size:1.05rem;font-weight:700;margin:1.8rem 0 .6rem;color:var(--text)}
+.article p{margin-bottom:1.1rem;color:#c8c8c8;line-height:1.9}
+.article strong{color:var(--text)}
+.article ul,.article ol{padding-left:1.4rem;margin-bottom:1.2rem}
+.article li{color:#c0c0c0;margin-bottom:.5rem;line-height:1.8}
+
+/* INLINE HIGHLIGHT */
+.hl{background:rgba(232,255,0,.1);border-left:3px solid var(--accent);padding:.9rem 1.2rem;margin:1.5rem 0;font-size:.93rem;color:#ccc}
+.hl strong{color:var(--text)}
+
+/* COMPARISON TABLE */
+.comp-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.88rem}
+.comp-table th{background:var(--surface2);padding:.7rem .8rem;font-family:'Barlow',sans-serif;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-align:left;border-bottom:2px solid var(--border)}
+.comp-table td{padding:.65rem .8rem;border-bottom:1px solid var(--border);vertical-align:top;color:#c0c0c0}
+.comp-table td:first-child{color:var(--text);font-weight:700;white-space:nowrap}
+.comp-table tr:hover td{background:var(--surface)}
+.tag-best{background:var(--accent);color:#000;font-family:'Barlow',sans-serif;font-size:.65rem;font-weight:700;padding:2px 6px;letter-spacing:1px;vertical-align:middle;margin-left:4px}
+
+/* CHECK BOX LIST */
+.check-list{list-style:none;padding-left:0;margin:1.2rem 0}
+.check-list li{padding-left:1.6rem;position:relative;margin-bottom:.6rem;color:#c0c0c0;font-size:.93rem}
+.check-list li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700}
+
+/* WARN LIST */
+.warn-list{list-style:none;padding-left:0;margin:1.2rem 0}
+.warn-list li{padding-left:1.6rem;position:relative;margin-bottom:.6rem;color:#c0c0c0;font-size:.93rem}
+.warn-list li::before{content:'✕';position:absolute;left:0;color:var(--red);font-weight:700}
+
+/* STEP BOX */
+.steps{counter-reset:step;margin:1.5rem 0}
+.step{display:flex;gap:1rem;margin-bottom:1.2rem;align-items:flex-start}
+.step-num{counter-increment:step;background:var(--accent);color:#000;font-family:'Bebas Neue',cursive;font-size:1.4rem;line-height:1;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-num::before{content:counter(step)}
+.step-body h4{font-weight:700;margin-bottom:.3rem;color:var(--text)}
+.step-body p{font-size:.9rem;color:#bbb;margin:0}
+
+/* PRODUCT CARD INLINE */
+.product-card{background:var(--surface);border:1px solid var(--border);padding:1.2rem;margin:1.5rem 0;display:flex;gap:1.2rem;align-items:flex-start}
+.product-card img{width:90px;height:90px;object-fit:cover;flex-shrink:0;background:var(--surface2)}
+.product-card .pc-body{}
+.product-card .pc-cat{font-family:'Barlow',sans-serif;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem}
+.product-card .pc-name{font-weight:700;font-size:.93rem;margin-bottom:.5rem;color:var(--text)}
+.product-card .pc-price{font-family:'Bebas Neue',cursive;font-size:1.4rem;color:var(--accent);margin-bottom:.5rem}
+.product-card .pc-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.btn-r{background:#bf0000;color:#fff;padding:.4rem .9rem;font-family:'Barlow',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.btn-rv{border:1px solid var(--accent);color:var(--accent);padding:.4rem .9rem;font-family:'Barlow',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.btn-rv:hover{background:var(--accent);color:#000}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:68px}
+.toc{background:var(--surface);border:1px solid var(--border);padding:1.4rem;margin-bottom:1.2rem}
+.toc h4{font-family:'Barlow',sans-serif;font-size:.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
+.toc ol{padding-left:1.2rem}
+.toc li{margin-bottom:.4rem}
+.toc a{font-size:.83rem;color:var(--muted)}
+.toc a:hover{color:var(--accent)}
+.cta-box{background:var(--surface);border:1px solid var(--border);padding:1.4rem}
+.cta-box h4{font-family:'Barlow',sans-serif;font-size:.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
+.cta-box p{font-size:.82rem;color:var(--muted);margin-bottom:1rem;line-height:1.7}
+.cta-btn{display:block;background:var(--accent);color:#000;text-align:center;padding:.75rem;font-family:'Barlow',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:1px;text-transform:uppercase}
+.cta-btn:hover{background:#d4e800}
+
+/* DISCLOSURE */
+.disclosure{background:var(--surface);border:1px solid var(--border);padding:.9rem 1.2rem;margin:1.5rem 0;font-size:.78rem;color:var(--dim);line-height:1.7}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem;text-align:center;font-size:.78rem;color:var(--dim);font-family:'Barlow',sans-serif}
+footer a{color:var(--muted)}
+
+/* BREADCRUMB */
+.breadcrumb{max-width:860px;margin:0 auto;padding:.8rem 2rem;font-family:'Barlow',sans-serif;font-size:.75rem;color:var(--dim)}
+.breadcrumb a{color:var(--muted)}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span{margin:0 .4rem}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">DRIVEGEARLAB</a>
+  <a class="nav-back" href="index.html">← トップへ戻る</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">TOP</a><span>›</span>
+  <a href="#">ガイド・選び方</a><span>›</span>
+  ドライブレコーダーの選び方
+</div>
+
+<div class="hero">
+  <div class="hero-cat">BUYING GUIDE · ドライブレコーダー</div>
+  <h1>ドライブレコーダーの選び方<em>【2025年版】</em><br>前後カメラ・夜間画質・駐車監視<br>失敗しない5つのポイント</h1>
+  <div class="hero-meta">
+    <span>📅 2025年5月更新</span>
+    <span>⏱ 読了約9分</span>
+    <span>✍️ DRIVE GEAR LAB編集部</span>
+  </div>
+  <div class="summary-box">
+    <h2>この記事でわかること</h2>
+    <ul>
+      <li>ドライブレコーダーの種類と、自分に合うタイプの選び方</li>
+      <li>夜間画質を左右する「センサー」の見方</li>
+      <li>駐車監視機能の仕組みと必要な追加機器</li>
+      <li>SDカードの正しい選び方（間違えると録画されない）</li>
+      <li>予算別おすすめモデルと楽天での最安値情報</li>
+    </ul>
+  </div>
+</div>
+
+<div class="layout">
+<article class="article">
+
+<div class="disclosure">
+  【広告】本記事は楽天アフィリエイトプログラムを利用しています。リンクから購入した場合、当ブログに報酬が発生することがあります。紹介する商品は実際に購入・使用した経験に基づきます。
+</div>
+
+<h2 id="why">なぜ今、ドラレコが必要なのか</h2>
+<p>あおり運転・当て逃げ・交通事故の証拠保全——ドライブレコーダーの必要性は年々高まっています。一方で「種類が多すぎて何を選べばいいかわからない」という声も多い。</p>
+<p>この記事では、<strong>実際に複数のモデルを購入・比較した経験</strong>をもとに、選び方の本質を5つのポイントに絞ってお伝えします。カタログスペックの読み方から、失敗しやすい落とし穴まで、正直に解説します。</p>
+
+<h2 id="type">Point 1｜まず「カメラ構成」を決める</h2>
+<p>最初に決めるべきは、カメラの台数・配置です。ここを間違えると、後でどれだけ高性能なモデルを買っても「必要な場面で役立たない」という状況になります。</p>
+
+<table class="comp-table">
+  <thead>
+    <tr><th>タイプ</th><th>特徴</th><th>おすすめな人</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>前方1カメラ</td>
+      <td>最安値・取付簡単。前方のみ記録。</td>
+      <td>とにかく費用を抑えたい初心者</td>
+    </tr>
+    <tr>
+      <td>前後2カメラ <span class="tag-best">主流</span></td>
+      <td>前後同時録画。あおり運転・追突対策に最適。</td>
+      <td>ほとんどのドライバーにおすすめ</td>
+    </tr>
+    <tr>
+      <td>360度カメラ</td>
+      <td>全方位カバー。死角なし。画質はやや低め。</td>
+      <td>駐車トラブルが多い都市部の人</td>
+    </tr>
+    <tr>
+      <td>ミラー型</td>
+      <td>ルームミラー一体型。視界を邪魔しない。</td>
+      <td>視野を広く保ちたい人・ミニバン</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="hl">
+  <strong>結論：迷ったら「前後2カメラ」一択。</strong>追突事故・あおり運転どちらにも対応でき、価格も手頃。¥6,000前後から揃うので、コストパフォーマンスも最高。
+</div>
+
+<h2 id="sensor">Point 2｜夜間画質は「センサー」で決まる</h2>
+<p>昼間はどのドラレコも一定の画質を出せます。<strong>本当の差が出るのは夜間・逆光・トンネル出口</strong>。これを左右するのがイメージセンサーの種類です。</p>
+
+<h3>センサー別の特徴比較</h3>
+<table class="comp-table">
+  <thead>
+    <tr><th>センサー</th><th>夜間強さ</th><th>価格帯</th><th>備考</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>SONY STARVIS系 <span class="tag-best">推奨</span></td><td>★★★★★</td><td>¥5,000〜</td><td>低照度に強い。安価なモデルにも搭載例あり</td></tr>
+    <tr><td>SONY STARVIS 2</td><td>★★★★★+</td><td>¥15,000〜</td><td>最新世代。HDRと組み合わせで最高峰</td></tr>
+    <tr><td>OmniVision系</td><td>★★★☆☆</td><td>¥3,000〜</td><td>コスパ型。昼間は十分。夜間はやや劣る</td></tr>
+    <tr><td>メーカー独自</td><td>★★☆☆☆</td><td>〜¥3,000</td><td>激安品に多い。夜間は荒くなりやすい</td></tr>
+  </tbody>
+</table>
+
+<p>楽天で¥5,980のSONYセンサー搭載モデルを実際に3ヶ月テストしましたが、市街地・郊外レベルの夜間なら実用十分の画質でした。詳しくは個別レビュー記事をご覧ください。</p>
+
+<div class="product-card">
+  <img src="https://hbb.afl.rakuten.co.jp/hgb/53094347.3320387b.53094348.683093cd/?me_id=1370914&item_id=10000183&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fyumenomori%2Fcabinet%2F09856724%2Fh26yh4780.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="ドライブレコーダー前後2カメラ SONYセンサー">
+  <div class="pc-body">
+    <div class="pc-cat">DRIVE RECORDER — コスパNo.1</div>
+    <div class="pc-name">ドライブレコーダー 前後2カメラ SONYセンサー搭載</div>
+    <div class="pc-price">¥5,980<span style="font-size:.75rem;color:var(--muted);font-family:'Noto Sans JP'"> 送料無料</span></div>
+    <div class="pc-actions">
+      <a class="btn-r" href="https://hb.afl.rakuten.co.jp/ichiba/53094347.3320387b.53094348.683093cd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyumenomori%2Fb1jlh26he%2F" target="_blank" rel="nofollow noopener">楽天で見る</a>
+      <a class="btn-rv" href="review-dashcam.html">詳細レビューを読む</a>
+    </div>
+  </div>
+</div>
+
+<h2 id="parking">Point 3｜駐車監視機能の「仕組み」を理解する</h2>
+<p>「駐車監視機能付き」と書いてあっても、実はそのまま使えないケースが多い。仕組みを知らないと購入後に後悔します。</p>
+
+<h3>駐車監視の3つの方式</h3>
+<div class="steps">
+  <div class="step">
+    <div class="step-num"></div>
+    <div class="step-body">
+      <h4>Gセンサー検知式（衝撃感知）</h4>
+      <p>衝撃を受けた前後30秒を自動保存。最も一般的。常時電源ケーブルが別途必要（約¥1,500〜）。バッテリー消費は少なめ。</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num"></div>
+    <div class="step-body">
+      <h4>動体検知式</h4>
+      <p>カメラが動きを検知したら録画。当て逃げに有効。映像は多く保存されるがSDカードの消費が速い。</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num"></div>
+    <div class="step-body">
+      <h4>常時録画式</h4>
+      <p>エンジンOFF後も録画し続ける。最も確実だが、バッテリー上がりリスクあり。外部バッテリー接続が推奨。</p>
+    </div>
+  </div>
+</div>
+
+<div class="hl">
+  <strong>⚠️ 重要：</strong>多くのドラレコは「駐車監視対応」であっても、<strong>「常時電源ケーブル（別売）」を接続しないと機能しません</strong>。購入前に必ず確認を。配線工賃込みで¥3,000〜5,000の追加費用を見込んでおくと安心です。
+</div>
+
+<h2 id="sd">Point 4｜SDカードは「専用品」を選ぶ</h2>
+<p>これが最も見落とされがちなポイントです。<strong>通常のSDカードを使うと、数ヶ月で突然録画できなくなる</strong>ことがあります。</p>
+
+<h3>ドラレコ用SDカードの条件</h3>
+<ul class="check-list">
+  <li>「高耐久」「ドライブレコーダー対応」の表記がある製品</li>
+  <li>書き込み速度クラス「V30」以上（Class 10だけでは不十分な場合あり）</li>
+  <li>容量は最低32GB、長距離ドライブが多いなら64GB以上</li>
+  <li>SanDisk・Transcend・Kingstonなど実績あるブランド</li>
+</ul>
+<ul class="warn-list">
+  <li>「32GB¥300」などの激安品は録画エラーのもと</li>
+  <li>スマホや一眼カメラ用SDカードをそのまま流用するのはNG</li>
+  <li>1年に1回は定期フォーマットを忘れずに</li>
+</ul>
+
+<h2 id="budget">Point 5｜予算別おすすめの考え方</h2>
+<p>「高ければ良い」は必ずしも正解ではありません。用途に合った予算設定が重要です。</p>
+
+<table class="comp-table">
+  <thead>
+    <tr><th>予算</th><th>できること</th><th>狙い目スペック</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>〜¥5,000</td><td>前方1カメラの基本録画</td><td>FHD・Gセンサー・ループ録画</td></tr>
+    <tr><td>¥5,000〜¥8,000 <span class="tag-best">最コスパ</span></td><td>前後2カメラ＋駐車監視対応</td><td>SONYセンサー・1080P・駐車監視対応</td></tr>
+    <tr><td>¥8,000〜¥15,000</td><td>高画質＋GPS＋アプリ連携</td><td>WQHD・Wi-Fi・スマホ連携</td></tr>
+    <tr><td>¥15,000〜</td><td>4K・STARVIS 2・全方位</td><td>4K・STARVIS 2・常時通信</td></tr>
+  </tbody>
+</table>
+
+<div class="hl">
+  <strong>編集部の結論：</strong>初めてのドラレコなら¥5,000〜¥8,000帯が最適解。SONYセンサー搭載の前後2カメラが揃い、駐車監視も対応できる。満足度が高く、後悔しにくいゾーン。
+</div>
+
+<h2 id="mistake">よくある失敗3選</h2>
+<ol>
+  <li style="margin-bottom:.8rem;color:#c0c0c0"><strong style="color:var(--text)">「取付工賃を忘れた」</strong>——配線を綺麗に隠したい場合、DIYで30〜60分かかる。苦手な人は工賃¥3,000〜¥10,000を別途見込む。</li>
+  <li style="margin-bottom:.8rem;color:#c0c0c0"><strong style="color:var(--text)">「SDカードを別途買い忘れた」</strong>——多くのモデルはSDカード別売。忘れると当日使えない。</li>
+  <li style="margin-bottom:.8rem;color:#c0c0c0"><strong style="color:var(--text)">「常時電源ケーブルを買わなかった」</strong>——駐車監視したいのにエンジンOFFで録画停止。常時電源ケーブルを同時購入しておくべき。</li>
+</ol>
+
+<h2 id="checklist">購入前チェックリスト</h2>
+<ul class="check-list">
+  <li>前後2カメラか前方1カメラか決めた</li>
+  <li>センサーの種類を確認した（SONYなら安心）</li>
+  <li>駐車監視が必要か、常時電源ケーブルは別購入か確認した</li>
+  <li>SDカードをドラレコ専用品で用意した（32GB〜）</li>
+  <li>取り付け方法（DIY or 業者）を決めた</li>
+</ul>
+
+<h2 id="recommend">編集部おすすめ｜コスパ最強の1台</h2>
+<p>上記5つのポイントをすべてクリアし、実際に3ヶ月使用してテストした結果、現時点でのベストバイはこちらです。</p>
+
+<div class="product-card">
+  <img src="https://hbb.afl.rakuten.co.jp/hgb/53094347.3320387b.53094348.683093cd/?me_id=1370914&item_id=10000183&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fyumenomori%2Fcabinet%2F09856724%2Fh26yh4780.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="ドライブレコーダー前後2カメラ SONYセンサー">
+  <div class="pc-body">
+    <div class="pc-cat">EDITOR'S PICK — 2025年コスパNo.1</div>
+    <div class="pc-name">ドライブレコーダー 前後2カメラ SONYセンサー搭載｜駐車監視・Gセンサー対応</div>
+    <div class="pc-price">¥5,980<span style="font-size:.75rem;color:var(--muted);font-family:'Noto Sans JP'"> 送料無料</span></div>
+    <div class="pc-actions">
+      <a class="btn-r" href="https://hb.afl.rakuten.co.jp/ichiba/53094347.3320387b.53094348.683093cd/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fyumenomori%2Fb1jlh26he%2F" target="_blank" rel="nofollow noopener">楽天で見る</a>
+      <a class="btn-rv" href="review-dashcam.html">3ヶ月使用レビューを見る</a>
+    </div>
+  </div>
+</div>
+
+</article>
+
+<aside class="sidebar">
+  <div class="toc">
+    <h4>CONTENTS</h4>
+    <ol>
+      <li><a href="#why">なぜ今ドラレコが必要か</a></li>
+      <li><a href="#type">カメラ構成の選び方</a></li>
+      <li><a href="#sensor">夜間画質はセンサーで決まる</a></li>
+      <li><a href="#parking">駐車監視の仕組み</a></li>
+      <li><a href="#sd">SDカードの選び方</a></li>
+      <li><a href="#budget">予算別おすすめ</a></li>
+      <li><a href="#mistake">よくある失敗3選</a></li>
+      <li><a href="#checklist">購入前チェックリスト</a></li>
+      <li><a href="#recommend">編集部おすすめ</a></li>
+    </ol>
+  </div>
+  <div class="cta-box">
+    <h4>RELATED REVIEW</h4>
+    <p>実際に¥5,980のSONYセンサー搭載モデルを3ヶ月使用した詳細レビュー。夜間映像・取付・駐車監視を徹底検証。</p>
+    <a class="cta-btn" href="review-dashcam.html">実機レビューを読む →</a>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <p><a href="index.html">DRIVE GEAR LAB</a> · 楽天アフィリエイトブログ · © 2025</p>
+  <p style="margin-top:.4rem"><a href="privacy-policy.html">プライバシーポリシー</a> · <a href="privacy-policy.html#disclaimer">免責事項</a></p>
+</footer>
+
+</body>
+</html>
