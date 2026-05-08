@@ -1,7 +1,6 @@
 import os
 import sys
 import requests
-import json
 
 def main():
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -36,12 +35,12 @@ Instruction: {instruction}
 {original_html}
 """
 
-   url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key={api_key}"
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
 
     print("Sending request to Gemini API...")
     response = requests.post(url, json=payload)
-    
+
     if response.status_code != 200:
         print(f"API Error: {response.status_code} {response.text}")
         sys.exit(1)
