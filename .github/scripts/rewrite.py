@@ -1,6 +1,7 @@
 import os
 import sys
-import google.generativeai as genai
+import requests
+import json
 
 def main():
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -20,9 +21,6 @@ def main():
 
     print(f"File loaded: {target_file} ({len(original_html)} chars)")
 
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-pro")
-
     prompt = f"""You are a professional web writer. Rewrite the following HTML.
 
 Rules:
@@ -38,9 +36,18 @@ Instruction: {instruction}
 {original_html}
 """
 
+    url = f"https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key={api_key}"
+    payload = {"contents": [{"parts": [{"text": prompt}]}]}
+
     print("Sending request to Gemini API...")
-    response = model.generate_content(prompt)
-    rewritten_html = response.text.strip()
+    response = requests.post(url, json=payload)
+    
+    if response.status_code != 200:
+        print(f"API Error: {response.status_code} {response.text}")
+        sys.exit(1)
+
+    data = response.json()
+    rewritten_html = data["candidates"][0]["content"]["parts"][0]["text"].strip()
 
     if rewritten_html.startswith("```"):
         lines = rewritten_html.splitlines()
