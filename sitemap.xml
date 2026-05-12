@@ -1,78 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <!-- トップページ -->
   <url>
     <loc>https://emire15.github.io/</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <!-- SEOガイド記事 -->
   <url>
     <loc>https://emire15.github.io/guide-dashcam-howto-choose.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://emire15.github.io/guide-summer-heat-countermeasure.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://emire15.github.io/guide-smartphone-holder-howto-choose.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <!-- 商品レビュー記事 -->
   <url>
     <loc>https://emire15.github.io/review-dashcam.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://emire15.github.io/review-earphones.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://emire15.github.io/review-phone-holder.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://emire15.github.io/review-battery.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://emire15.github.io/review-sunshade.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://emire15.github.io/review-air-duster.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emire15.github.io/review-coating.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emire15.github.io/review-navi.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- その他 -->
   <url>
     <loc>https://emire15.github.io/privacy-policy.html</loc>
-    <lastmod>2025-05-08</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
 </urlset>
