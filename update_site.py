@@ -3,6 +3,7 @@ import requests
 from datetime import datetime
 
 APP_ID = os.environ['RAKUTEN_APP_ID']
+ACCESS_KEY = os.environ['RAKUTEN_ACCESS_KEY']
 AFFILIATE_ID = os.environ['RAKUTEN_AFFILIATE_ID']
 
 KEYWORDS = [
@@ -17,17 +18,23 @@ KEYWORDS = [
 ]
 
 def fetch_items(keyword):
-    url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706'
+    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601'
     params = {
         'applicationId': APP_ID,
+        'accessKey': ACCESS_KEY,
         'keyword': keyword,
         'hits': 3,
         'sort': '-reviewCount',
         'imageFlag': 1,
         'format': 'json',
     }
+    headers = {
+        'Referer': 'https://emire15.github.io/',
+        'Origin': 'https://emire15.github.io',
+        'User-Agent': 'Mozilla/5.0',
+    }
     try:
-        res = requests.get(url, params=params, timeout=10)
+        res = requests.get(url, params=params, headers=headers, timeout=10)
         print(f"[{keyword}] status={res.status_code}")
         data = res.json()
         if 'Items' not in data:
