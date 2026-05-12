@@ -1,6 +1,5 @@
 import os
 import requests
-import json
 from datetime import datetime
 
 APP_ID = os.environ['RAKUTEN_APP_ID']
@@ -21,7 +20,6 @@ def fetch_items(keyword):
     url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601'
     params = {
         'applicationId': APP_ID,
-        'affiliateId': AFFILIATE_ID,
         'keyword': keyword,
         'hits': 3,
         'sort': '-reviewCount',
@@ -30,9 +28,13 @@ def fetch_items(keyword):
     }
     try:
         res = requests.get(url, params=params, timeout=10)
+        print(f"[{keyword}] status={res.status_code}")
         data = res.json()
+        if 'Items' not in data:
+            print(f"[{keyword}] response={data}")
         return data.get('Items', [])
-    except:
+    except Exception as e:
+        print(f"[{keyword}] error={e}")
         return []
 
 def make_card(item):
@@ -40,7 +42,7 @@ def make_card(item):
     name = info['itemName'][:40]
     price = f"¥{info['itemPrice']:,}"
     img = info['mediumImageUrls'][0]['imageUrl'] if info['mediumImageUrls'] else ''
-    url = info['affiliateUrl'] or info['itemUrl']
+    url = info['itemUrl']
     return f'''
     <div class="auto-item">
       <a href="{url}" target="_blank" rel="nofollow noopener">
@@ -56,6 +58,7 @@ def main():
     cards = ''
     for kw in KEYWORDS:
         items = fetch_items(kw)
+        print(f"[{kw}] {len(items)}件取得")
         for item in items:
             cards += make_card(item)
 
