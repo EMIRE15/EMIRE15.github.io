@@ -805,7 +805,34 @@ footer {
 
   </div><!-- /products-grid -->
 </section>
+<!-- AUTO UPDATE SECTION -->
+<section style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; border-top: 1px solid #222;">
+  <div class="section-header">
+    <div class="section-eyebrow">AUTO UPDATE</div>
+    <h2 class="section-title">今日のおすすめ</h2>
+    <p class="section-sub">楽天APIから毎日自動更新 · 最新の人気アイテムをピックアップ</p>
+  </div>
+  <div id="auto-items-wrap" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: 2rem;"></div>
+</section>
 
+<script>
+fetch('auto-items.html')
+  .then(r => r.text())
+  .then(html => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const items = doc.querySelectorAll('.auto-item');
+    const wrap = document.getElementById('auto-items-wrap');
+    items.forEach(item => {
+      item.style.background = '#1a1a1a';
+      item.style.borderRadius = '0px';
+      item.style.border = '1px solid #222';
+      item.style.padding = '12px';
+      item.style.textAlign = 'center';
+      wrap.appendChild(item);
+    });
+  });
+</script>
 <!-- DISCLOSURE -->
 <div class="disclosure">
   <strong>【広告表示】</strong> 当ブログは楽天アフィリエイトプログラムを利用しています。記事内のリンクから商品をご購入いただいた際、当ブログに一定の報酬が発生する場合があります。紹介する商品・価格・在庫状況は掲載時点の情報であり、変動する場合があります。必ず楽天市場の販売ページにてご確認ください。
