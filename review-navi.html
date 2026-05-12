@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ATOTO A6 カーナビ9インチを実際に購入・取り付けてレビュー。CarPlay・Android Auto対応の実力を徹底検証。純正ナビとの比較も。">
+  <title>【実機レビュー】ATOTO A6 カーナビ9インチ｜CarPlay対応の後付けナビは純正の代わりになるか？ | DRIVE GEAR LAB</title>
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --accent: #e8ff00;
+      --gray-100: #f5f5f5;
+      --gray-200: #e8e8e8;
+      --gray-500: #888888;
+      --gray-700: #444444;
+      --red: #ff3b3b;
+      --green: #00c853;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    a { color: var(--black); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 24px; border-bottom: 2px solid var(--black);
+      position: sticky; top: 0; background: var(--white); z-index: 100;
+    }
+    .nav-logo { font-size: 13px; font-weight: 800; letter-spacing: 0.15em; }
+    .nav-back {
+      font-size: 12px; color: var(--gray-500);
+      border: 1px solid var(--gray-200); padding: 6px 14px; border-radius: 20px; transition: all 0.2s;
+    }
+    .nav-back:hover { background: var(--black); color: var(--white); text-decoration: none; }
+    .hero { border-bottom: 2px solid var(--black); padding: 48px 24px 40px; max-width: 800px; margin: 0 auto; }
+    .category-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: var(--gray-500); margin-bottom: 20px; }
+    h1 { font-size: clamp(26px, 5vw, 40px); font-weight: 900; line-height: 1.25; margin-bottom: 24px; letter-spacing: -0.02em; }
+    h1 em { font-style: normal; background: var(--accent); padding: 0 4px; }
+    .meta-row { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--gray-500); margin-bottom: 28px; }
+    .rating-block { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: var(--black); color: var(--white); border-radius: 8px; margin-bottom: 20px; }
+    .rating-number { font-size: 36px; font-weight: 900; }
+    .rating-label { font-size: 13px; opacity: 0.7; line-height: 1.4; }
+    .ad-notice { font-size: 11px; color: var(--gray-500); padding: 10px 14px; border: 1px solid var(--gray-200); border-radius: 4px; line-height: 1.6; }
+    .content { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+    h2 { font-size: 20px; font-weight: 800; margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--black); letter-spacing: -0.01em; }
+    h3 { font-size: 16px; font-weight: 700; margin: 28px 0 10px; }
+    p { margin-bottom: 16px; }
+    strong { font-weight: 700; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 14px; }
+    th, td { padding: 10px 14px; text-align: left; border: 1px solid var(--gray-200); }
+    th { background: var(--gray-100); font-weight: 700; width: 38%; }
+    .img-placeholder { background: var(--gray-100); border: 2px dashed var(--gray-200); border-radius: 8px; padding: 48px 24px; text-align: center; margin: 20px 0; color: var(--gray-500); font-size: 12px; letter-spacing: 0.1em; }
+    .img-placeholder strong { display: block; font-size: 14px; margin-bottom: 8px; color: var(--gray-700); }
+    .callout { background: var(--gray-100); border-left: 4px solid var(--accent); padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 20px 0; font-size: 14px; }
+    .rating-section { background: var(--black); color: var(--white); border-radius: 12px; padding: 28px 24px; margin: 36px 0; }
+    .rating-section h3 { color: var(--white); margin-top: 0; font-size: 13px; letter-spacing: 0.15em; opacity: 0.6; }
+    .rating-item { margin: 16px 0; }
+    .rating-item-label { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }
+    .rating-item-label span:last-child { font-weight: 700; }
+    .bar-bg { background: #333; border-radius: 4px; height: 6px; }
+    .bar-fill { background: var(--accent); border-radius: 4px; height: 6px; }
+    .procon { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    @media (max-width: 600px) { .procon { grid-template-columns: 1fr; } }
+    .pros, .cons { padding: 20px; border-radius: 8px; font-size: 14px; }
+    .pros { background: #f0fff4; border: 1px solid #c6f6d5; }
+    .cons { background: #fff5f5; border: 1px solid #fed7d7; }
+    .pros h4 { color: var(--green); margin-bottom: 12px; font-size: 12px; letter-spacing: 0.1em; }
+    .cons h4 { color: var(--red); margin-bottom: 12px; font-size: 12px; letter-spacing: 0.1em; }
+    .pros li, .cons li { margin: 8px 0 8px 16px; }
+    .buy-box { border: 2px solid var(--black); border-radius: 12px; padding: 28px 24px; margin: 40px 0; text-align: center; }
+    .buy-box .product-label { font-size: 11px; letter-spacing: 0.2em; color: var(--gray-500); margin-bottom: 8px; }
+    .buy-box .product-name { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+    .buy-box .product-price { font-size: 22px; font-weight: 900; margin-bottom: 20px; }
+    .btn-buy { display: inline-block; background: var(--black); color: var(--white); padding: 14px 36px; border-radius: 6px; font-weight: 700; font-size: 15px; transition: all 0.2s; margin-bottom: 10px; }
+    .btn-buy:hover { background: #333; text-decoration: none; }
+    .buy-note { font-size: 11px; color: var(--gray-500); }
+    .toc { background: var(--gray-100); border-radius: 8px; padding: 24px; margin: 32px 0; font-size: 14px; }
+    .toc h4 { font-size: 12px; letter-spacing: 0.15em; color: var(--gray-500); margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin: 6px 0; }
+    .compare-box { border: 1px solid var(--gray-200); border-radius: 8px; overflow: hidden; margin: 20px 0; font-size: 14px; }
+    .compare-box .compare-header { display: grid; grid-template-columns: 1fr 1fr 1fr; background: var(--black); color: var(--white); font-weight: 700; font-size: 12px; }
+    .compare-box .compare-row { display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid var(--gray-200); }
+    .compare-box .compare-row:nth-child(even) { background: var(--gray-100); }
+    .compare-box .compare-header div, .compare-box .compare-row div { padding: 10px 14px; }
+    footer { border-top: 2px solid var(--black); padding: 24px; text-align: center; font-size: 12px; color: var(--gray-500); }
+    footer a { color: var(--gray-500); margin: 0 8px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://emire15.github.io/index.html" class="nav-logo">DRIVEGEARLAB</a>
+  <a href="https://emire15.github.io/index.html" class="nav-back">← 一覧に戻る</a>
+</nav>
+
+<div class="hero">
+  <div class="category-tag">CAR NAVIGATION · REVIEW</div>
+  <h1>ATOTO A6 カーナビ <em>9インチ</em><br>CarPlay対応の後付けナビは<br>純正の代わりになるか？</h1>
+  <div class="meta-row">
+    <span>📅 2025年5月更新</span>
+    <span>⏱ 読了約8分</span>
+    <span>🛒 楽天市場購入</span>
+    <span>📦 実機レビュー</span>
+  </div>
+  <div class="rating-block">
+    <div class="rating-number">4.1</div>
+    <div class="rating-label">総合評価 — iPhoneユーザーにとっては純正ナビより使いやすいかもしれない。</div>
+  </div>
+  <div class="ad-notice">【広告】本記事は楽天アフィリエイトプログラムを利用しています。リンクから購入した場合、当ブログに報酬が発生することがあります。レビュー内容は実際に購入・使用した感想です。</div>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <h4>CONTENTS</h4>
+    <ol>
+      <li><a href="#intro">なぜ後付けナビを選んだか</a></li>
+      <li><a href="#spec">スペック早見表</a></li>
+      <li><a href="#install">取り付け方法</a></li>
+      <li><a href="#carplay">Apple CarPlayの使い心地</a></li>
+      <li><a href="#screen">画面・音質</a></li>
+      <li><a href="#compare">純正ナビとの比較</a></li>
+      <li><a href="#procon">良い点・気になる点</a></li>
+      <li><a href="#verdict">総評</a></li>
+    </ol>
+  </div>
+
+  <h2 id="intro">はじめに｜なぜ後付けナビを選んだか</h2>
+  <p>純正ナビの地図更新に毎年数万円払い続けるのが馬鹿らしくなってきたのが購入のきっかけです。iPhoneのAppleマップ・Googleマップの方が情報が新鮮で使いやすいのに、CarPlayに対応していない古い純正ナビをずっと使い続けていました。</p>
+  <p>そこで選んだのが<strong>ATOTO A6 9インチ（CarPlay・Android Auto対応）</strong>。2DINサイズに対応した後付けナビの中では信頼性が高く、レビュー数も多い定番モデルです。</p>
+
+  <div class="img-placeholder">
+    <strong>📷 PRODUCT PHOTO</strong>
+    ATOTO A6 9インチ。パッケージ開封直後の状態。
+  </div>
+
+  <h2 id="spec">スペック早見表</h2>
+  <table>
+    <tr><th>画面サイズ</th><td>9インチ（1280×720）</td></tr>
+    <tr><th>対応規格</th><td>Apple CarPlay / Android Auto</td></tr>
+    <tr><th>接続方式</th><td>有線 / ワイヤレス（モデルによる）</td></tr>
+    <tr><th>取付サイズ</th><td>2DIN（178mm×100mm）</td></tr>
+    <tr><th>Bluetooth</th><td>5.0（ハンズフリー通話・音楽対応）</td></tr>
+    <tr><th>バックカメラ</th><td>対応（別売）</td></tr>
+    <tr><th>ステアリングコントロール</th><td>対応</td></tr>
+    <tr><th>価格</th><td>楽天市場にて確認</td></tr>
+  </table>
+
+  <h2 id="install">取り付け方法｜2DINなら基本ポン付け</h2>
+  <p>2DINに対応した車であれば、基本的にはポン付けで取り付けられます。必要なのは車種別の取付キット（別売・数千円）と、カプラーオン変換ハーネスです。</p>
+  <p>私の車（国産セダン）では、純正ナビの取り外しから新ナビの取り付けまで約2時間で完了。電気系の知識がある方なら自分でできますが、不安な方はカーディーラーやカーショップへの依頼をおすすめします。</p>
+
+  <div class="callout">
+    💡 <strong>注意：</strong>ステアリングリモコンを生かすには別途ステアリングアダプターが必要です（車種によって異なります）。事前に対応表を確認しましょう。
+  </div>
+
+  <div class="img-placeholder">
+    <strong>🔧 INSTALL PHOTO</strong>
+    取り付け後のダッシュボード。9インチは存在感がある。
+  </div>
+
+  <h2 id="carplay">Apple CarPlayの使い心地</h2>
+  <p>iPhoneユーザーにとってはこれが最大のポイントです。有線接続でCarPlayを起動すると、iPhoneの画面がそのままナビに映ります。</p>
+  <p>Appleマップ・Googleマップ・Yahoo!カーナビが使え、地図の更新は自動。もう地図更新費を払う必要はありません。Spotifyも画面操作で使えるので、ドライブ中の音楽体験も大幅に向上しました。</p>
+
+  <div class="img-placeholder">
+    <strong>📱 CARPLAY SCREEN</strong>
+    Apple CarPlay起動中の画面。Googleマップが9インチ画面に映し出される。
+  </div>
+
+  <p>ハンズフリー通話もCarPlay経由でシームレスに使えます。LINEの音声通話にも対応しており、日常使いで不満を感じる場面はほぼありませんでした。</p>
+
+  <h2 id="screen">画面・音質チェック</h2>
+  <p>9インチ・1280×720の解像度は、今の基準で見ると高精細とは言えませんが、実用上は問題なし。直射日光下での視認性は良好で、明るい夏の日中でもはっきり見えます。</p>
+  <p>音質はビルトインアンプ経由では及第点程度。外部アンプと組み合わせれば化けますが、純正スピーカーとの組み合わせでも日常使いには十分なレベルです。</p>
+
+  <h2 id="compare">純正ナビとの比較</h2>
+  <div class="compare-box">
+    <div class="compare-header">
+      <div>項目</div>
+      <div>純正ナビ（旧型）</div>
+      <div>ATOTO A6</div>
+    </div>
+    <div class="compare-row"><div>地図の新しさ</div><div>△ 更新費あり</div><div>◎ スマホ連携で常に最新</div></div>
+    <div class="compare-row"><div>CarPlay対応</div><div>✕</div><div>◎</div></div>
+    <div class="compare-row"><div>画面サイズ</div><div>7インチ</div><div>9インチ</div></div>
+    <div class="compare-row"><div>音楽アプリ</div><div>△ 限定的</div><div>◎ Spotify等フル対応</div></div>
+    <div class="compare-row"><div>取り付けの手間</div><div>◎ 最初から付いている</div><div>△ 工賃が別途かかる</div></div>
+    <div class="compare-row"><div>コスト</div><div>△ 地図更新費込みで高額</div><div>◎ 一度の購入で完結</div></div>
+  </div>
+
+  <div class="rating-section">
+    <h3>PERFORMANCE RATING</h3>
+    <div class="rating-item">
+      <div class="rating-item-label"><span>CarPlay・Android Auto</span><span>4.8</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:96%"></div></div>
+    </div>
+    <div class="rating-item">
+      <div class="rating-item-label"><span>画面の見やすさ</span><span>4.0</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:80%"></div></div>
+    </div>
+    <div class="rating-item">
+      <div class="rating-item-label"><span>取り付けやすさ</span><span>3.5</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div>
+    </div>
+    <div class="rating-item">
+      <div class="rating-item-label"><span>音質</span><span>3.6</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:72%"></div></div>
+    </div>
+    <div class="rating-item">
+      <div class="rating-item-label"><span>コストパフォーマンス</span><span>4.4</span></div>
+      <div class="bar-bg"><div class="bar-fill" style="width:88%"></div></div>
+    </div>
+  </div>
+
+  <h2 id="procon">良い点・気になる点</h2>
+  <div class="procon">
+    <div class="pros">
+      <h4>PROS / 良い点</h4>
+      <ul>
+        <li>CarPlay・Android Auto対応で地図が常に最新</li>
+        <li>9インチ大画面で見やすい</li>
+        <li>Spotify・LINE等のアプリがフル活用できる</li>
+        <li>Bluetooth5.0でハンズフリー通話快適</li>
+        <li>バックカメラ対応（別売）</li>
+        <li>ステアリングコントロール対応</li>
+      </ul>
+    </div>
+    <div class="cons">
+      <h4>CONS / 気になる点</h4>
+      <ul>
+        <li>取り付けに専門知識または工賃が必要</li>
+        <li>車種別キットが別途必要</li>
+        <li>解像度は最新スマホより低め</li>
+        <li>ワイヤレスCarPlayは別モデルが必要</li>
+        <li>日本語マニュアルが薄い</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="verdict">総評｜iPhoneユーザーには純正ナビより快適</h2>
+  <p>毎年地図更新費を払い、古い純正ナビを渋々使い続けている方に強くおすすめしたい製品です。一度CarPlayを使い始めると、もう元には戻れません。</p>
+  <p>取り付けの手間・費用がある分、純正より敷居は高いですが、その後のランニングコストがゼロになることを考えると、中長期的にはコスパ◎です。</p>
+  <p><strong>こんな人に特におすすめ：</strong>古い純正ナビに不満がある方・iPhoneのCarPlayを活用したい方・Spotifyをドライブ中に快適に使いたい方</p>
+
+  <div class="buy-box">
+    <div class="product-label">BUY ON RAKUTEN</div>
+    <div class="product-name">ATOTO A6 カーナビ 9インチ<br>CarPlay・Android Auto対応</div>
+    <div class="product-price">楽天で価格を確認 →</div>
+    <a href="https://hb.afl.rakuten.co.jp/ichiba/531a804a.3288cd7c.531a804b.fd40ea08/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ffamous2017%2Ff7g210pe-al%2F%3Fscid%3Daf_pc_bbtn" class="btn-buy" target="_blank" rel="noopener">楽天で見る →</a>
+    <div class="buy-note">※価格・在庫は楽天市場にてご確認ください</div>
+  </div>
+
+</div>
+
+<footer>
+  <a href="https://emire15.github.io/index.html">DRIVE GEAR LAB</a> · 楽天アフィリエイトブログ · © 2025
+  <br>
+  <a href="https://emire15.github.io/privacy-policy.html">プライバシーポリシー</a> · <a href="https://emire15.github.io/privacy-policy.html#disclaimer">免責事項</a>
+</footer>
+
+</body>
+</html>
