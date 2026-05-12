@@ -17,7 +17,7 @@ KEYWORDS = [
 ]
 
 def fetch_items(keyword):
-    url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601'
+    url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20170706'
     params = {
         'applicationId': APP_ID,
         'keyword': keyword,
