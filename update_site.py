@@ -99,7 +99,35 @@ p.updated {{ text-align: center; color: #aaa; font-size: 0.85em; }}
 
     with open('auto-items.html', 'w', encoding='utf-8') as f:
         f.write(html)
+    update_sitemap()
     print('Done!')
+def update_sitemap():
+    import glob
+    base_url = 'https://emire15.github.io/'
+    today = datetime.now().strftime('%Y-%m-%d')
+    
+    html_files = glob.glob('*.html')
+    exclude = ['google3193697637b4df7b.html']
+    
+    urls = []
+    for f in sorted(html_files):
+        if f in exclude:
+            continue
+        if f == 'index.html':
+            urls.insert(0, f'  <url>\n    <loc>{base_url}</loc>\n    <lastmod>{today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>')
+        else:
+            urls.append(f'  <url>\n    <loc>{base_url}{f}</loc>\n    <lastmod>{today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>')
+    
+    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    sitemap += '\n'.join(urls)
+    sitemap += '\n</urlset>'
+    
+    with open('sitemap.xml', 'w', encoding='utf-8') as f:
+        f.write(sitemap)
+    print('Sitemap updated!')
+
 
 if __name__ == '__main__':
     main()
+
