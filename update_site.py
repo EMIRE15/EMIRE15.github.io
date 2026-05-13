@@ -1,6 +1,8 @@
 import os
 import requests
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+
+JST = timezone(timedelta(hours=9))
 
 APP_ID = os.environ['RAKUTEN_APP_ID']
 ACCESS_KEY = os.environ['RAKUTEN_ACCESS_KEY']
@@ -63,7 +65,7 @@ def make_card(item):
 def update_sitemap():
     import glob
     base_url = 'https://emire15.github.io/'
-    today = datetime.now().strftime('%Y-%m-%d')
+    today = datetime.now(JST).strftime('%Y-%m-%d')
     html_files = glob.glob('*.html')
     exclude = ['google3193697637b4df7b.html']
     urls = []
@@ -84,7 +86,7 @@ def update_sitemap():
 
 def generate_post_draft():
     import random
-    today = datetime.now().strftime('%Y年%m月%d日')
+    today = datetime.now(JST).strftime('%Y年%m月%d日')
     templates = [
         "🚗 ドライブをもっと快適に！\n\n車好き・ガジェット好きが実際に買って良かったアイテムだけを正直レビュー中📦\n\n楽天で買えるおすすめ車用品はこちら👇\nhttps://emire15.github.io/\n\n#車好き #カーグッズ #楽天 #ガジェット好き",
         "💡 楽天で買える車用品、何を選べばいい？\n\nDRIVE GEAR LABでは実際に購入・使用したアイテムだけを忖度なしでレビュー中！\n\n👇 チェックしてみてください\nhttps://emire15.github.io/\n\n#楽天 #車用品 #カーグッズ #ドライブ好き",
@@ -97,7 +99,7 @@ def generate_post_draft():
     print('Post draft generated!')
 
 def main():
-    now = datetime.now().strftime('%Y年%m月%d日 %H:%M')
+    now = datetime.now(JST).strftime('%Y年%m月%d日 %H:%M')
     cards = ''
     for kw in KEYWORDS:
         items = fetch_items(kw)
