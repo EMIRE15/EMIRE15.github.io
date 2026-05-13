@@ -60,6 +60,42 @@ def make_card(item):
       </a>
     </div>'''
 
+def update_sitemap():
+    import glob
+    base_url = 'https://emire15.github.io/'
+    today = datetime.now().strftime('%Y-%m-%d')
+    html_files = glob.glob('*.html')
+    exclude = ['google3193697637b4df7b.html']
+    urls = []
+    for f in sorted(html_files):
+        if f in exclude:
+            continue
+        if f == 'index.html':
+            urls.insert(0, f'  <url>\n    <loc>{base_url}</loc>\n    <lastmod>{today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>')
+        else:
+            urls.append(f'  <url>\n    <loc>{base_url}{f}</loc>\n    <lastmod>{today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>')
+    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    sitemap += '\n'.join(urls)
+    sitemap += '\n</urlset>'
+    with open('sitemap.xml', 'w', encoding='utf-8') as f:
+        f.write(sitemap)
+    print('Sitemap updated!')
+
+def generate_post_draft():
+    import random
+    today = datetime.now().strftime('%Y年%m月%d日')
+    templates = [
+        "🚗 ドライブをもっと快適に！\n\n車好き・ガジェット好きが実際に買って良かったアイテムだけを正直レビュー中📦\n\n楽天で買えるおすすめ車用品はこちら👇\nhttps://emire15.github.io/\n\n#車好き #カーグッズ #楽天 #ガジェット好き",
+        "💡 楽天で買える車用品、何を選べばいい？\n\nDRIVE GEAR LABでは実際に購入・使用したアイテムだけを忖度なしでレビュー中！\n\n👇 チェックしてみてください\nhttps://emire15.github.io/\n\n#楽天 #車用品 #カーグッズ #ドライブ好き",
+        "🔥 今週のおすすめ車用品をチェック！\n\nドライブレコーダー・スマホホルダー・モバイルバッテリーなど20アイテム以上掲載中🔍\n\nhttps://emire15.github.io/\n\n#ドライブレコーダー #スマホホルダー #車載グッズ #楽天購入品",
+        "☀️ 夏のドライブ対策してますか？\n\nサンシェード・ハンディファンなど暑さ対策グッズを楽天最安値でご紹介！\n\nhttps://emire15.github.io/\n\n#夏 #車中暑対策 #サンシェード #楽天 #カーグッズ",
+    ]
+    draft = random.choice(templates)
+    with open('post_draft.txt', 'w', encoding='utf-8') as f:
+        f.write(f"【{today}の投稿候補】\n\n{draft}\n")
+    print('Post draft generated!')
+
 def main():
     now = datetime.now().strftime('%Y年%m月%d日 %H:%M')
     cards = ''
@@ -68,7 +104,6 @@ def main():
         print(f"[{kw}] {len(items)}件取得")
         for item in items:
             cards += make_card(item)
-
     html = f'''<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -96,38 +131,11 @@ p.updated {{ text-align: center; color: #aaa; font-size: 0.85em; }}
 </div>
 </body>
 </html>'''
-
     with open('auto-items.html', 'w', encoding='utf-8') as f:
         f.write(html)
     update_sitemap()
+    generate_post_draft()
     print('Done!')
-def update_sitemap():
-    import glob
-    base_url = 'https://emire15.github.io/'
-    today = datetime.now().strftime('%Y-%m-%d')
-    
-    html_files = glob.glob('*.html')
-    exclude = ['google3193697637b4df7b.html']
-    
-    urls = []
-    for f in sorted(html_files):
-        if f in exclude:
-            continue
-        if f == 'index.html':
-            urls.insert(0, f'  <url>\n    <loc>{base_url}</loc>\n    <lastmod>{today}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>1.0</priority>\n  </url>')
-        else:
-            urls.append(f'  <url>\n    <loc>{base_url}{f}</loc>\n    <lastmod>{today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>')
-    
-    sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n'
-    sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    sitemap += '\n'.join(urls)
-    sitemap += '\n</urlset>'
-    
-    with open('sitemap.xml', 'w', encoding='utf-8') as f:
-        f.write(sitemap)
-    print('Sitemap updated!')
-
 
 if __name__ == '__main__':
     main()
-
