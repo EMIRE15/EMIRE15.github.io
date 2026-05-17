@@ -5,7 +5,6 @@ from datetime import datetime, timezone, timedelta
 JST = timezone(timedelta(hours=9))
 
 APP_ID = os.environ['RAKUTEN_APP_ID']
-ACCESS_KEY = os.environ['RAKUTEN_ACCESS_KEY']
 AFFILIATE_ID = os.environ['RAKUTEN_AFFILIATE_ID']
 
 KEYWORDS = [
@@ -20,23 +19,19 @@ KEYWORDS = [
 ]
 
 def fetch_items(keyword):
-    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601'
+    url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601'
     params = {
         'applicationId': APP_ID,
-        'accessKey': ACCESS_KEY,
+        'affiliateId': AFFILIATE_ID,
         'keyword': keyword,
         'hits': 3,
         'sort': '-reviewCount',
         'imageFlag': 1,
+        'availability': 1,
         'format': 'json',
     }
-    headers = {
-        'Referer': 'https://www.drivegearlab.online/',
-        'Origin': 'https://www.drivegearlab.online',
-        'User-Agent': 'Mozilla/5.0',
-    }
     try:
-        res = requests.get(url, params=params, headers=headers, timeout=10)
+        res = requests.get(url, params=params, timeout=10)
         print(f"[{keyword}] status={res.status_code}")
         data = res.json()
         if 'Items' not in data:
@@ -51,7 +46,7 @@ def make_card(item):
     name = info['itemName'][:40]
     price = f"¥{info['itemPrice']:,}"
     img = info['mediumImageUrls'][0]['imageUrl'] if info['mediumImageUrls'] else ''
-    url = info['itemUrl']
+    url = info.get('affiliateUrl') or info['itemUrl']
     return f'''
     <div class="auto-item">
       <a href="{url}" target="_blank" rel="nofollow noopener">
