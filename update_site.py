@@ -3,8 +3,7 @@ import requests
 from datetime import datetime, timezone, timedelta
 
 JST = timezone(timedelta(hours=9))
-
-APP_ID = os.environ['RAKUTEN_APP_ID']
+APP_ID = os.environ['RAKUTEN_ACCESS_KEY']
 AFFILIATE_ID = os.environ['RAKUTEN_AFFILIATE_ID']
 
 KEYWORDS = [
