@@ -5,9 +5,8 @@ from datetime import datetime, timezone, timedelta
 JST = timezone(timedelta(hours=9))
 
 APP_ID = os.environ['RAKUTEN_APP_ID']
+ACCESS_KEY = os.environ['RAKUTEN_ACCESS_KEY']
 AFFILIATE_ID = os.environ['RAKUTEN_AFFILIATE_ID']
-
-print(f"APP_ID先頭10文字: {APP_ID[:10]}")
 
 KEYWORDS = [
     'ドライブレコーダー',
@@ -21,9 +20,10 @@ KEYWORDS = [
 ]
 
 def fetch_items(keyword):
-    url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601'
+    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601'
     params = {
         'applicationId': APP_ID,
+        'accessKey': ACCESS_KEY,
         'affiliateId': AFFILIATE_ID,
         'keyword': keyword,
         'hits': 3,
@@ -32,8 +32,12 @@ def fetch_items(keyword):
         'availability': 1,
         'format': 'json',
     }
+    headers = {
+        'Origin': 'https://www.drivegearlab.online',
+        'Referer': 'https://www.drivegearlab.online/',
+    }
     try:
-        res = requests.get(url, params=params, timeout=10)
+        res = requests.get(url, params=params, headers=headers, timeout=10)
         print(f"[{keyword}] status={res.status_code}")
         data = res.json()
         if 'Items' not in data:
