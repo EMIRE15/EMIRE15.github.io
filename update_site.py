@@ -3,8 +3,11 @@ import requests
 from datetime import datetime, timezone, timedelta
 
 JST = timezone(timedelta(hours=9))
+
 APP_ID = os.environ['RAKUTEN_ACCESS_KEY']
 AFFILIATE_ID = os.environ['RAKUTEN_AFFILIATE_ID']
+
+print(f"APP_ID先頭10文字: {APP_ID[:10]}")
 
 KEYWORDS = [
     'ドライブレコーダー',
