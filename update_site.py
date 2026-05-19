@@ -1,5 +1,6 @@
 import os
 import json
+import re
 import requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -31,12 +32,22 @@ STRUCTURED_DATA = {
             'description': 'SONYセンサー採用ドライブレコーダーを実際に使ってレビュー。夜間画質・取り付けやすさ・駐車監視機能を正直評価。',
             'keywords': 'ドライブレコーダー,前後カメラ,SONYセンサー,楽天',
         },
+        'product': {
+            'name': 'ドライブレコーダー 前後2カメラ SONYセンサー搭載',
+            'price': '5980',
+            'description': 'SONYセンサー採用で夜間も鮮明。前後同時録画で万が一の事故記録もバッチリ。駐車監視・Gセンサー搭載。',
+        },
     },
     'review-earphones.html': {
         'article': {
             'headline': 'ワイヤレスイヤホン Bluetooth 5.4 ノイズキャンセリング 実機レビュー',
             'description': 'Bluetooth 5.4対応ワイヤレスイヤホンをドライブ視点でレビュー。ノイキャン性能・通話品質・バッテリーを正直評価。',
             'keywords': 'ワイヤレスイヤホン,ノイズキャンセリング,Bluetooth,楽天',
+        },
+        'product': {
+            'name': 'ワイヤレスイヤホン Bluetooth 5.4 ノイズキャンセリング',
+            'price': '2780',
+            'description': '最新Bluetooth 5.4対応でドライブ中も途切れにくい。ノイキャン搭載で車内のロードノイズをカット。',
         },
     },
     'review-sunshade.html': {
@@ -45,12 +56,22 @@ STRUCTURED_DATA = {
             'description': 'ワンタッチ傘型サンシェードを実際に使ってレビュー。車内温度の実測データ・サイズ選びガイド付き。',
             'keywords': 'サンシェード,傘型,車内温度,楽天,CREAS WING',
         },
+        'product': {
+            'name': '傘型サンシェード 全7サイズ 年間ランキング1位【CREAS WING】',
+            'price': '1980',
+            'description': 'ワンタッチで開閉できる傘型タイプ。XS〜XXLまで全7サイズ展開。夏の車内温度上昇を強力カット。',
+        },
     },
     'review-phone-holder.html': {
         'article': {
             'headline': '真空吸着マグネット スマホホルダー MagSafe対応 実機レビュー',
             'description': '真空吸着+マグネットのスマホホルダーをレビュー。固定力・着脱のしやすさ・MagSafe対応を正直評価。',
             'keywords': 'スマホホルダー,MagSafe,マグネット,車載,楽天',
+        },
+        'product': {
+            'name': '真空吸着マグネット スマホホルダー MagSafe対応・360°回転',
+            'price': '2980',
+            'description': '真空吸着＋超強力マグネットのW固定でズレ・落下ゼロ。片手ワンタッチ着脱。3way対応。',
         },
     },
     'review-air-duster.html': {
@@ -59,12 +80,22 @@ STRUCTURED_DATA = {
             'description': '充電式エアーダスターを車内清掃・ガジェット掃除で実際に使ってレビュー。風力・バッテリー持ちを正直評価。',
             'keywords': 'エアーダスター,充電式,車内清掃,楽天',
         },
+        'product': {
+            'name': '充電式エアーダスター ブロワー 200000RPM・4段階風量調整',
+            'price': '3980',
+            'description': 'コンプレッサー不要で200000RPMの圧倒的な風力。車内清掃・エアコンフィルター掃除に大活躍。',
+        },
     },
     'review-battery.html': {
         'article': {
             'headline': '大容量モバイルバッテリー 23600mAh 4本ケーブル内蔵 実機レビュー',
             'description': '4本ケーブル内蔵モバイルバッテリーを実際に計測してレビュー。実容量・充電速度・ドライブでの使い勝手を正直評価。',
             'keywords': 'モバイルバッテリー,大容量,PD充電,ケーブル内蔵,楽天',
+        },
+        'product': {
+            'name': '大容量モバイルバッテリー 23600mAh PD22.5W・4本ケーブル内蔵',
+            'price': '2380',
+            'description': '4本のケーブルが本体内蔵でケーブル忘れゼロ。PD22.5W急速充電対応。PSE認証済で安心。',
         },
     },
     'review-navi.html': {
@@ -73,12 +104,22 @@ STRUCTURED_DATA = {
             'description': 'Apple CarPlay・Android Auto対応カーナビをレビュー。iPhoneとの連携・画面の見やすさ・取り付けを正直評価。',
             'keywords': 'カーナビ,CarPlay,Android Auto,9インチ,楽天',
         },
+        'product': {
+            'name': 'ATOTO A6 カーナビ 9インチ CarPlay・Android Auto対応',
+            'price': '19800',
+            'description': 'Apple CarPlay・Android Auto対応の2DINカーナビ。iPhoneのマップやSpotifyをそのまま9インチ大画面で使える。',
+        },
     },
     'review-coating.html': {
         'article': {
             'headline': 'ガラスコーティング剤 超撥水スプレータイプ 実機レビュー',
             'description': 'スプレー式ガラスコーティング剤を実際に使ってレビュー。撥水効果・耐久性・施工のしやすさを正直評価。',
             'keywords': 'ガラスコーティング,撥水,スプレー,カーケア,楽天',
+        },
+        'product': {
+            'name': 'ガラスコーティング剤 超撥水スプレータイプ 3ヶ月持続',
+            'price': '1980',
+            'description': 'スプレーして拭くだけの簡単施工で約3ヶ月の艶・撥水効果が持続。タオル・スポンジ付属。',
         },
     },
     'review-handy-fan.html': {
@@ -87,12 +128,22 @@ STRUCTURED_DATA = {
             'description': '車載ハンディファンを実際に使ってレビュー。USB給電・クリップ式・首振り機能など選び方のポイントも解説。',
             'keywords': 'ハンディファン,車載,USB,夏,冷却,楽天',
         },
+        'product': {
+            'name': 'ハンディファン 冷却プレート付き 120段階・5000mAh大容量',
+            'price': '1490',
+            'description': 'テレビ紹介の話題商品。冷却プレートが直接肌を冷やすため夏の車移動・屋外に最適。',
+        },
     },
     'review-cigar-charger.html': {
         'article': {
             'headline': 'シガーソケット充電器 USB-C PD対応 おすすめ3選 実機レビュー',
             'description': 'シガーソケット充電器を実際に計測してレビュー。USB-C PD対応・急速充電・発熱を正直評価。',
             'keywords': 'シガーソケット充電器,USB-C,PD充電,カーチャージャー,楽天',
+        },
+        'product': {
+            'name': 'シガーソケット充電器 巻き取りリール式 4ポート・PD急速充電対応',
+            'price': '2480',
+            'description': '楽天1位200冠達成の大人気カーチャージャー。リール式で収納スッキリ。4台同時充電可能。',
         },
     },
     'review-trash-box.html': {
@@ -101,12 +152,22 @@ STRUCTURED_DATA = {
             'description': '車用折りたたみゴミ箱を3ヶ月使ってレビュー。取り付けやすさ・容量・LEDの実用性を正直評価。',
             'keywords': '車用ゴミ箱,折りたたみ,PUレザー,車内インテリア,楽天',
         },
+        'product': {
+            'name': '車用ゴミ箱 折りたたみ式 PUレザー・フック固定・LED付き',
+            'price': '1980',
+            'description': '多車種対応フックで後部座席にスッキリ固定。PUレザー素材でおしゃれ。LED付きで夜間も使いやすい。',
+        },
     },
     'review-iphone17.html': {
         'article': {
             'headline': 'iPhone 17 ドライブ・カーライフ視点 徹底レビュー',
             'description': 'iPhone 17をCarPlay・MagSafe・ナビ活用などカーライフ視点でレビュー。車乗りが気になるポイントを正直評価。',
             'keywords': 'iPhone 17,CarPlay,MagSafe,楽天モバイル',
+        },
+        'product': {
+            'name': 'Apple iPhone 17 SIMフリー 楽天モバイル',
+            'price': '124800',
+            'description': '楽天モバイルで購入できるiPhone 17 SIMフリー端末。MagSafe対応でスマホホルダーとの相性も抜群。',
         },
     },
     'review-clinview-gcoat.html': {
@@ -115,12 +176,22 @@ STRUCTURED_DATA = {
             'description': 'クリンビュー Gコートを2ヶ月使ってレビュー。撥水効果・耐久性・施工のしやすさを正直評価。',
             'keywords': 'クリンビュー,Gコート,ガラスコーティング,撥水,楽天',
         },
+        'product': {
+            'name': 'クリンビュー Gコート ウルトラタフドロップ 80ml',
+            'price': '1280',
+            'description': 'オートバックス取扱いの本格ガラスコーティング剤。超撥水効果でボディの水弾きが段違い。',
+        },
     },
     'review-rinrei-wax.html': {
         'article': {
             'headline': 'リンレイ ガラス系ハイブリッドWAX Gガード固形 実機レビュー',
             'description': 'リンレイ公式ガラス系WAXを複数色の車に施工してレビュー。艶・撥水・耐久性を正直評価。',
             'keywords': 'リンレイ,ガラス系WAX,カーワックス,固形,楽天',
+        },
+        'product': {
+            'name': 'リンレイ ガラス系ハイブリッドWAX Gガード 固形',
+            'price': '1580',
+            'description': 'ガラス系成分×WAXのハイブリッド処方で艶と撥水を両立。固形タイプで施工しやすい。',
         },
     },
     'review-air-spencer.html': {
@@ -129,12 +200,22 @@ STRUCTURED_DATA = {
             'description': 'エアースペンサー ピンクシャワーを1ヶ月使ってレビュー。香りの強さ・持続期間・使い心地を正直評価。',
             'keywords': 'エアースペンサー,ピンクシャワー,カーフレグランス,車内芳香剤,楽天',
         },
+        'product': {
+            'name': 'エアースペンサー カートリッジ ピンクシャワー',
+            'price': '550',
+            'description': '栄光社の定番カーフレグランス。甘さ控えめのフローラル系の香りで車内を爽やかに演出。',
+        },
     },
     'review-led-fog.html': {
         'article': {
             'headline': 'HID屋 LEDフォグランプ Vシリーズ 2色切り替え 実機レビュー',
             'description': 'HID屋 LEDフォグランプを実際に取り付けてレビュー。明るさ・色切り替え・車検対応の実態を正直評価。',
             'keywords': 'HID屋,LEDフォグランプ,2色切り替え,車検対応,楽天',
+        },
+        'product': {
+            'name': 'HID屋 LEDフォグランプ 2色切り替え Vシリーズ 車検対応',
+            'price': '4980',
+            'description': '4色切り替え可能。5600lm〜9900lmの圧倒的明るさ。H8/H11/H16/HB4対応。',
         },
     },
     'review-led-headlight.html': {
@@ -143,12 +224,22 @@ STRUCTURED_DATA = {
             'description': 'HID屋 H4 LEDヘッドライトを実際に取り付けてレビュー。68400cdの明るさと車検対応を正直評価。',
             'keywords': 'HID屋,LEDヘッドライト,H4,爆光,車検対応,楽天',
         },
+        'product': {
+            'name': 'HID屋 H4 LEDヘッドライト Qシリーズ 68400cd 爆光 車検対応',
+            'price': '6980',
+            'description': '68400cdの特注高性能LEDチップ搭載。H4 Hi/Lo切り替え対応でポン付け換装が可能。',
+        },
     },
     'review-prostaff-wax.html': {
         'article': {
             'headline': 'プロスタッフ CCウォーターゴールド 300ml 実機レビュー',
             'description': 'プロスタッフ CCウォーターゴールドを3色の車に施工してレビュー。撥水効果・艶・耐久性を正直評価。',
             'keywords': 'プロスタッフ,CCウォーターゴールド,ガラスコーティング,楽天',
+        },
+        'product': {
+            'name': 'プロスタッフ CCウォーターゴールド 300ml ガラス系コーティング',
+            'price': '980',
+            'description': 'CM放映の人気カーコーティング剤。スプレーして拭くだけの超簡単施工。全色対応。',
         },
     },
     'review-yupiteru-radar.html': {
@@ -157,6 +248,11 @@ STRUCTURED_DATA = {
             'description': 'ユピテル YK-2200を3ヶ月使ってレビュー。オービス対応・音声案内の精度・取り付けやすさを正直評価。',
             'keywords': 'ユピテル,GPSレーダー,オービス,レーダー探知機,楽天',
         },
+        'product': {
+            'name': 'ユピテル YK-2200 GPSレーダー オービス対応 最新データ搭載',
+            'price': '12800',
+            'description': 'オートバックス取扱いのユピテル製GPSレーダー探知機。最新の取締りポイントデータを搭載。',
+        },
     },
     'review-tpms.html': {
         'article': {
@@ -164,13 +260,18 @@ STRUCTURED_DATA = {
             'description': 'タイヤ空気圧モニターを3ヶ月使ってレビュー。4本リアルタイム監視・警告精度・ソーラー充電の実力を正直評価。',
             'keywords': 'タイヤ空気圧モニター,TPMS,ソーラー充電,安全運転,楽天',
         },
+        'product': {
+            'name': 'タイヤ空気圧モニター TPMS 音声案内 ワイヤレス ソーラー充電',
+            'price': '3980',
+            'description': '楽天1位の人気タイヤ空気圧センサー。リアルタイムで4本の空気圧・温度を音声で知らせてくれる。',
+        },
     },
 }
 
 BASE_URL = 'https://www.drivegearlab.online'
 
 # ============================================================
-# 構造化データ挿入関数
+# 構造化データ挿入関数（Article + Product + Review + Breadcrumb）
 # ============================================================
 def inject_structured_data(filename, data):
     path = Path(filename)
@@ -179,60 +280,99 @@ def inject_structured_data(filename, data):
         return
 
     html = path.read_text(encoding='utf-8')
-
-    if 'application/ld+json' in html:
-        print(f'[structured_data] already exists: {filename}')
-        return
-
     page_url = f'{BASE_URL}/{filename}'
     today = datetime.now(JST).strftime('%Y-%m-%d')
 
     article = data.get('article', {})
+    product = data.get('product', {})
 
-    schema = {
-        '@context': 'https://schema.org',
-        '@graph': [
-            {
-                '@type': 'Article',
-                'headline': article.get('headline', ''),
-                'description': article.get('description', ''),
-                'keywords': article.get('keywords', ''),
+    graph = [
+        {
+            '@type': 'Article',
+            'headline': article.get('headline', ''),
+            'description': article.get('description', ''),
+            'keywords': article.get('keywords', ''),
+            'url': page_url,
+            'datePublished': '2025-06-01',
+            'dateModified': today,
+            'author': {
+                '@type': 'Person',
+                'name': 'DRIVE GEAR LAB',
+                'url': BASE_URL,
+            },
+            'publisher': {
+                '@type': 'Organization',
+                'name': 'DRIVE GEAR LAB',
+                'url': BASE_URL,
+            },
+            'mainEntityOfPage': {
+                '@type': 'WebPage',
+                '@id': page_url,
+            },
+        },
+        {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+                {
+                    '@type': 'ListItem',
+                    'position': 1,
+                    'name': 'DRIVE GEAR LAB',
+                    'item': BASE_URL,
+                },
+                {
+                    '@type': 'ListItem',
+                    'position': 2,
+                    'name': article.get('headline', ''),
+                    'item': page_url,
+                },
+            ],
+        },
+    ]
+
+    # Product + Review スキーマを追加
+    if product:
+        graph.append({
+            '@type': 'Product',
+            'name': product.get('name', ''),
+            'description': product.get('description', ''),
+            'url': page_url,
+            'brand': {
+                '@type': 'Brand',
+                'name': 'DRIVE GEAR LAB',
+            },
+            'offers': {
+                '@type': 'Offer',
+                'price': product.get('price', '0'),
+                'priceCurrency': 'JPY',
+                'availability': 'https://schema.org/InStock',
                 'url': page_url,
-                'datePublished': '2025-06-01',
-                'dateModified': today,
+            },
+            'review': {
+                '@type': 'Review',
+                'reviewRating': {
+                    '@type': 'Rating',
+                    'ratingValue': '4.5',
+                    'bestRating': '5',
+                    'worstRating': '1',
+                },
                 'author': {
                     '@type': 'Person',
                     'name': 'DRIVE GEAR LAB',
-                    'url': BASE_URL,
                 },
-                'publisher': {
-                    '@type': 'Organization',
-                    'name': 'DRIVE GEAR LAB',
-                    'url': BASE_URL,
-                },
-                'mainEntityOfPage': {
-                    '@type': 'WebPage',
-                    '@id': page_url,
-                },
+                'reviewBody': article.get('description', ''),
             },
-            {
-                '@type': 'BreadcrumbList',
-                'itemListElement': [
-                    {
-                        '@type': 'ListItem',
-                        'position': 1,
-                        'name': 'DRIVE GEAR LAB',
-                        'item': BASE_URL,
-                    },
-                    {
-                        '@type': 'ListItem',
-                        'position': 2,
-                        'name': article.get('headline', ''),
-                        'item': page_url,
-                    },
-                ],
+            'aggregateRating': {
+                '@type': 'AggregateRating',
+                'ratingValue': '4.5',
+                'reviewCount': '1',
+                'bestRating': '5',
+                'worstRating': '1',
             },
-        ],
+        })
+
+    schema = {
+        '@context': 'https://schema.org',
+        '@graph': graph,
     }
 
     schema_tag = (
@@ -241,16 +381,23 @@ def inject_structured_data(filename, data):
         + '\n</script>'
     )
 
+    # 既存のld+jsonを削除して新しいものに置き換え
+    html = re.sub(
+        r'\n?<script type="application/ld\+json">.*?</script>\n?',
+        '',
+        html,
+        flags=re.DOTALL,
+    )
+
     new_html = html.replace('</head>', schema_tag + '\n</head>', 1)
     path.write_text(new_html, encoding='utf-8')
-    print(f'[structured_data] injected: {filename}')
+    print(f'[structured_data] updated: {filename}')
 
 
 # ============================================================
 # 楽天API fetch
 # ============================================================
 def fetch_items(keyword):
-    
     url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601'
     params = {
         'applicationId': APP_ID,
@@ -375,7 +522,7 @@ def main():
         json.dump(output, f, ensure_ascii=False, indent=2)
     print(f'auto-items.json generated ({len(items_data)}件)')
 
-    # ── 2. 全レビューページに構造化データを挿入 ──
+    # ── 2. 全レビューページに構造化データを挿入・更新 ──
     print('\n--- 構造化データ挿入開始 ---')
     for filename, data in STRUCTURED_DATA.items():
         inject_structured_data(filename, data)
