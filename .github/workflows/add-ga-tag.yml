@@ -1,7 +1,7 @@
 name: Add GA4 Tag to All HTML Files
 
 on:
-  workflow_dispatch:  # 手動実行ボタンで起動
+  workflow_dispatch:
 
 jobs:
   add-ga-tag:
@@ -11,8 +11,39 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run GA4 tag insertion script
-        run: python add_ga_tag.py
+      - name: Insert GA4 tag into all HTML files
+        run: |
+          python3 - <<'EOF'
+          import glob
+
+          GA_TAG = """<!-- Google tag (gtag.js) -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-9FXE2YR7NL"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9FXE2YR7NL');
+          </script>"""
+
+          html_files = glob.glob('*.html')
+          print(f"{len(html_files)} 件のHTMLファイルを処理します...")
+
+          for filepath in sorted(html_files):
+              with open(filepath, 'r', encoding='utf-8') as f:
+                  content = f.read()
+              if 'G-9FXE2YR7NL' in content:
+                  print(f"  [SKIP] {filepath}")
+                  continue
+              if '<head>' in content:
+                  new_content = content.replace('<head>', '<head>\n' + GA_TAG, 1)
+                  with open(filepath, 'w', encoding='utf-8') as f:
+                      f.write(new_content)
+                  print(f"  [OK]   {filepath}")
+              else:
+                  print(f"  [WARN] {filepath} — <head>タグなし")
+
+          print("完了！")
+          EOF
 
       - name: Commit and push if changed
         run: |
