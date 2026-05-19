@@ -262,8 +262,14 @@ def fetch_items(keyword):
         'imageFlag': 1,
         'format': 'json',
     }
+    headers = {
+        'Referer': 'https://www.drivegearlab.online/',
+        'Origin': 'https://www.drivegearlab.online',
+    }
     try:
-        res = requests.get(url, params=params, timeout=10)
+        import time
+        time.sleep(2)
+        res = requests.get(url, params=params, headers=headers, timeout=10)
         print(f'[{keyword}] status={res.status_code}')
         data = res.json()
         if 'Items' not in data:
