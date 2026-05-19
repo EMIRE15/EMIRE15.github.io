@@ -249,6 +249,7 @@ def inject_structured_data(filename, data):
 # 楽天API fetch
 # ============================================================
 def fetch_items(keyword):
+    print(f'[DEBUG] APP_ID先頭8文字={APP_ID[:8] if APP_ID else "空"}')
     url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601'
     params = {
         'applicationId': APP_ID,
