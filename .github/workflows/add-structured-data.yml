@@ -1,0 +1,308 @@
+name: Add Structured Data to All HTML Files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  add-structured-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Insert structured data into HTML files
+        run: |
+          python3 - <<'EOF'
+          import json, re, os
+
+          BASE_URL = "https://www.drivegearlab.online"
+
+          # 各レビューページの構造化データ定義
+          REVIEW_DATA = {
+            "review-dashcam.html": {
+              "name": "ドライブレコーダー 前後2カメラ SONYセンサー搭載",
+              "description": "SONYセンサー採用で夜間も鮮明。前後同時録画で万が一の事故記録もバッチリ。駐車監視・Gセンサー搭載。",
+              "price": "5980",
+              "rating": "4.4",
+              "ratingCount": "1",
+              "category": "ドライブレコーダー"
+            },
+            "review-earphones.html": {
+              "name": "ワイヤレスイヤホン Bluetooth 5.4 ノイズキャンセリング",
+              "description": "最新Bluetooth 5.4対応でドライブ中も途切れにくい。ノイキャン搭載で車内のロードノイズをカット。",
+              "price": "2780",
+              "rating": "4.0",
+              "ratingCount": "1",
+              "category": "ガジェット"
+            },
+            "review-sunshade.html": {
+              "name": "傘型サンシェード 全7サイズ【CREAS WING】",
+              "description": "ワンタッチで開閉できる傘型タイプ。XS〜XXLまで全7サイズ展開で軽自動車からハイエースまで対応。",
+              "price": "3980",
+              "rating": "4.3",
+              "ratingCount": "1",
+              "category": "車内インテリア"
+            },
+            "review-phone-holder.html": {
+              "name": "真空吸着マグネット スマホホルダー MagSafe対応・360°回転",
+              "description": "真空吸着＋超強力マグネットのW固定でズレ・落下ゼロ。片手ワンタッチ着脱。3way対応。",
+              "price": "2980",
+              "rating": "4.5",
+              "ratingCount": "1",
+              "category": "スマホホルダー"
+            },
+            "review-air-duster.html": {
+              "name": "充電式エアーダスター ブロワー 200000RPM",
+              "description": "コンプレッサー不要で200000RPMの圧倒的な風力。車内清掃・エアコンフィルター掃除に大活躍。",
+              "price": "3980",
+              "rating": "4.5",
+              "ratingCount": "1",
+              "category": "ガジェット"
+            },
+            "review-battery.html": {
+              "name": "大容量モバイルバッテリー 23600mAh PD22.5W 4本ケーブル内蔵",
+              "description": "4本のケーブルが本体内蔵でケーブル忘れゼロ。PD22.5W急速充電対応。PSE認証済。",
+              "price": "2380",
+              "rating": "4.3",
+              "ratingCount": "1",
+              "category": "充電・電源"
+            },
+            "review-navi.html": {
+              "name": "ATOTO A6 カーナビ 9インチ CarPlay・Android Auto対応",
+              "description": "Apple CarPlay・Android Auto対応の2DINカーナビ。9インチ大画面。Bluetoothハンズフリー通話対応。",
+              "price": "19800",
+              "rating": "4.2",
+              "ratingCount": "1",
+              "category": "カーナビ・ミラー"
+            },
+            "review-coating.html": {
+              "name": "ガラスコーティング剤 超撥水スプレータイプ 3ヶ月持続",
+              "description": "スプレーして拭くだけの簡単施工で約3ヶ月の艶・撥水効果が持続。タオル・スポンジ付属。",
+              "price": "1980",
+              "rating": "4.1",
+              "ratingCount": "1",
+              "category": "カーケア"
+            },
+            "review-handy-fan.html": {
+              "name": "ハンディファン 冷却プレート付き 120段階・5000mAh大容量",
+              "description": "冷却プレートが直接肌を冷やすため夏の車移動・屋外に最適。120段階の細かい風量調整。",
+              "price": "1490",
+              "rating": "4.1",
+              "ratingCount": "1",
+              "category": "ガジェット"
+            },
+            "review-cigar-charger.html": {
+              "name": "シガーソケット充電器 巻き取りリール式 4ポート・PD急速充電対応",
+              "description": "USB Type-C・Lightning対応のケーブルがリール式で収納スッキリ。4台同時充電可能。",
+              "price": "2980",
+              "rating": "4.3",
+              "ratingCount": "1",
+              "category": "充電・電源"
+            },
+            "review-trash-box.html": {
+              "name": "車用ゴミ箱 折りたたみ式 PUレザー フック固定・LED付き",
+              "description": "多車種対応フックで後部座席にスッキリ固定。折りたたんでコンパクトに収納。LED付きで夜間も使いやすい。",
+              "price": "1980",
+              "rating": "4.2",
+              "ratingCount": "1",
+              "category": "車内インテリア"
+            },
+            "review-iphone17.html": {
+              "name": "Apple iPhone 17 SIMフリー 楽天モバイル",
+              "description": "楽天モバイルで購入できるiPhone 17 SIMフリー端末。MagSafe対応。CarPlayを快適に使いたい方にもおすすめ。",
+              "price": "124800",
+              "rating": "4.5",
+              "ratingCount": "1",
+              "category": "ガジェット"
+            },
+            "review-air-spencer.html": {
+              "name": "エアースペンサー カートリッジ ピンクシャワー",
+              "description": "栄光社の定番カーフレグランス。甘さ控えめのフローラル系の香りで車内を爽やかに演出。",
+              "price": "880",
+              "rating": "4.3",
+              "ratingCount": "1",
+              "category": "車内インテリア"
+            },
+            "review-led-fog.html": {
+              "name": "HID屋 LEDフォグランプ Vシリーズ 2色切り替え 車検対応",
+              "description": "ホワイト・イエローなど最大4色に切り替え可能。5600lm〜9900lmの圧倒的明るさ。H8/H11/H16/HB4対応。",
+              "price": "4980",
+              "rating": "4.3",
+              "ratingCount": "1",
+              "category": "カーケア"
+            },
+            "review-led-headlight.html": {
+              "name": "HID屋 H4 LEDヘッドライト Qシリーズ 68400cd 爆光 車検対応",
+              "description": "68400cdの特注高性能LEDチップ搭載。H4 Hi/Lo切り替え対応でポン付け換装が可能。",
+              "price": "5980",
+              "rating": "4.4",
+              "ratingCount": "1",
+              "category": "カーケア"
+            },
+            "review-clinview-gcoat.html": {
+              "name": "クリンビュー Gコート ウルトラタフドロップ 80ml",
+              "description": "超撥水効果でボディの水弾きが段違い。耐久性が高く雨の多い季節にも頼れるガラスコーティング剤。",
+              "price": "1480",
+              "rating": "4.0",
+              "ratingCount": "1",
+              "category": "カーケア"
+            },
+            "review-rinrei-wax.html": {
+              "name": "リンレイ ガラス系ハイブリッドWAX Gガード 固形",
+              "description": "ガラス系成分×WAXのハイブリッド処方で艶と撥水を両立。固形タイプで伸びが良く施工しやすい。",
+              "price": "1580",
+              "rating": "4.1",
+              "ratingCount": "1",
+              "category": "カーケア"
+            },
+            "review-prostaff-wax.html": {
+              "name": "プロスタッフ CCウォーターゴールド 300ml ガラス系コーティング",
+              "description": "スプレーして拭くだけの超簡単施工。高撥水・艶出し効果。全色対応でノーコンパウンドだから塗装を傷めない。",
+              "price": "1280",
+              "rating": "4.4",
+              "ratingCount": "1",
+              "category": "カーケア"
+            },
+            "review-yupiteru-radar.html": {
+              "name": "ユピテル YK-2200 GPSレーダー探知機 オービス対応",
+              "description": "最新の取締りポイントデータを搭載。コンパクト設計でダッシュボードに馴染む。USB経由で無料アップデート対応。",
+              "price": "9800",
+              "rating": "4.3",
+              "ratingCount": "1",
+              "category": "カーケア"
+            },
+            "review-tpms.html": {
+              "name": "タイヤ空気圧モニター TPMS 音声案内 ワイヤレス ソーラー充電",
+              "description": "リアルタイムで4本の空気圧・温度を音声で知らせてくれる。USB＆ソーラーのダブル充電対応。",
+              "price": "3980",
+              "rating": "4.3",
+              "ratingCount": "1",
+              "category": "カーケア"
+            },
+          }
+
+          def make_review_schema(filename, data):
+              url = f"{BASE_URL}/{filename}"
+              schema = {
+                "@context": "https://schema.org",
+                "@type": "Product",
+                "name": data["name"],
+                "description": data["description"],
+                "url": url,
+                "category": data["category"],
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "JPY",
+                  "price": data["price"],
+                  "availability": "https://schema.org/InStock",
+                  "url": url
+                },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": data["rating"],
+                  "bestRating": "5",
+                  "worstRating": "1",
+                  "ratingCount": data["ratingCount"]
+                },
+                "review": {
+                  "@type": "Review",
+                  "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": data["rating"],
+                    "bestRating": "5"
+                  },
+                  "author": {
+                    "@type": "Person",
+                    "name": "DRIVE GEAR LAB"
+                  },
+                  "publisher": {
+                    "@type": "Organization",
+                    "name": "DRIVE GEAR LAB"
+                  }
+                }
+              }
+              return f'<script type="application/ld+json">\n{json.dumps(schema, ensure_ascii=False, indent=2)}\n</script>'
+
+          def make_website_schema():
+              schema = {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "DRIVE GEAR LAB",
+                "url": BASE_URL,
+                "description": "車用品・ガジェット・電化製品・便利グッズを実際に使って正直レビュー。楽天で買えるおすすめアイテム情報。",
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "DRIVE GEAR LAB",
+                  "url": BASE_URL
+                }
+              }
+              return f'<script type="application/ld+json">\n{json.dumps(schema, ensure_ascii=False, indent=2)}\n</script>'
+
+          def make_article_schema(filename, title):
+              url = f"{BASE_URL}/{filename}"
+              schema = {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": title,
+                "url": url,
+                "author": {
+                  "@type": "Person",
+                  "name": "DRIVE GEAR LAB"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "DRIVE GEAR LAB",
+                  "url": BASE_URL
+                }
+              }
+              return f'<script type="application/ld+json">\n{json.dumps(schema, ensure_ascii=False, indent=2)}\n</script>'
+
+          def get_title(content):
+              m = re.search(r'<title>(.*?)</title>', content)
+              return m.group(1) if m else "DRIVE GEAR LAB"
+
+          import glob
+          html_files = glob.glob('*.html')
+          print(f"{len(html_files)} 件のHTMLファイルを処理します...\n")
+
+          for filepath in sorted(html_files):
+              with open(filepath, 'r', encoding='utf-8') as f:
+                  content = f.read()
+
+              # すでに挿入済みならスキップ
+              if 'application/ld+json' in content:
+                  print(f"  [SKIP] {filepath}")
+                  continue
+
+              # スキーマ生成
+              if filepath in REVIEW_DATA:
+                  schema_tag = make_review_schema(filepath, REVIEW_DATA[filepath])
+              elif filepath == 'index.html':
+                  schema_tag = make_website_schema()
+              elif filepath.startswith('guide-'):
+                  title = get_title(content)
+                  schema_tag = make_article_schema(filepath, title)
+              else:
+                  print(f"  [SKIP] {filepath} (対象外)")
+                  continue
+
+              # </head> の直前に挿入
+              if '</head>' in content:
+                  new_content = content.replace('</head>', schema_tag + '\n</head>', 1)
+                  with open(filepath, 'w', encoding='utf-8') as f:
+                      f.write(new_content)
+                  print(f"  [OK]   {filepath}")
+              else:
+                  print(f"  [WARN] {filepath} — </head>タグなし")
+
+          print("\n完了！")
+          EOF
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.html
+          git diff --cached --quiet || git commit -m "feat: 構造化データ (JSON-LD) を全ページに追加"
+          git push
