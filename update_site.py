@@ -7,6 +7,7 @@ from pathlib import Path
 JST = timezone(timedelta(hours=9))
 
 APP_ID = os.environ['RAKUTEN_APP_ID']
+ACCESS_KEY = os.environ['RAKUTEN_ACCESS_KEY']
 AFFILIATE_ID = os.environ.get('RAKUTEN_AFFILIATE_ID', '')
 
 KEYWORDS = [
@@ -249,10 +250,11 @@ def inject_structured_data(filename, data):
 # 楽天API fetch
 # ============================================================
 def fetch_items(keyword):
-    print(f'[DEBUG] APP_ID先頭8文字={APP_ID[:8] if APP_ID else "空"}')
-    url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601'
+    
+    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601'
     params = {
         'applicationId': APP_ID,
+        'accessKey': ACCESS_KEY,
         'affiliateId': AFFILIATE_ID,
         'keyword': keyword,
         'hits': 3,
