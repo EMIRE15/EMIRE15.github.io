@@ -507,11 +507,12 @@ def main():
         for item in items:
             info = item.get('Item', item)
             img_url = info['mediumImageUrls'][0]['imageUrl'] if info.get('mediumImageUrls') else ''
+            item_url = (info.get('affiliateUrl') or info.get('itemUrl', '#')).replace(' ', '')
             items_data.append({
                 'name': info['itemName'][:40],
                 'price': f"¥{info['itemPrice']:,}",
                 'img': img_url,
-                'url': info.get('affiliateUrl') or info.get('itemUrl', '#'),
+                'url': item_url,
             })
 
     output = {
