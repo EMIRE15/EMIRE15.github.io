@@ -340,7 +340,6 @@ footer { border-top: 1px solid var(--border); padding: 4rem 2rem 2rem; }
       </div>
     </div>
 
-    <!-- ハンディファン：レビューボタン追加 -->
     <div class="card" data-cat="gadget">
       <span class="card-badge badge-rank">🏆 楽天1位・TV紹介</span>
       <div class="card-img-wrap"><img src="https://hbb.afl.rakuten.co.jp/hgb/531a8501.50356f72.531a8502.a40446dd/?me_id=1398321&item_id=10000130&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fazusa%2Fcabinet%2Fh8fan%2Fh08pro_main01.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="ハンディファン 冷却プレート付き" loading="lazy"></div>
@@ -356,7 +355,6 @@ footer { border-top: 1px solid var(--border); padding: 4rem 2rem 2rem; }
       </div>
     </div>
 
-    <!-- シガーソケット充電器：レビューボタン追加 -->
     <div class="card" data-cat="charge">
       <span class="card-badge badge-rank">🏆 楽天1位 200冠</span>
       <div class="card-img-wrap"><img src="https://hbb.afl.rakuten.co.jp/hgb/53859647.8a74d4b7.53859648.4fa7e08f/?me_id=1372782&item_id=10011400&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Flohas1%2Fcabinet%2F10463166%2F10803904%2Fimgrc0106897964.jpg%3F_ex%3D300x300&s=300x300&t=picttext" alt="シガーソケット充電器 巻き取りリール式" loading="lazy"></div>
@@ -585,31 +583,30 @@ footer { border-top: 1px solid var(--border); padding: 4rem 2rem 2rem; }
 </footer>
 
 <script>
-fetch('auto-items.html')
-  .then(r => r.text())
-  .then(html => {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(html, 'text/html');
-
-    // 更新時刻を表示
-    const updatedEl = doc.querySelector('p.updated');
-    if (updatedEl) {
-      const timeLabel = document.getElementById('auto-updated-at');
-      if (timeLabel) timeLabel.textContent = updatedEl.textContent.trim();
+// ── 今日のおすすめ（JSONから読み込み）──
+fetch('auto-items.json')
+  .then(r => r.json())
+  .then(data => {
+    const timeLabel = document.getElementById('auto-updated-at');
+    if (timeLabel && data.updated_at) {
+      timeLabel.textContent = '最終更新: ' + data.updated_at;
     }
-
-    // アイテム表示
-    const items = doc.querySelectorAll('.auto-item');
     const wrap = document.getElementById('auto-items-wrap');
-    items.forEach(item => {
-      item.style.background = '#1a1a1a';
-      item.style.borderRadius = '0px';
-      item.style.border = '1px solid #222';
-      item.style.padding = '12px';
-      item.style.textAlign = 'center';
-      wrap.appendChild(item);
+    data.items.forEach(item => {
+      const div = document.createElement('div');
+      div.style.cssText = 'background:#1a1a1a;border:1px solid #222;padding:12px;text-align:center;';
+      const safeName = item.name.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      div.innerHTML =
+        '<a href="' + item.url + '" target="_blank" rel="nofollow noopener" style="text-decoration:none;color:inherit;">' +
+          '<img src="' + item.img + '" alt="' + safeName + '" loading="lazy" style="width:100%;display:block;">' +
+          '<p style="font-size:0.8em;margin:8px 0 4px;color:#f0f0f0;">' + safeName + '</p>' +
+          '<p style="color:#e8ff00;font-weight:bold;font-family:\'Bebas Neue\',cursive;font-size:1.2rem;">' + item.price + '</p>' +
+          '<span style="display:inline-block;background:#bf0000;color:#fff;padding:5px 10px;font-size:0.78em;margin-top:8px;">楽天で見る →</span>' +
+        '</a>';
+      wrap.appendChild(div);
     });
-  });
+  })
+  .catch(function(e) { console.error('auto-items load error:', e); });
 
 function filterCards(cat, btn) {
   const cards = document.querySelectorAll('.card');
