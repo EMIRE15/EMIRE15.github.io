@@ -1,0 +1,23 @@
+name: Add GA4 Tag to All HTML Files
+
+on:
+  workflow_dispatch:  # 手動実行ボタンで起動
+
+jobs:
+  add-ga-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run GA4 tag insertion script
+        run: python add_ga_tag.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add *.html
+          git diff --cached --quiet || git commit -m "feat: Google Analytics (GA4) タグを全ページに追加"
+          git push
