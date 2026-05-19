@@ -7,7 +7,6 @@ from pathlib import Path
 JST = timezone(timedelta(hours=9))
 
 APP_ID = os.environ['RAKUTEN_APP_ID']
-ACCESS_KEY = os.environ['RAKUTEN_ACCESS_KEY']
 AFFILIATE_ID = os.environ.get('RAKUTEN_AFFILIATE_ID', '')
 
 KEYWORDS = [
@@ -180,7 +179,6 @@ def inject_structured_data(filename, data):
 
     html = path.read_text(encoding='utf-8')
 
-    # すでに挿入済みならスキップ
     if 'application/ld+json' in html:
         print(f'[structured_data] already exists: {filename}')
         return
@@ -242,20 +240,19 @@ def inject_structured_data(filename, data):
         + '\n</script>'
     )
 
-    # </head> の直前に挿入
     new_html = html.replace('</head>', schema_tag + '\n</head>', 1)
     path.write_text(new_html, encoding='utf-8')
     print(f'[structured_data] injected: {filename}')
 
 
 # ============================================================
-# 楽天APIでauto-items.htmlを生成する既存処理
+# 楽天API fetch
 # ============================================================
 def fetch_items(keyword):
-    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601'
+    url = 'https://app.rakuten.co.jp/services/api/IchibaItem/Search/20220601'
     params = {
         'applicationId': APP_ID,
-        'accessKey': ACCESS_KEY,
+        'affiliateId': AFFILIATE_ID,
         'keyword': keyword,
         'hits': 3,
         'sort': '-reviewCount',
@@ -279,22 +276,9 @@ def fetch_items(keyword):
         return []
 
 
-def make_card(item):
-    info = item.get('Item', item)
-    name = info['itemName'][:40]
-    price = f"¥{info['itemPrice']:,}"
-    img = info['mediumImageUrls'][0]['imageUrl'] if info.get('mediumImageUrls') else ''
-    url = info.get('affiliateUrl') or info.get('itemUrl', '#')
-    return f'''    <div class="auto-item">
-      <a href="{url}" target="_blank" rel="nofollow noopener">
-        <img src="{img}" alt="{name}" loading="lazy">
-        <p class="item-name">{name}</p>
-        <p class="item-price">{price}</p>
-        <span class="btn">楽天で見る →</span>
-      </a>
-    </div>\n'''
-
-
+# ============================================================
+# サイトマップ・投稿下書き
+# ============================================================
 def update_sitemap():
     today = datetime.now(JST).strftime('%Y-%m-%d')
     pages = [
@@ -358,48 +342,34 @@ def generate_post_draft():
     print('post_draft.txt generated')
 
 
+# ============================================================
+# メイン処理
+# ============================================================
 def main():
     now = datetime.now(JST).strftime('%Y年%m月%d日 %H:%M')
 
-    # ── 1. 楽天APIでauto-items.htmlを生成 ──
-    cards = ''
+    # ── 1. 楽天APIでauto-items.jsonを生成 ──
+    items_data = []
     for kw in KEYWORDS:
         items = fetch_items(kw)
         print(f'[{kw}] {len(items)}件取得')
         for item in items:
-            cards += make_card(item)
+            info = item.get('Item', item)
+            img_url = info['mediumImageUrls'][0]['imageUrl'] if info.get('mediumImageUrls') else ''
+            items_data.append({
+                'name': info['itemName'][:40],
+                'price': f"¥{info['itemPrice']:,}",
+                'img': img_url,
+                'url': info.get('affiliateUrl') or info.get('itemUrl', '#'),
+            })
 
-    html = f'''<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DRIVE GEAR LAB | 自動更新アイテム一覧</title>
-<style>
-body {{ font-family: sans-serif; background: #111; color: #eee; margin: 0; padding: 20px; }}
-h1 {{ text-align: center; color: #e60027; }}
-p.updated {{ text-align: center; color: #aaa; font-size: 0.85em; }}
-.grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; max-width: 1200px; margin: 0 auto; }}
-.auto-item {{ background: #1e1e1e; border-radius: 8px; padding: 12px; text-align: center; }}
-.auto-item a {{ text-decoration: none; color: inherit; }}
-.auto-item img {{ width: 100%; border-radius: 4px; }}
-.item-name {{ font-size: 0.8em; margin: 8px 0 4px; }}
-.item-price {{ color: #e60027; font-weight: bold; }}
-.btn {{ display: inline-block; background: #e60027; color: #fff; padding: 6px 12px; border-radius: 4px; font-size: 0.8em; margin-top: 8px; }}
-</style>
-</head>
-<body>
-<h1>🚗 DRIVE GEAR LAB 自動更新アイテム</h1>
-<p class="updated">最終更新: {now}</p>
-<div class="grid">
-{cards}
-</div>
-</body>
-</html>'''
-
-    with open('auto-items.html', 'w', encoding='utf-8') as f:
-        f.write(html)
-    print('auto-items.html generated')
+    output = {
+        'updated_at': now,
+        'items': items_data,
+    }
+    with open('auto-items.json', 'w', encoding='utf-8') as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+    print(f'auto-items.json generated ({len(items_data)}件)')
 
     # ── 2. 全レビューページに構造化データを挿入 ──
     print('\n--- 構造化データ挿入開始 ---')
