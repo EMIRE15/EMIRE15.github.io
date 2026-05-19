@@ -18,51 +18,22 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #0a0a0a;
-  --surface: #111;
-  --surface2: #1a1a1a;
-  --border: #222;
-  --accent: #e8ff00;
-  --text: #f0f0f0;
-  --text-muted: #888;
-  --red: #ff3b30;
+  --bg: #0a0a0a; --surface: #111; --surface2: #1a1a1a; --border: #222;
+  --accent: #e8ff00; --text: #f0f0f0; --text-muted: #888; --red: #ff3b30;
 }
 html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 15px;
-  line-height: 1.8;
-  overflow-x: hidden;
-}
+body { background: var(--bg); color: var(--text); font-family: 'Noto Sans JP', sans-serif; font-size: 15px; line-height: 1.8; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
-nav {
-  position: sticky; top: 0; z-index: 200;
-  background: rgba(10,10,10,0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 2rem; height: 60px;
-}
+nav { position: sticky; top: 0; z-index: 200; background: rgba(10,10,10,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; }
 .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 2px; color: var(--accent); }
 .nav-back { font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
 .nav-back:hover { color: var(--accent); }
-.hero {
-  background: linear-gradient(160deg, #0a0a0a 0%, #111 50%, #001a11 100%);
-  border-bottom: 1px solid var(--border);
-  padding: 4rem 2rem 3rem;
-  max-width: 900px; margin: 0 auto;
-}
+.hero { background: linear-gradient(160deg, #0a0a0a 0%, #111 50%, #001a11 100%); border-bottom: 1px solid var(--border); padding: 4rem 2rem 3rem; max-width: 900px; margin: 0 auto; }
 .hero-eyebrow { font-family: 'Barlow', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
 .hero h1 { font-family: 'Barlow', sans-serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.3; margin-bottom: 1rem; }
 .hero-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.5rem; }
 .ad-badge { display: inline-block; background: #333; color: var(--text-muted); font-size: 0.65rem; padding: 2px 8px; letter-spacing: 1px; text-transform: uppercase; }
-.content-wrap {
-  max-width: 900px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr 280px;
-  gap: 3rem; padding: 3rem 2rem; align-items: start;
-}
+.content-wrap { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 280px; gap: 3rem; padding: 3rem 2rem; align-items: start; }
 @media (max-width: 700px) { .content-wrap { grid-template-columns: 1fr; padding: 2rem 1rem; } .sidebar { order: -1; } }
 .main-content { min-width: 0; }
 .sidebar { position: sticky; top: 80px; }
@@ -71,10 +42,7 @@ nav {
 .buy-btn { display: block; background: #e60027; color: #fff; text-align: center; padding: 12px 16px; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; transition: opacity 0.2s; }
 .buy-btn:hover { opacity: 0.85; }
 .buy-note { font-size: 0.7rem; color: var(--text-muted); }
-.toc ol { padding-left: 1.2rem; }
-.toc li { margin-bottom: 0.4rem; }
-.toc a { font-size: 0.82rem; color: var(--text-muted); }
-.toc a:hover { color: var(--accent); }
+.toc ol { padding-left: 1.2rem; } .toc li { margin-bottom: 0.4rem; } .toc a { font-size: 0.82rem; color: var(--text-muted); } .toc a:hover { color: var(--accent); }
 .main-content h2 { font-family: 'Barlow', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--accent); border-left: 3px solid var(--accent); padding-left: 12px; margin: 3rem 0 1rem; }
 .main-content h3 { font-size: 1rem; font-weight: 700; margin: 2rem 0 0.7rem; }
 .main-content p { margin-bottom: 1rem; }
@@ -111,8 +79,7 @@ nav {
 .info-box { background: var(--surface2); border-left: 3px solid #3399ff; padding: 1rem 1.4rem; margin: 1.5rem 0; font-size: 0.87rem; }
 .info-box strong { color: #3399ff; }
 footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 4rem; }
-footer a { color: var(--text-muted); }
-footer a:hover { color: var(--accent); }
+footer a { color: var(--text-muted); } footer a:hover { color: var(--accent); }
 </style>
 
 <script type="application/ld+json">
@@ -127,36 +94,15 @@ footer a:hover { color: var(--accent); }
       "url": "https://www.drivegearlab.online/review-cigar-charger.html",
       "datePublished": "2025-06-01",
       "dateModified": "2026-05-19",
-      "author": {
-        "@type": "Person",
-        "name": "DRIVE GEAR LAB",
-        "url": "https://www.drivegearlab.online"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "DRIVE GEAR LAB",
-        "url": "https://www.drivegearlab.online"
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://www.drivegearlab.online/review-cigar-charger.html"
-      }
+      "author": { "@type": "Person", "name": "DRIVE GEAR LAB", "url": "https://www.drivegearlab.online" },
+      "publisher": { "@type": "Organization", "name": "DRIVE GEAR LAB", "url": "https://www.drivegearlab.online" },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.drivegearlab.online/review-cigar-charger.html" }
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "DRIVE GEAR LAB",
-          "item": "https://www.drivegearlab.online"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "シガーソケット充電器 USB-C PD対応 おすすめ3選 実機レビュー",
-          "item": "https://www.drivegearlab.online/review-cigar-charger.html"
-        }
+        { "@type": "ListItem", "position": 1, "name": "DRIVE GEAR LAB", "item": "https://www.drivegearlab.online" },
+        { "@type": "ListItem", "position": 2, "name": "シガーソケット充電器 USB-C PD対応 おすすめ3選 実機レビュー", "item": "https://www.drivegearlab.online/review-cigar-charger.html" }
       ]
     },
     {
@@ -164,38 +110,15 @@ footer a:hover { color: var(--accent); }
       "name": "シガーソケット充電器 巻き取りリール式 4ポート・PD急速充電対応",
       "description": "楽天1位200冠達成の大人気カーチャージャー。リール式で収納スッキリ。4台同時充電可能。",
       "url": "https://www.drivegearlab.online/review-cigar-charger.html",
-      "brand": {
-        "@type": "Brand",
-        "name": "DRIVE GEAR LAB"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "2480",
-        "priceCurrency": "JPY",
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.drivegearlab.online/review-cigar-charger.html"
-      },
+      "brand": { "@type": "Brand", "name": "DRIVE GEAR LAB" },
+      "offers": { "@type": "Offer", "price": "2480", "priceCurrency": "JPY", "availability": "https://schema.org/InStock", "url": "https://www.drivegearlab.online/review-cigar-charger.html" },
       "review": {
         "@type": "Review",
-        "reviewRating": {
-          "@type": "Rating",
-          "ratingValue": "4.5",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "DRIVE GEAR LAB"
-        },
+        "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5", "worstRating": "1" },
+        "author": { "@type": "Person", "name": "DRIVE GEAR LAB" },
         "reviewBody": "シガーソケット充電器を実際に計測してレビュー。USB-C PD対応・急速充電・発熱を正直評価。"
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.5",
-        "reviewCount": "1",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.5", "reviewCount": "1", "bestRating": "5", "worstRating": "1" }
     }
   ]
 }
@@ -255,30 +178,11 @@ footer a:hover { color: var(--accent); }
 
     <div class="score-box">
       <div class="score-title">評価スコア</div>
-      <div class="score-row">
-        <span class="score-label">充電速度</span>
-        <div class="score-bar-bg"><div class="score-bar-fill" style="width:68%"></div></div>
-        <span class="score-val">3.4</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">発熱の少なさ</span>
-        <div class="score-bar-bg"><div class="score-bar-fill" style="width:74%"></div></div>
-        <span class="score-val">3.7</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">使いやすさ</span>
-        <div class="score-bar-bg"><div class="score-bar-fill" style="width:86%"></div></div>
-        <span class="score-val">4.3</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">コスパ</span>
-        <div class="score-bar-bg"><div class="score-bar-fill" style="width:92%"></div></div>
-        <span class="score-val">4.6</span>
-      </div>
-      <div class="total-score">
-        <div class="total-num">4.0</div>
-        <div class="total-label">総合評価<br>/ 5.0</div>
-      </div>
+      <div class="score-row"><span class="score-label">充電速度</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:68%"></div></div><span class="score-val">3.4</span></div>
+      <div class="score-row"><span class="score-label">発熱の少なさ</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:74%"></div></div><span class="score-val">3.7</span></div>
+      <div class="score-row"><span class="score-label">使いやすさ</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:86%"></div></div><span class="score-val">4.3</span></div>
+      <div class="score-row"><span class="score-label">コスパ</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:92%"></div></div><span class="score-val">4.6</span></div>
+      <div class="total-score"><div class="total-num">4.0</div><div class="total-label">総合評価<br>/ 5.0</div></div>
     </div>
 
     <p>2台同時充電ができて価格が安く、入門モデルとして優秀です。Quick Charge 3.0対応なのでQC対応Androidスマホなら快速充電できます。ただし最新iPhoneのPD急速充電は非対応なので注意。2ポート同時使用時の発熱は48℃と少し高めですが、安全機能があるので心配なし。</p>
@@ -316,30 +220,11 @@ footer a:hover { color: var(--accent); }
 
     <div class="score-box">
       <div class="score-title">評価スコア</div>
-      <div class="score-row">
-        <span class="score-label">充電速度</span>
-        <div class="score-bar-bg"><div class="score-bar-fill" style="width:92%"></div></div>
-        <span class="score-val">4.6</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">発熱の少なさ</span>
-        <div class="score-bar-bg"><div class="score-bar-fill" style="width:82%"></div></div>
-        <span class="score-val">4.1</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">対応機器の広さ</span>
-        <div class="score-bar-bg"><div class="score-bar-fill" style="width:90%"></div></div>
-        <span class="score-val">4.5</span>
-      </div>
-      <div class="score-row">
-        <span class="score-label">コスパ</span>
-        <div class="score-bar-bg"><div class="score-bar-fill" style="width:76%"></div></div>
-        <span class="score-val">3.8</span>
-      </div>
-      <div class="total-score">
-        <div class="total-num">4.3</div>
-        <div class="total-label">総合評価<br>/ 5.0</div>
-      </div>
+      <div class="score-row"><span class="score-label">充電速度</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:92%"></div></div><span class="score-val">4.6</span></div>
+      <div class="score-row"><span class="score-label">発熱の少なさ</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:82%"></div></div><span class="score-val">4.1</span></div>
+      <div class="score-row"><span class="score-label">対応機器の広さ</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:90%"></div></div><span class="score-val">4.5</span></div>
+      <div class="score-row"><span class="score-label">コスパ</span><div class="score-bar-bg"><div class="score-bar-fill" style="width:76%"></div></div><span class="score-val">3.8</span></div>
+      <div class="total-score"><div class="total-num">4.3</div><div class="total-label">総合評価<br>/ 5.0</div></div>
     </div>
 
     <p>iPhone・iPad・最新Androidに対応したUSB-C PD 45Wが最大の強み。実測でiPhone 15のバッテリーを0→50%まで約28分で充電できました。USB-Aポートも併設しているので、スマホ2台の同時充電も問題なし。発熱は45W出力時で43℃と適切な範囲内です。</p>
@@ -377,8 +262,7 @@ footer a:hover { color: var(--accent); }
       <div class="rec-info">
         <h3>USB-C PD 45W + USB-A 12W シガーソケット充電器</h3>
         <p>iPhone急速充電対応。これ一本で全機器をカバー</p>
-        <!-- 楽天アフィリエイトURLを設定してください -->
-        <a class="rec-btn" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow noopener">楽天で見る →</a>
+        <a class="rec-btn" href="https://hb.afl.rakuten.co.jp/ichiba/53859647.8a74d4b7.53859648.4fa7e08f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flohas1%2Fph-ptsx6-gm%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow noopener">楽天で見る →</a>
       </div>
     </div>
 
@@ -387,8 +271,7 @@ footer a:hover { color: var(--accent); }
       <div class="rec-info">
         <h3>USB-A 2ポート 24W QC3.0 シガーソケット充電器</h3>
         <p>予算重視・Android QC対応ユーザーにおすすめ</p>
-        <!-- 楽天アフィリエイトURLを設定してください -->
-        <a class="rec-btn" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow noopener">楽天で見る →</a>
+        <a class="rec-btn" href="https://hb.afl.rakuten.co.jp/ichiba/53859647.8a74d4b7.53859648.4fa7e08f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flohas1%2Fph-ptsx6-gm%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow noopener">楽天で見る →</a>
       </div>
     </div>
 
@@ -397,8 +280,7 @@ footer a:hover { color: var(--accent); }
   <aside class="sidebar">
     <div class="sidebar-box">
       <h4>楽天で購入</h4>
-      <!-- 楽天アフィリエイトURLを設定してください -->
-      <a class="buy-btn" href="https://www.rakuten.co.jp/" target="_blank" rel="nofollow noopener">楽天で見る →</a>
+      <a class="buy-btn" href="https://hb.afl.rakuten.co.jp/ichiba/53859647.8a74d4b7.53859648.4fa7e08f/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Flohas1%2Fph-ptsx6-gm%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIzMDB4MzAwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjAsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==" target="_blank" rel="nofollow noopener">楽天で見る →</a>
       <p class="buy-note">※価格・在庫は楽天市場にてご確認ください</p>
     </div>
     <nav class="sidebar-box toc">
