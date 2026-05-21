@@ -80,6 +80,21 @@ nav { position: sticky; top: 0; z-index: 200; background: rgba(10,10,10,0.97); b
 .editor-icon { width: 44px; height: 44px; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
 .editor-label { font-family: 'Barlow', sans-serif; font-size: 0.68rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
 .editor-note p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; }
+
+/* ガイド記事バナー */
+.guide-section { padding: 4rem 2rem 0; max-width: 1200px; margin: 0 auto; }
+.guide-section .section-eyebrow { font-family: 'Barlow', sans-serif; font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+.guide-section .section-title { font-family: 'Bebas Neue', cursive; font-size: 2.8rem; letter-spacing: 2px; margin-bottom: 0.4rem; }
+.guide-section .section-sub { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.8rem; }
+.guide-card { display: flex; align-items: center; gap: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem 2rem; transition: border-color 0.2s, background 0.2s; }
+.guide-card:hover { background: var(--surface2); border-color: var(--accent); }
+.guide-card-icon { font-size: 2.2rem; flex-shrink: 0; }
+.guide-card-body { flex: 1; }
+.guide-card-label { font-family: 'Barlow', sans-serif; font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; }
+.guide-card-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem; line-height: 1.4; }
+.guide-card-desc { font-size: 0.82rem; color: var(--text-muted); }
+.guide-card-arrow { font-family: 'Barlow', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--accent); flex-shrink: 0; letter-spacing: 1px; }
+
 .products-section { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
 .section-header { margin-bottom: 2.5rem; }
 .section-eyebrow { font-family: 'Barlow', sans-serif; font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
@@ -141,6 +156,8 @@ footer { border-top: 1px solid var(--border); padding: 4rem 2rem 2rem; }
   .hero-stats { gap: 2rem; }
   .products-section { padding: 3rem 1rem; }
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 1px; }
+  .guide-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .guide-card-arrow { display: none; }
 }
 @media (max-width: 420px) { .products-grid { grid-template-columns: 1fr; } }
 </style>
@@ -230,6 +247,7 @@ footer { border-top: 1px solid var(--border); padding: 4rem 2rem 2rem; }
   <a class="nav-logo" href="#">DRIVEGEARLAB</a>
   <div class="nav-links" id="nav-links">
     <a href="#products">アイテム</a>
+    <a href="#guide">ガイド</a>
     <a href="https://room.rakuten.co.jp/room_15551d76c1/collections" target="_blank" rel="noopener">楽天ROOM</a>
     <a href="https://www.rakuten.co.jp/" target="_blank" rel="noopener" class="nav-cta">楽天で見る →</a>
   </div>
@@ -257,6 +275,22 @@ footer { border-top: 1px solid var(--border); padding: 4rem 2rem 2rem; }
     <p>車好き・ガジェット好きが高じて、気づいたら楽天で年間100件以上レビューしてました。このサイトは「実際に自分で買って、本当に良かったもの」だけを載せています。忖度なし、正直に。ドライブがもっと楽しくなるアイテム、一緒に探しましょう。</p>
   </div>
 </div>
+
+<!-- ガイド記事セクション -->
+<section class="guide-section" id="guide">
+  <div class="section-eyebrow">GUIDE</div>
+  <h2 class="section-title">選び方ガイド</h2>
+  <p class="section-sub">比較・まとめ記事で失敗しない選択を。</p>
+  <a class="guide-card" href="guide-radar-osusume-2026.html">
+    <div class="guide-card-icon">📡</div>
+    <div class="guide-card-body">
+      <div class="guide-card-label">RADAR DETECTOR GUIDE · 2026</div>
+      <div class="guide-card-title">レーダー探知機 おすすめ2026年版｜選び方と人気モデルを徹底比較</div>
+      <div class="guide-card-desc">ユピテル・コムテック・セルスターを比較。誤警報対策・レーザー対応など選び方のポイントも解説。</div>
+    </div>
+    <div class="guide-card-arrow">READ →</div>
+  </a>
+</section>
 
 <section class="products-section" id="products">
   <div class="section-header">
@@ -626,6 +660,7 @@ footer { border-top: 1px solid var(--border); padding: 4rem 2rem 2rem; }
       <h4>INFO</h4>
       <ul>
         <li><a href="about.html">このブログについて</a></li>
+        <li><a href="guide-radar-osusume-2026.html">📡 レーダー探知機 選び方ガイド2026</a></li>
         <li><a href="privacy-policy.html">プライバシーポリシー</a></li>
         <li><a href="privacy-policy.html#disclaimer">免責事項</a></li>
         <li><a href="privacy-policy.html#contact">お問い合わせ</a></li>
