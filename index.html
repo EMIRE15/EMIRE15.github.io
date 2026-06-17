@@ -784,6 +784,48 @@ footer { border-top: 1px solid var(--border); padding: 4rem 2rem 2rem; }
   </div><!-- /products-grid -->
 </section>
 
+<!-- 今日のおすすめ（auto-items.json から自動生成） -->
+<section class="products-section" id="auto-items" style="padding-top:0;">
+  <div class="section-header">
+    <div class="section-eyebrow">DAILY PICKS</div>
+    <h2 class="section-title">今日のおすすめ</h2>
+    <p class="section-sub" id="auto-items-updated">楽天リアルタイム人気ランキングから自動更新</p>
+  </div>
+  <div class="products-grid" id="auto-items-grid"></div>
+</section>
+
+<script>
+fetch('auto-items.json?_=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    const grid = document.getElementById('auto-items-grid');
+    const sub = document.getElementById('auto-items-updated');
+    if (data.updated_at) sub.textContent = '更新日時：' + data.updated_at;
+    (data.items || []).forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="card-img-wrap">
+          <a href="${item.url}" target="_blank" rel="nofollow sponsored noopener">
+            <img src="${item.img}" alt="${item.name}" loading="lazy" style="object-fit:contain;">
+          </a>
+        </div>
+        <div class="card-body">
+          <div class="card-cat">RAKUTEN RANKING</div>
+          <h3 class="card-title">${item.name}</h3>
+          <div class="card-price">${item.price}</div>
+          <div class="card-actions">
+            <a class="btn-rakuten" href="${item.url}" target="_blank" rel="nofollow sponsored noopener">楽天で見る →</a>
+          </div>
+        </div>`;
+      grid.appendChild(card);
+    });
+  })
+  .catch(() => {
+    document.getElementById('auto-items-grid').innerHTML = '<p style="color:var(--text-muted);padding:1rem;">データ読み込み中...</p>';
+  });
+</script>
+
 <div class="room-banner">
   <a href="https://room.rakuten.co.jp/room_15551d76c1/collections" target="_blank" rel="noopener">
     <div>
