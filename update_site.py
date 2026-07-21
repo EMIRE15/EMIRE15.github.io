@@ -268,7 +268,7 @@ STRUCTURED_DATA = {
     },
 }
 
-BASE_URL = 'https://www.drivegearlab.online'
+BASE_URL = 'https://drivegearlab.online'
 
 # ============================================================
 # 構造化データ挿入関数（Article + Product + Review + Breadcrumb）
