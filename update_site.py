@@ -432,34 +432,33 @@ def fetch_items(keyword):
 # ============================================================
 def update_sitemap():
     today = datetime.now(JST).strftime('%Y-%m-%d')
-    pages = [
-        ('', '1.0', 'weekly'),
-        ('guide-dashcam-howto-choose.html', '0.9', 'monthly'),
-        ('guide-summer-heat-countermeasure.html', '0.9', 'monthly'),
-        ('guide-smartphone-holder-howto-choose.html', '0.9', 'monthly'),
-        ('review-dashcam.html', '0.8', 'monthly'),
-        ('review-earphones.html', '0.8', 'monthly'),
-        ('review-sunshade.html', '0.8', 'monthly'),
-        ('review-phone-holder.html', '0.8', 'monthly'),
-        ('review-air-duster.html', '0.8', 'monthly'),
-        ('review-battery.html', '0.8', 'monthly'),
-        ('review-navi.html', '0.8', 'monthly'),
-        ('review-coating.html', '0.8', 'monthly'),
-        ('review-handy-fan.html', '0.8', 'monthly'),
-        ('review-cigar-charger.html', '0.8', 'monthly'),
-        ('review-trash-box.html', '0.8', 'monthly'),
-        ('review-iphone17.html', '0.8', 'monthly'),
-        ('review-clinview-gcoat.html', '0.8', 'monthly'),
-        ('review-rinrei-wax.html', '0.8', 'monthly'),
-        ('review-air-spencer.html', '0.8', 'monthly'),
-        ('review-led-fog.html', '0.8', 'monthly'),
-        ('review-led-headlight.html', '0.8', 'monthly'),
-        ('review-prostaff-wax.html', '0.8', 'monthly'),
-        ('review-yupiteru-radar.html', '0.8', 'monthly'),
-        ('review-tpms.html', '0.8', 'monthly'),
-        ('about.html', '0.4', 'yearly'),
-        ('privacy-policy.html', '0.3', 'yearly'),
-    ]
+
+    # 除外するHTMLファイル（テンプレート・404など、公開ページでないもの）
+    EXCLUDE = {'404.html'}
+    # Google Search Console等のサイト所有権確認用ファイル（google1234...html）は
+    # 検索結果に出す意味がないため、パターンで自動除外する
+    def is_verification_file(name):
+        return name.startswith('google') and name[6:-5].isalnum()
+
+    # 優先度を上げたい主要ページ（それ以外は自動でmonthly/0.7）
+    PRIORITY_OVERRIDE = {
+        'index.html': ('1.0', 'weekly'),
+        'about.html': ('0.4', 'yearly'),
+        'privacy-policy.html': ('0.3', 'yearly'),
+    }
+
+    # リポジトリ直下の全 .html ファイルを自動スキャン（ハードコードしない）
+    html_files = sorted(
+        f for f in os.listdir('.')
+        if f.endswith('.html') and f not in EXCLUDE and not is_verification_file(f)
+    )
+
+    pages = []
+    for f in html_files:
+        page = '' if f == 'index.html' else f
+        priority, freq = PRIORITY_OVERRIDE.get(f, ('0.7', 'monthly'))
+        pages.append((page, priority, freq))
+
     urls = ''
     for page, priority, freq in pages:
         loc = f'{BASE_URL}/{page}'
@@ -475,7 +474,7 @@ def update_sitemap():
 {urls}</urlset>'''
     with open('sitemap.xml', 'w', encoding='utf-8') as f:
         f.write(sitemap)
-    print('sitemap.xml updated')
+    print(f'sitemap.xml updated ({len(pages)} URLs, auto-scanned)')
 
 
 def generate_post_draft():
