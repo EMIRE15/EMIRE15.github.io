@@ -16,7 +16,7 @@ jobs:
           python3 - <<'EOF'
           import json, re, os
 
-          BASE_URL = "https://www.drivegearlab.online"
+          BASE_URL = "https://drivegearlab.online"
 
           # 各レビューページの構造化データ定義
           REVIEW_DATA = {
