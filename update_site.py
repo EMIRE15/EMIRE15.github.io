@@ -410,8 +410,8 @@ def fetch_items(keyword):
         'format': 'json',
     }
     headers = {
-        'Referer': 'https://www.drivegearlab.online/',
-        'Origin': 'https://www.drivegearlab.online',
+        'Referer': 'https://drivegearlab.online/',
+        'Origin': 'https://drivegearlab.online',
     }
     try:
         import time
@@ -481,10 +481,10 @@ def generate_post_draft():
     import random
     today = datetime.now(JST).strftime('%Y年%m月%d日')
     templates = [
-        '🚗 ドライブをもっと快適に！\n\n車好き・ガジェット好きが実際に買って良かったアイテムだけを正直レビュー中📦\n\n楽天で買えるおすすめ車用品はこちら👇\nhttps://www.drivegearlab.online/\n\n#車好き #カーグッズ #楽天 #ガジェット好き',
-        '💡 楽天で買える車用品、何を選べばいい？\n\nDRIVE GEAR LABでは実際に購入・使用したアイテムだけを忖度なしでレビュー中！\n\n👇 チェックしてみてください\nhttps://www.drivegearlab.online/\n\n#楽天 #車用品 #カーグッズ #ドライブ好き',
-        '🔥 今週のおすすめ車用品をチェック！\n\nドライブレコーダー・スマホホルダー・モバイルバッテリーなど20アイテム以上掲載中🔍\n\nhttps://www.drivegearlab.online/\n\n#ドライブレコーダー #スマホホルダー #車載グッズ #楽天購入品',
-        '☀️ 夏のドライブ対策してますか？\n\nサンシェード・ハンディファンなど暑さ対策グッズを楽天最安値でご紹介！\n\nhttps://www.drivegearlab.online/\n\n#夏 #車中暑対策 #サンシェード #楽天 #カーグッズ',
+        '🚗 ドライブをもっと快適に！\n\n車好き・ガジェット好きが実際に買って良かったアイテムだけを正直レビュー中📦\n\n楽天で買えるおすすめ車用品はこちら👇\nhttps://drivegearlab.online/\n\n#車好き #カーグッズ #楽天 #ガジェット好き',
+        '💡 楽天で買える車用品、何を選べばいい？\n\nDRIVE GEAR LABでは実際に購入・使用したアイテムだけを忖度なしでレビュー中！\n\n👇 チェックしてみてください\nhttps://drivegearlab.online/\n\n#楽天 #車用品 #カーグッズ #ドライブ好き',
+        '🔥 今週のおすすめ車用品をチェック！\n\nドライブレコーダー・スマホホルダー・モバイルバッテリーなど20アイテム以上掲載中🔍\n\nhttps://drivegearlab.online/\n\n#ドライブレコーダー #スマホホルダー #車載グッズ #楽天購入品',
+        '☀️ 夏のドライブ対策してますか？\n\nサンシェード・ハンディファンなど暑さ対策グッズを楽天最安値でご紹介！\n\nhttps://drivegearlab.online/\n\n#夏 #車中暑対策 #サンシェード #楽天 #カーグッズ',
     ]
     draft = random.choice(templates)
     with open('post_draft.txt', 'w', encoding='utf-8') as f:
