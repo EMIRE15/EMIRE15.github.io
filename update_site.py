@@ -34,7 +34,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'ドライブレコーダー 前後2カメラ SONYセンサー搭載',
-            'price': '5980',
+            'price': '10980',
             'description': 'SONYセンサー採用で夜間も鮮明。前後同時録画で万が一の事故記録もバッチリ。駐車監視・Gセンサー搭載。',
         },
     },
@@ -70,7 +70,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': '真空吸着マグネット スマホホルダー MagSafe対応・360°回転',
-            'price': '2980',
+            'price': '2180',
             'description': '真空吸着＋超強力マグネットのW固定でズレ・落下ゼロ。片手ワンタッチ着脱。3way対応。',
         },
     },
@@ -82,7 +82,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': '充電式エアーダスター ブロワー 200000RPM・4段階風量調整',
-            'price': '3980',
+            'price': '5980',
             'description': 'コンプレッサー不要で200000RPMの圧倒的な風力。車内清掃・エアコンフィルター掃除に大活躍。',
         },
     },
@@ -94,7 +94,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': '大容量モバイルバッテリー 23600mAh PD22.5W・4本ケーブル内蔵',
-            'price': '2380',
+            'price': '2980',
             'description': '4本のケーブルが本体内蔵でケーブル忘れゼロ。PD22.5W急速充電対応。PSE認証済で安心。',
         },
     },
@@ -106,7 +106,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'ATOTO A6 カーナビ 9インチ CarPlay・Android Auto対応',
-            'price': '19800',
+            'price': '39300',
             'description': 'Apple CarPlay・Android Auto対応の2DINカーナビ。iPhoneのマップやSpotifyをそのまま9インチ大画面で使える。',
         },
     },
@@ -118,7 +118,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'ガラスコーティング剤 超撥水スプレータイプ 3ヶ月持続',
-            'price': '1980',
+            'price': '1990',
             'description': 'スプレーして拭くだけの簡単施工で約3ヶ月の艶・撥水効果が持続。タオル・スポンジ付属。',
         },
     },
@@ -130,7 +130,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'ハンディファン 冷却プレート付き 120段階・5000mAh大容量',
-            'price': '1490',
+            'price': '2780',
             'description': 'テレビ紹介の話題商品。冷却プレートが直接肌を冷やすため夏の車移動・屋外に最適。',
         },
     },
@@ -166,7 +166,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'Apple iPhone 17 SIMフリー 楽天モバイル',
-            'price': '124800',
+            'price': '176800',
             'description': '楽天モバイルで購入できるiPhone 17 SIMフリー端末。MagSafe対応でスマホホルダーとの相性も抜群。',
         },
     },
@@ -178,7 +178,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'クリンビュー Gコート ウルトラタフドロップ 80ml',
-            'price': '1280',
+            'price': '1780',
             'description': 'オートバックス取扱いの本格ガラスコーティング剤。超撥水効果でボディの水弾きが段違い。',
         },
     },
@@ -190,7 +190,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'リンレイ ガラス系ハイブリッドWAX Gガード 固形',
-            'price': '1580',
+            'price': '1738',
             'description': 'ガラス系成分×WAXのハイブリッド処方で艶と撥水を両立。固形タイプで施工しやすい。',
         },
     },
@@ -202,7 +202,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'エアースペンサー カートリッジ ピンクシャワー',
-            'price': '550',
+            'price': '598',
             'description': '栄光社の定番カーフレグランス。甘さ控えめのフローラル系の香りで車内を爽やかに演出。',
         },
     },
@@ -214,7 +214,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'HID屋 LEDフォグランプ 2色切り替え Vシリーズ 車検対応',
-            'price': '4980',
+            'price': '9860',
             'description': '4色切り替え可能。5600lm〜9900lmの圧倒的明るさ。H8/H11/H16/HB4対応。',
         },
     },
@@ -226,7 +226,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'HID屋 H4 LEDヘッドライト Qシリーズ 68400cd 爆光 車検対応',
-            'price': '6980',
+            'price': '15980',
             'description': '68400cdの特注高性能LEDチップ搭載。H4 Hi/Lo切り替え対応でポン付け換装が可能。',
         },
     },
@@ -238,7 +238,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'プロスタッフ CCウォーターゴールド 300ml ガラス系コーティング',
-            'price': '980',
+            'price': '2180',
             'description': 'CM放映の人気カーコーティング剤。スプレーして拭くだけの超簡単施工。全色対応。',
         },
     },
@@ -250,7 +250,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'ユピテル YK-2200 GPSレーダー オービス対応 最新データ搭載',
-            'price': '12800',
+            'price': '36970',
             'description': 'オートバックス取扱いのユピテル製GPSレーダー探知機。最新の取締りポイントデータを搭載。',
         },
     },
@@ -262,7 +262,7 @@ STRUCTURED_DATA = {
         },
         'product': {
             'name': 'タイヤ空気圧モニター TPMS 音声案内 ワイヤレス ソーラー充電',
-            'price': '3980',
+            'price': '7980',
             'description': '楽天1位の人気タイヤ空気圧センサー。リアルタイムで4本の空気圧・温度を音声で知らせてくれる。',
         },
     },
