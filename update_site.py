@@ -268,6 +268,32 @@ STRUCTURED_DATA = {
     },
 }
 
+# ============================================================
+# 商品画像URL（Product schemaのimage必須項目。index.htmlのカード画像と同一）
+# ============================================================
+PRODUCT_IMAGES = {
+    "review-dashcam.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/yumenomori/cabinet/09856724/h26yh4780.jpg",
+    "review-earphones.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/gracevally/cabinet/09355687/09355695/12855263/x1front-2026old.jpg",
+    "review-sunshade.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/creaswing/cabinet/cwrt50/car-311-0005.jpg",
+    "review-phone-holder.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/creamchic/cabinet/smp/smp_004/smp-0045_00.jpg",
+    "review-air-duster.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/gmy-japan/cabinet/250902/1011.jpg",
+    "review-battery.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/furumiyashop/cabinet/zt/p60-2380-2.jpg",
+    "review-navi.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/famous2017/cabinet/08758553/imgrc0095748973.jpg",
+    "review-coating.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/zepancar/cabinet/10636932/zt/zepancar-spl-ss.jpg",
+    "review-handy-fan.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/azusa/cabinet/h8fan/h08pro_main01.jpg",
+    "review-cigar-charger.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/lohas1/cabinet/10463166/10803904/imgrc0106897964.jpg",
+    "review-trash-box.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/creaswing/cabinet/cwrt30/car-0011.jpg",
+    "review-iphone17.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenmobile-store/cabinet/product/iphone-17/pc/17-d-m.jpg",
+    "review-clinview-gcoat.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/autobacs-ec/cabinet/image/10951522/01751081_1.jpg",
+    "review-rinrei-wax.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/rinreiwax/cabinet/car/339014.jpg",
+    "review-air-spencer.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/autobacs-ec/cabinet/image/12821157/00552265_1.jpg",
+    "review-led-fog.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-tradingtrade/cabinet/foglamp/v_fog/r_v_fog_h8-1.jpg",
+    "review-led-headlight.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/auc-tradingtrade/cabinet/lh/tt007_0017/r_search_head_q_h4.jpg",
+    "review-prostaff-wax.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/prostaff-shop/cabinet/s121_p.jpg",
+    "review-yupiteru-radar.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/autobacs-ec/cabinet/image/12821157/01844289_1.jpg",
+    "review-tpms.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/rise0828/cabinet/5065456-0.jpg"
+}
+
 BASE_URL = 'https://drivegearlab.online'
 
 # ============================================================
@@ -369,6 +395,14 @@ def inject_structured_data(filename, data):
                 'worstRating': '1',
             },
         })
+
+    # Product schemaにimageを付与（欠落するとGSC販売者のリスティングで無効判定になる）
+    if product:
+        img = product.get('image') or PRODUCT_IMAGES.get(filename)
+        if img:
+            graph[-1]['image'] = img
+        else:
+            print(f'[structured_data] WARNING: image未設定: {filename}')
 
     schema = {
         '@context': 'https://schema.org',
