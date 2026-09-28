@@ -294,6 +294,94 @@ PRODUCT_IMAGES = {
     "review-tpms.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/rise0828/cabinet/5065456-0.jpg"
 }
 
+# ============================================================
+# 楽天商品コード（価格の日次自動取得用）
+# item_code: 楽天API itemCode / url_path: 当サイトのリンク先。APIの返却itemUrlに
+# url_pathが含まれない場合は別商品とみなし、STRUCTURED_DATAの固定価格を使う
+# ============================================================
+PRODUCT_RAKUTEN = {
+    "review-dashcam.html": {
+        "item_code": "yumenomori:10000183",
+        "url_path": "yumenomori/b1jlh26he"
+    },
+    "review-earphones.html": {
+        "item_code": "gracevally:10000003",
+        "url_path": "gracevally/grace-x1"
+    },
+    "review-sunshade.html": {
+        "item_code": "creaswing:10000036",
+        "url_path": "creaswing/car-311-0005"
+    },
+    "review-phone-holder.html": {
+        "item_code": "creamchic:10000255",
+        "url_path": "creamchic/gs-smp-0045"
+    },
+    "review-air-duster.html": {
+        "item_code": "gmy-japan:10000080",
+        "url_path": "gmy-japan/s-p70"
+    },
+    "review-battery.html": {
+        "item_code": "furumiyashop:10000146",
+        "url_path": "furumiyashop/cdb00p60"
+    },
+    "review-navi.html": {
+        "item_code": "famous2017:10000689",
+        "url_path": "famous2017/f7g210pe-al"
+    },
+    "review-coating.html": {
+        "item_code": "zepancar:10000005",
+        "url_path": "zepancar/quick-coating"
+    },
+    "review-handy-fan.html": {
+        "item_code": "azusa:10000130",
+        "url_path": "azusa/0302"
+    },
+    "review-cigar-charger.html": {
+        "item_code": "lohas1:10011400",
+        "url_path": "lohas1/ph-ptsx6-gm"
+    },
+    "review-trash-box.html": {
+        "item_code": "creaswing:10000209",
+        "url_path": "creaswing/car-0011"
+    },
+    "review-iphone17.html": {
+        "item_code": "rakutenmobile-store:10001785",
+        "url_path": "rakutenmobile-store/iphone-17"
+    },
+    "review-clinview-gcoat.html": {
+        "item_code": "autobacs-ec:10057014",
+        "url_path": "autobacs-ec/4974672209244"
+    },
+    "review-rinrei-wax.html": {
+        "item_code": "rinreiwax:10002427",
+        "url_path": "rinreiwax/339014"
+    },
+    "review-air-spencer.html": {
+        "item_code": "autobacs-ec:10031111",
+        "url_path": "autobacs-ec/4970301590424"
+    },
+    "review-led-fog.html": {
+        "item_code": "auc-tradingtrade:10003942",
+        "url_path": "auc-tradingtrade/v_fog"
+    },
+    "review-led-headlight.html": {
+        "item_code": "auc-tradingtrade:10000295",
+        "url_path": "auc-tradingtrade/tt007_0017"
+    },
+    "review-prostaff-wax.html": {
+        "item_code": "prostaff-shop:10000000",
+        "url_path": "prostaff-shop/s121"
+    },
+    "review-yupiteru-radar.html": {
+        "item_code": "autobacs-ec:10090584",
+        "url_path": "autobacs-ec/4968543130942"
+    },
+    "review-tpms.html": {
+        "item_code": "rise0828:10000055",
+        "url_path": "rise0828/b1t3cthe"
+    }
+}
+
 BASE_URL = 'https://drivegearlab.online'
 
 # ============================================================
@@ -370,7 +458,7 @@ def inject_structured_data(filename, data):
                 '@type': 'Offer',
                 'price': product.get('price', '0'),
                 'priceCurrency': 'JPY',
-                'availability': 'https://schema.org/InStock',
+                'availability': product.get('availability', 'https://schema.org/InStock'),
                 'url': page_url,
             },
             'review': {
@@ -459,6 +547,45 @@ def fetch_items(keyword):
     except Exception as e:
         print(f'[{keyword}] error={e}')
         return []
+
+
+def fetch_item_price(filename):
+    """楽天APIで商品の現在価格・在庫を取得。失敗・商品不一致時はNoneを返す"""
+    info = PRODUCT_RAKUTEN.get(filename)
+    if not info:
+        return None
+    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601'
+    params = {
+        'applicationId': APP_ID,
+        'accessKey': ACCESS_KEY,
+        'itemCode': info['item_code'],
+        'availability': 0,  # 売り切れ商品も取得対象にする
+        'hits': 1,
+        'format': 'json',
+    }
+    headers = {
+        'Referer': 'https://drivegearlab.online/',
+        'Origin': 'https://drivegearlab.online',
+    }
+    try:
+        import time
+        time.sleep(1.5)
+        res = requests.get(url, params=params, headers=headers, timeout=10)
+        items = res.json().get('Items', [])
+        if not items:
+            print(f'[price] {filename}: 取得0件 status={res.status_code}')
+            return None
+        item = items[0].get('Item', items[0])
+        item_url = item.get('itemUrl', '')
+        if info['url_path'] not in item_url:
+            print(f'[price] {filename}: 商品不一致のためスキップ itemUrl={item_url}')
+            return None
+        price = int(item['itemPrice'])
+        in_stock = item.get('availability', 1) == 1
+        return price, in_stock
+    except Exception as e:
+        print(f'[price] {filename}: error={e}')
+        return None
 
 
 # ============================================================
@@ -558,6 +685,22 @@ def main():
 
     # ── 2. 全レビューページに構造化データを挿入・更新 ──
     print('\n--- 構造化データ挿入開始 ---')
+    updated, fallback = 0, []
+    for filename, data in STRUCTURED_DATA.items():
+        result = fetch_item_price(filename)
+        if result:
+            price, in_stock = result
+            old = data['product'].get('price')
+            data['product']['price'] = str(price)
+            data['product']['availability'] = (
+                'https://schema.org/InStock' if in_stock else 'https://schema.org/OutOfStock'
+            )
+            if old != str(price):
+                print(f'[price] {filename}: {old} -> {price}')
+            updated += 1
+        else:
+            fallback.append(filename)
+    print(f'[price] API取得 {updated}件 / 固定価格フォールバック {len(fallback)}件 {fallback}')
     for filename, data in STRUCTURED_DATA.items():
         inject_structured_data(filename, data)
     print('--- 構造化データ挿入完了 ---\n')
