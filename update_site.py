@@ -588,6 +588,58 @@ def fetch_item_price(filename):
         return None
 
 
+def sync_page_prices():
+    """各レビューページの購入ボックスの価格表示を、STRUCTURED_DATAの現在価格に揃える"""
+    changed = 0
+    for filename, data in STRUCTURED_DATA.items():
+        path = Path(filename)
+        price = data['product'].get('price')
+        if not path.exists() or not price:
+            continue
+        out = 'OutOfStock' in data['product'].get('availability', '')
+        html = path.read_text(encoding='utf-8')
+        # 価格を表示している購入ボックスだけを対象にする(「楽天で価格を確認」表示のページは触らない)
+        new_html = re.sub(
+            r'(<div class="(?:buy|product)-price">)¥[\d,]+〜?\s*(?:<span>[^<]*</span>)?(</div>)',
+            lambda m: f'{m.group(1)}¥{int(price):,}<span>{"在庫切れ" if out else "税込"}</span>{m.group(2)}',
+            html,
+        )
+        if new_html != html:
+            path.write_text(new_html, encoding='utf-8')
+            changed += 1
+    print(f'[price] レビューページ購入ボックス価格 更新{changed}件')
+
+
+def sync_index_prices():
+    """index.htmlのカード価格を、STRUCTURED_DATAの現在価格(API取得後)に揃える"""
+    path = Path('index.html')
+    if not path.exists():
+        return
+    html = path.read_text(encoding='utf-8')
+    changed = 0
+    for filename, data in STRUCTURED_DATA.items():
+        price = data['product'].get('price')
+        if not price:
+            continue
+        out = 'OutOfStock' in data['product'].get('availability', '')
+        new_inner = f'¥{int(price):,}<span class="price-note">{"在庫切れ" if out else "税込"}</span>'
+        pattern = re.compile(
+            r'(<div class="card-img-wrap"><a href="' + re.escape(filename) + r'">'
+            r'(?:(?!<div class="card")[\s\S])*?<div class="card-price">)'
+            r'((?:(?!</div>)[\s\S])*)(</div>)'
+        )
+        m = pattern.search(html)
+        # 価格を表示していないカード(「楽天で価格確認」など)はそのままにする
+        if not m or '¥' not in m.group(2):
+            continue
+        if m.group(2) != new_inner:
+            html = html[:m.start(2)] + new_inner + html[m.end(2):]
+            changed += 1
+    if changed:
+        path.write_text(html, encoding='utf-8')
+    print(f'[price] index.htmlカード価格 更新{changed}件')
+
+
 # ============================================================
 # サイトマップ・投稿下書き
 # ============================================================
@@ -703,6 +755,8 @@ def main():
     print(f'[price] API取得 {updated}件 / 固定価格フォールバック {len(fallback)}件 {fallback}')
     for filename, data in STRUCTURED_DATA.items():
         inject_structured_data(filename, data)
+    sync_index_prices()
+    sync_page_prices()
     print('--- 構造化データ挿入完了 ---\n')
 
     # ── 3. サイトマップ・投稿下書きを更新 ──
