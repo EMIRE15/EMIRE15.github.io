@@ -299,6 +299,21 @@ PRODUCT_IMAGES = {
 # item_code: 楽天API itemCode / url_path: 当サイトのリンク先。APIの返却itemUrlに
 # url_pathが含まれない場合は別商品とみなし、STRUCTURED_DATAの固定価格を使う
 # ============================================================
+# Product schemaのbrand(メーカー名)。ノーブランド品は登録しない(brand自体を出力しない)
+PRODUCT_BRANDS = {
+    'review-sunshade.html': 'CREAS WING',
+    'review-navi.html': 'ATOTO',
+    'review-iphone17.html': 'Apple',
+    'review-clinview-gcoat.html': 'クリンビュー',
+    'review-rinrei-wax.html': 'リンレイ',
+    'review-air-spencer.html': 'エアースペンサー',
+    'review-led-fog.html': 'HID屋',
+    'review-led-headlight.html': 'HID屋',
+    'review-prostaff-wax.html': 'プロスタッフ',
+    'review-yupiteru-radar.html': 'ユピテル',
+}
+
+
 PRODUCT_RAKUTEN = {
     "review-dashcam.html": {
         "item_code": "yumenomori:10000183",
@@ -410,7 +425,7 @@ def inject_structured_data(filename, data):
             'datePublished': '2025-06-01',
             'dateModified': today,
             'author': {
-                '@type': 'Person',
+                '@type': 'Organization',
                 'name': 'DRIVE GEAR LAB',
                 'url': BASE_URL,
             },
@@ -450,10 +465,6 @@ def inject_structured_data(filename, data):
             'name': product.get('name', ''),
             'description': product.get('description', ''),
             'url': page_url,
-            'brand': {
-                '@type': 'Brand',
-                'name': 'DRIVE GEAR LAB',
-            },
             'offers': {
                 '@type': 'Offer',
                 'price': product.get('price', '0'),
@@ -470,7 +481,7 @@ def inject_structured_data(filename, data):
                     'worstRating': '1',
                 },
                 'author': {
-                    '@type': 'Person',
+                    '@type': 'Organization',
                     'name': 'DRIVE GEAR LAB',
                 },
                 'reviewBody': article.get('description', ''),
@@ -491,6 +502,10 @@ def inject_structured_data(filename, data):
             graph[-1]['image'] = img
         else:
             print(f'[structured_data] WARNING: image未設定: {filename}')
+        # brandはメーカーが明確な商品のみ(サイト名をbrandにすると自己レビュー扱いのリスク)
+        brand = PRODUCT_BRANDS.get(filename)
+        if brand:
+            graph[-1]['brand'] = {'@type': 'Brand', 'name': brand}
 
     schema = {
         '@context': 'https://schema.org',
