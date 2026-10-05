@@ -535,7 +535,7 @@ def inject_structured_data(filename, data):
 # 楽天API fetch
 # ============================================================
 def fetch_items(keyword):
-    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601'
+    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701'
     params = {
         'applicationId': APP_ID,
         'accessKey': ACCESS_KEY,
@@ -569,7 +569,7 @@ def fetch_item_price(filename):
     info = PRODUCT_RAKUTEN.get(filename)
     if not info:
         return None
-    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601'
+    url = 'https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20260701'
     params = {
         'applicationId': APP_ID,
         'accessKey': ACCESS_KEY,
@@ -746,9 +746,13 @@ def main():
         'updated_at': now,
         'items': items_data,
     }
-    with open('auto-items.json', 'w', encoding='utf-8') as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
-    print(f'auto-items.json generated ({len(items_data)}件)')
+    if items_data:
+        with open('auto-items.json', 'w', encoding='utf-8') as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
+        print(f'auto-items.json generated ({len(items_data)}件)')
+    else:
+        # API障害時に「今日のおすすめ」を空で上書きしない(前回分を残す)
+        print('::warning::楽天APIから0件 — auto-items.jsonは前回分を維持')
 
     # ── 2. 全レビューページに構造化データを挿入・更新 ──
     print('\n--- 構造化データ挿入開始 ---')
@@ -768,6 +772,8 @@ def main():
         else:
             fallback.append(filename)
     print(f'[price] API取得 {updated}件 / 固定価格フォールバック {len(fallback)}件 {fallback}')
+    if updated == 0 and fallback:
+        print('::warning::楽天API価格取得が全件失敗 — 固定価格で表示中')
     for filename, data in STRUCTURED_DATA.items():
         inject_structured_data(filename, data)
     sync_index_prices()
