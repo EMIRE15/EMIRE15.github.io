@@ -158,18 +158,6 @@ STRUCTURED_DATA = {
             'description': '多車種対応フックで後部座席にスッキリ固定。PUレザー素材でおしゃれ。LED付きで夜間も使いやすい。',
         },
     },
-    'review-iphone17.html': {
-        'article': {
-            'headline': 'iPhone 17 ドライブ・カーライフ視点 徹底レビュー',
-            'description': 'iPhone 17をCarPlay・MagSafe・ナビ活用などカーライフ視点でレビュー。車乗りが気になるポイントを正直評価。',
-            'keywords': 'iPhone 17,CarPlay,MagSafe,楽天モバイル',
-        },
-        'product': {
-            'name': 'Apple iPhone 17 SIMフリー 楽天モバイル',
-            'price': '176800',
-            'description': '楽天モバイルで購入できるiPhone 17 SIMフリー端末。MagSafe対応でスマホホルダーとの相性も抜群。',
-        },
-    },
     'review-clinview-gcoat.html': {
         'article': {
             'headline': 'クリンビュー Gコート ウルトラタフドロップ 実機レビュー',
@@ -283,7 +271,6 @@ PRODUCT_IMAGES = {
     "review-handy-fan.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/azusa/cabinet/h8fan/h08pro_main01.jpg",
     "review-cigar-charger.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/lohas1/cabinet/10463166/10803904/imgrc0106897964.jpg",
     "review-trash-box.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/creaswing/cabinet/cwrt30/car-0011.jpg",
-    "review-iphone17.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/rakutenmobile-store/cabinet/product/iphone-17/pc/17-d-m.jpg",
     "review-clinview-gcoat.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/autobacs-ec/cabinet/image/10951522/01751081_1.jpg",
     "review-rinrei-wax.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/rinreiwax/cabinet/car/339014.jpg",
     "review-air-spencer.html": "https://thumbnail.image.rakuten.co.jp/@0_mall/autobacs-ec/cabinet/image/12821157/00552265_1.jpg",
@@ -303,7 +290,6 @@ PRODUCT_IMAGES = {
 PRODUCT_BRANDS = {
     'review-sunshade.html': 'CREAS WING',
     'review-navi.html': 'ATOTO',
-    'review-iphone17.html': 'Apple',
     'review-clinview-gcoat.html': 'クリンビュー',
     'review-rinrei-wax.html': 'リンレイ',
     'review-air-spencer.html': 'エアースペンサー',
@@ -358,10 +344,6 @@ PRODUCT_RAKUTEN = {
     "review-trash-box.html": {
         "item_code": "creaswing:10000209",
         "url_path": "creaswing/car-0011"
-    },
-    "review-iphone17.html": {
-        "item_code": "rakutenmobile-store:10001785",
-        "url_path": "rakutenmobile-store/iphone-17"
     },
     "review-clinview-gcoat.html": {
         "item_code": "autobacs-ec:10057014",
