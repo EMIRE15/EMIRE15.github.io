@@ -108,14 +108,6 @@ jobs:
               "ratingCount": "1",
               "category": "車内インテリア"
             },
-            "review-iphone17.html": {
-              "name": "Apple iPhone 17 SIMフリー 楽天モバイル",
-              "description": "楽天モバイルで購入できるiPhone 17 SIMフリー端末。MagSafe対応。CarPlayを快適に使いたい方にもおすすめ。",
-              "price": "124800",
-              "rating": "4.5",
-              "ratingCount": "1",
-              "category": "ガジェット"
-            },
             "review-air-spencer.html": {
               "name": "エアースペンサー カートリッジ ピンクシャワー",
               "description": "栄光社の定番カーフレグランス。甘さ控えめのフローラル系の香りで車内を爽やかに演出。",
