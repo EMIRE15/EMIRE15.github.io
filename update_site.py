@@ -28,8 +28,8 @@ KEYWORDS = [
 STRUCTURED_DATA = {
     'review-dashcam.html': {
         'article': {
-            'headline': 'ドライブレコーダー 前後2カメラ SONYセンサー搭載 実機レビュー',
-            'description': 'SONYセンサー採用ドライブレコーダーを実際に使ってレビュー。夜間画質・取り付けやすさ・駐車監視機能を正直評価。',
+            'headline': '前後2カメラ SONYセンサー搭載ドラレコの特徴・スペック解説｜夜間画質・駐車監視は？',
+            'description': 'SONYセンサー搭載の前後2カメラドライブレコーダーを、公表スペックから解説。夜間画質・取り付け・駐車監視のポイントと注意点まとめ。',
             'keywords': 'ドライブレコーダー,前後カメラ,SONYセンサー,楽天',
         },
         'product': {
@@ -40,8 +40,8 @@ STRUCTURED_DATA = {
     },
     'review-earphones.html': {
         'article': {
-            'headline': 'ワイヤレスイヤホン Bluetooth 5.4 ノイズキャンセリング 実機レビュー',
-            'description': 'Bluetooth 5.4対応ワイヤレスイヤホンをドライブ視点でレビュー。ノイキャン性能・通話品質・バッテリーを正直評価。',
+            'headline': 'ワイヤレスイヤホン Bluetooth5.4 ノイキャン搭載の特徴・スペック解説｜ドライブ中の通話に使える？',
+            'description': 'Bluetooth5.4・ノイズキャンセリング・デュアルマイク搭載の低価格ワイヤレスイヤホンを公表スペックから解説。ドライブ中のハンズフリー通話での使いどころと注意点まとめ。',
             'keywords': 'ワイヤレスイヤホン,ノイズキャンセリング,Bluetooth,楽天',
         },
         'product': {
@@ -64,20 +64,20 @@ STRUCTURED_DATA = {
     },
     'review-phone-holder.html': {
         'article': {
-            'headline': '真空吸着マグネット スマホホルダー MagSafe対応 実機レビュー',
-            'description': '真空吸着+マグネットのスマホホルダーをレビュー。固定力・着脱のしやすさ・MagSafe対応を正直評価。',
+            'headline': '真空吸着マグネットスマホホルダー MagSafe対応の特徴・スペック解説｜3way設置と選び方',
+            'description': '真空吸着＋MagSafe対応のスマホホルダーを公表スペックから解説。ダッシュボード・ドリンクホルダー・エアコン口の3way設置の違いと、Androidでの使い方、購入前の注意点まとめ。',
             'keywords': 'スマホホルダー,MagSafe,マグネット,車載,楽天',
         },
         'product': {
             'name': '真空吸着マグネット スマホホルダー MagSafe対応・360°回転',
             'price': '2180',
-            'description': '真空吸着＋超強力マグネットのW固定でズレ・落下ゼロ。片手ワンタッチ着脱。3way対応。',
+            'description': '真空吸着＋超強力マグネットのW固定でズレ・落下を防ぐ設計。片手ワンタッチ着脱。3way対応。',
         },
     },
     'review-air-duster.html': {
         'article': {
-            'headline': '充電式エアーダスター 200000RPM 実機レビュー',
-            'description': '充電式エアーダスターを車内清掃・ガジェット掃除で実際に使ってレビュー。風力・バッテリー持ちを正直評価。',
+            'headline': '充電式エアーダスター200000RPMの特徴・スペック解説｜車内清掃に使える？選ぶ前の注意点',
+            'description': '充電式エアーダスター200000RPM・4段階調整モデルを公表スペックから解説。車内清掃・エアコン吹き出し口・PC掃除での使いどころと、騒音・バッテリーなどの注意点まとめ。',
             'keywords': 'エアーダスター,充電式,車内清掃,楽天',
         },
         'product': {
@@ -88,8 +88,8 @@ STRUCTURED_DATA = {
     },
     'review-battery.html': {
         'article': {
-            'headline': '23600mAhはスマホ何回分？iPhone約4回が目安｜ケーブル内蔵モバイルバッテリー レビュー',
-            'description': '23600mAhのモバイルバッテリーでスマホは何回充電できる？変換ロスで使える容量は約14,000mAh、iPhone 15 Proなら約4回が目安。4本ケーブル内蔵モデルの実容量・充電速度・車での使い勝手を解説。',
+            'headline': '23600mAhはスマホ何回分？iPhone約4回が目安｜ケーブル内蔵モバイルバッテリーの特徴・スペック解説',
+            'description': '23600mAhのモバイルバッテリーでスマホは何回充電できる？一般的な変換ロスを考えると使える容量は約14,000mAh前後、iPhone 15 Proなら約4回が目安。4本ケーブル内蔵モデルの特徴と車での使い方を解説。',
             'keywords': 'モバイルバッテリー,大容量,PD充電,ケーブル内蔵,楽天',
         },
         'product': {
@@ -100,8 +100,8 @@ STRUCTURED_DATA = {
     },
     'review-navi.html': {
         'article': {
-            'headline': 'ATOTO A6 カーナビ 9インチ CarPlay対応 実機レビュー',
-            'description': 'Apple CarPlay・Android Auto対応カーナビをレビュー。iPhoneとの連携・画面の見やすさ・取り付けを正直評価。',
+            'headline': 'ATOTO A6 カーナビ9インチの特徴・スペック解説｜CarPlay対応の後付けナビは純正の代わりになるか？',
+            'description': 'CarPlay・Android Auto対応の後付けナビATOTO A6 9インチを公表スペックから解説。取り付けに必要なもの、純正ナビとの違い、購入前の注意点まとめ。',
             'keywords': 'カーナビ,CarPlay,Android Auto,9インチ,楽天',
         },
         'product': {
@@ -112,8 +112,8 @@ STRUCTURED_DATA = {
     },
     'review-coating.html': {
         'article': {
-            'headline': 'ガラスコーティング剤 超撥水スプレータイプ 実機レビュー',
-            'description': 'スプレー式ガラスコーティング剤を実際に使ってレビュー。撥水効果・耐久性・施工のしやすさを正直評価。',
+            'headline': 'ガラスコーティング剤スプレータイプの特徴・スペック解説｜3ヶ月持続は本当？施工手順と注意点',
+            'description': '「約3ヶ月持続」をうたうスプレー式ガラスコーティング剤を公表スペックから解説。施工手順、持続期間を左右する条件、専門店コーティングとの違いまとめ。',
             'keywords': 'ガラスコーティング,撥水,スプレー,カーケア,楽天',
         },
         'product': {
@@ -124,8 +124,8 @@ STRUCTURED_DATA = {
     },
     'review-handy-fan.html': {
         'article': {
-            'headline': '車載ハンディファン おすすめ3選 選び方ガイド実機レビュー',
-            'description': '車載ハンディファンを実際に使ってレビュー。USB給電・クリップ式・首振り機能など選び方のポイントも解説。',
+            'headline': '車載ハンディファンおすすめ比較｜クリップ式・首振りなど選び方ガイド',
+            'description': '車載ハンディファンを電源方式・取り付け方式・首振り機能など公表スペックで比較。クリップ式USB-AとUSB-C自動首振りモデルの違いと選び方を解説。',
             'keywords': 'ハンディファン,車載,USB,夏,冷却,楽天',
         },
         'product': {
@@ -136,8 +136,8 @@ STRUCTURED_DATA = {
     },
     'review-cigar-charger.html': {
         'article': {
-            'headline': 'シガーソケット充電器 USB-C PD対応 おすすめ3選 実機レビュー',
-            'description': 'シガーソケット充電器を実際に計測してレビュー。USB-C PD対応・急速充電・発熱を正直評価。',
+            'headline': 'シガーソケット充電器おすすめ比較｜USB-C PD対応モデルの選び方と注意点',
+            'description': 'シガーソケット充電器をUSB-C PD対応・2ポート・QC3.0など公表スペックで比較。iPhone・Android別の選び方と、発熱・安全機能など購入前の注意点を解説。',
             'keywords': 'シガーソケット充電器,USB-C,PD充電,カーチャージャー,楽天',
         },
         'product': {
@@ -148,8 +148,8 @@ STRUCTURED_DATA = {
     },
     'review-trash-box.html': {
         'article': {
-            'headline': '車用ゴミ箱 折りたたみ式 PUレザー LED付き 実機レビュー',
-            'description': '車用折りたたみゴミ箱を3ヶ月使ってレビュー。取り付けやすさ・容量・LEDの実用性を正直評価。',
+            'headline': '車用ゴミ箱 折りたたみ式 PUレザー LED付きの特徴・スペック解説｜取り付け方と選び方',
+            'description': '車用ゴミ箱 折りたたみ式PUレザー（LED付き）を公表スペックから解説。ヘッドレストへの取り付け方、容量、LED・折りたたみ機能と購入前の注意点まとめ。',
             'keywords': '車用ゴミ箱,折りたたみ,PUレザー,車内インテリア,楽天',
         },
         'product': {
@@ -160,8 +160,8 @@ STRUCTURED_DATA = {
     },
     'review-clinview-gcoat.html': {
         'article': {
-            'headline': 'クリンビュー Gコート ウルトラタフドロップ 実機レビュー',
-            'description': 'クリンビュー Gコートを2ヶ月使ってレビュー。撥水効果・耐久性・施工のしやすさを正直評価。',
+            'headline': 'クリンビュー Gコート ウルトラタフドロップの特徴・スペック解説｜撥水力と持続期間の目安',
+            'description': 'クリンビュー Gコート ウルトラタフドロップを公表スペックから解説。スプレー式ガラス系コーティングの施工手順、持続期間の目安、向いている人と注意点まとめ。',
             'keywords': 'クリンビュー,Gコート,ガラスコーティング,撥水,楽天',
         },
         'product': {
@@ -172,8 +172,8 @@ STRUCTURED_DATA = {
     },
     'review-rinrei-wax.html': {
         'article': {
-            'headline': 'リンレイ ガラス系ハイブリッドWAX Gガード固形 実機レビュー',
-            'description': 'リンレイ公式ガラス系WAXを複数色の車に施工してレビュー。艶・撥水・耐久性を正直評価。',
+            'headline': 'リンレイ ガラス系ハイブリッドWAX Gガード固形の特徴・スペック解説｜艶と撥水を両立するWAX',
+            'description': 'リンレイ ガラス系ハイブリッドWAX Gガード固形を公表スペックから解説。ガラス系×WAXの特徴、施工手順と手間、スプレータイプとの違いまとめ。',
             'keywords': 'リンレイ,ガラス系WAX,カーワックス,固形,楽天',
         },
         'product': {
@@ -184,8 +184,8 @@ STRUCTURED_DATA = {
     },
     'review-air-spencer.html': {
         'article': {
-            'headline': 'エアースペンサー ピンクシャワーの口コミ・レビュー｜どんな香り？持続期間は約1ヶ月',
-            'description': 'エアースペンサー ピンクシャワーはどんな香り？どれくらい持つ？石鹸系フローラルの香りの特徴、メーカー目安30〜45日の持続期間、エアコン吹き出し口での使い方とカートリッジ交換のポイントをまとめました。',
+            'headline': 'エアースペンサー ピンクシャワーはどんな香り？特徴と持続期間の目安（メーカー30〜45日）',
+            'description': 'エアースペンサー ピンクシャワーはどんな香り？石鹸系フローラルと案内される香りの特徴、メーカー目安30〜45日の持続期間、エアコン吹き出し口での使い方とカートリッジ交換のポイントをまとめました。',
             'keywords': 'エアースペンサー,ピンクシャワー,カーフレグランス,車内芳香剤,楽天',
         },
         'product': {
@@ -196,8 +196,8 @@ STRUCTURED_DATA = {
     },
     'review-led-fog.html': {
         'article': {
-            'headline': 'HID屋 LEDフォグランプ Vシリーズ 2色切り替え 実機レビュー',
-            'description': 'HID屋 LEDフォグランプを実際に取り付けてレビュー。明るさ・色切り替え・車検対応の実態を正直評価。',
+            'headline': 'HID屋 LEDフォグランプ Vシリーズの特徴・スペック解説｜2色切り替えと車検対応のポイント',
+            'description': 'HID屋 LEDフォグランプ Vシリーズを公表スペックから解説。ホワイト・イエローなどの色切り替え、車検対応になる色、取り付け前に確認すべきバルブ規格まとめ。',
             'keywords': 'HID屋,LEDフォグランプ,2色切り替え,車検対応,楽天',
         },
         'product': {
@@ -208,8 +208,8 @@ STRUCTURED_DATA = {
     },
     'review-led-headlight.html': {
         'article': {
-            'headline': 'HID屋 H4 LEDヘッドライト Qシリーズ 爆光 実機レビュー',
-            'description': 'HID屋 H4 LEDヘッドライトを実際に取り付けてレビュー。68400cdの明るさと車検対応を正直評価。',
+            'headline': 'HID屋 H4 LEDヘッドライト Qシリーズの特徴・スペック解説｜68400cdの明るさと車検対応の注意点',
+            'description': 'HID屋 H4 LEDヘッドライト Qシリーズを公表スペックから解説。68400cdの明るさ、車検対応の考え方と光軸調整、取り付け前に確認すべきポイントまとめ。',
             'keywords': 'HID屋,LEDヘッドライト,H4,爆光,車検対応,楽天',
         },
         'product': {
@@ -220,8 +220,8 @@ STRUCTURED_DATA = {
     },
     'review-prostaff-wax.html': {
         'article': {
-            'headline': 'プロスタッフ CCウォーターゴールド 300ml 実機レビュー',
-            'description': 'プロスタッフ CCウォーターゴールドを3色の車に施工してレビュー。撥水効果・艶・耐久性を正直評価。',
+            'headline': 'プロスタッフ CCウォーターゴールド 300mlの特徴・スペック解説｜撥水力・持続期間と使い方',
+            'description': 'プロスタッフ CCウォーターゴールドを公表スペックから解説。ボディ・窓・樹脂に使えるガラス系スプレーコーティングの特徴、持続期間の目安、向いている人まとめ。',
             'keywords': 'プロスタッフ,CCウォーターゴールド,ガラスコーティング,楽天',
         },
         'product': {
@@ -244,8 +244,8 @@ STRUCTURED_DATA = {
     },
     'review-tpms.html': {
         'article': {
-            'headline': 'タイヤ空気圧モニター TPMS ソーラー充電 楽天1位 実機レビュー',
-            'description': 'タイヤ空気圧モニターを3ヶ月使ってレビュー。4本リアルタイム監視・警告精度・ソーラー充電の実力を正直評価。',
+            'headline': 'タイヤ空気圧モニター TPMS ソーラー充電（楽天1位）の特徴・スペック解説｜取り付けと選び方',
+            'description': '楽天1位のタイヤ空気圧モニター（TPMS）を公表スペックから解説。4本リアルタイム監視・音声警告・ソーラー充電の仕組みと、取り付け・ペアリングの注意点まとめ。',
             'keywords': 'タイヤ空気圧モニター,TPMS,ソーラー充電,安全運転,楽天',
         },
         'product': {
@@ -440,7 +440,7 @@ def inject_structured_data(filename, data):
         },
     ]
 
-    # Product スキーマを追加（自サイトの評価・レビュー評価は付けない：実使用していない商品のため）
+    # Product スキーマを追加（実機レビューではないためReview/AggregateRatingは付けない）
     if product:
         graph.append({
             '@type': 'Product',
@@ -670,10 +670,10 @@ def generate_post_draft():
     import random
     today = datetime.now(JST).strftime('%Y年%m月%d日')
     templates = [
-        '🚗 ドライブをもっと快適に！\n\n車好き・ガジェット好きが実際に買って良かったアイテムだけを正直レビュー中📦\n\n楽天で買えるおすすめ車用品はこちら👇\nhttps://drivegearlab.online/\n\n#車好き #カーグッズ #楽天 #ガジェット好き',
-        '💡 楽天で買える車用品、何を選べばいい？\n\nDRIVE GEAR LABでは実際に購入・使用したアイテムだけを忖度なしでレビュー中！\n\n👇 チェックしてみてください\nhttps://drivegearlab.online/\n\n#楽天 #車用品 #カーグッズ #ドライブ好き',
+        '🚗 ドライブをもっと快適に！\n\n車好き・ガジェット好き向けに、楽天で買える車用品をスペック比較でわかりやすく解説中📦\n\n楽天で買えるおすすめ車用品はこちら👇\nhttps://drivegearlab.online/\n\n#車好き #カーグッズ #楽天 #ガジェット好き',
+        '💡 楽天で買える車用品、何を選べばいい？\n\nDRIVE GEAR LABでは選び方のポイントと注意点をスペックから解説中！\n\n👇 チェックしてみてください\nhttps://drivegearlab.online/\n\n#楽天 #車用品 #カーグッズ #ドライブ好き',
         '🔥 今週のおすすめ車用品をチェック！\n\nドライブレコーダー・スマホホルダー・モバイルバッテリーなど20アイテム以上掲載中🔍\n\nhttps://drivegearlab.online/\n\n#ドライブレコーダー #スマホホルダー #車載グッズ #楽天購入品',
-        '☀️ 夏のドライブ対策してますか？\n\nサンシェード・ハンディファンなど暑さ対策グッズを楽天最安値でご紹介！\n\nhttps://drivegearlab.online/\n\n#夏 #車中暑対策 #サンシェード #楽天 #カーグッズ',
+        '☀️ 夏のドライブ対策してますか？\n\nサンシェード・ハンディファンなど暑さ対策グッズを楽天からご紹介！\n\nhttps://drivegearlab.online/\n\n#夏 #車中暑対策 #サンシェード #楽天 #カーグッズ',
     ]
     draft = random.choice(templates)
     with open('post_draft.txt', 'w', encoding='utf-8') as f:
