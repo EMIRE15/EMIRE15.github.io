@@ -52,8 +52,8 @@ STRUCTURED_DATA = {
     },
     'review-sunshade.html': {
         'article': {
-            'headline': '傘型サンシェード CREAS WING 実機レビュー',
-            'description': 'ワンタッチ傘型サンシェードを実際に使ってレビュー。車内温度の実測データ・サイズ選びガイド付き。',
+            'headline': 'CREAS WING 傘型サンシェードの口コミ・評判とサイズの選び方',
+            'description': '楽天レビュー1万4千件超・★4.46のCREAS WING 傘型サンシェード。改良型と強化版の違い、全7サイズの寸法と選び方、傘型ならではのメリット・注意点をまとめました。',
             'keywords': 'サンシェード,傘型,車内温度,楽天,CREAS WING',
         },
         'product': {
@@ -232,8 +232,8 @@ STRUCTURED_DATA = {
     },
     'review-yupiteru-radar.html': {
         'article': {
-            'headline': 'ユピテル YK-2200 口コミ・評判レビュー｜取り付け方法とオービス警告の実力',
-            'description': 'ユピテル YK-2200の口コミ・評判をレビュー。シガーソケットに挿して置くだけの取り付け方法、オービスや取締りポイントの音声警告、データ更新、メリット・デメリットまで解説。',
+            'headline': 'ユピテル YK-2200の口コミ・評判と特徴まとめ｜取り付け方法・できること',
+            'description': 'ユピテル YK-2200の楽天口コミ（★4.71）と特徴をまとめました。レーザー式・Kバンドオービスの識別警報、誤警報を減らすセーフティーモード、4.0インチ液晶、無線LANでのデータ更新、取り付け方法まで解説。',
             'keywords': 'ユピテル,GPSレーダー,オービス,レーダー探知機,楽天',
         },
         'product': {
@@ -440,7 +440,7 @@ def inject_structured_data(filename, data):
         },
     ]
 
-    # Product + Review スキーマを追加
+    # Product スキーマを追加（自サイトの評価・レビュー評価は付けない：実使用していない商品のため）
     if product:
         graph.append({
             '@type': 'Product',
@@ -453,27 +453,6 @@ def inject_structured_data(filename, data):
                 'priceCurrency': 'JPY',
                 'availability': product.get('availability', 'https://schema.org/InStock'),
                 'url': page_url,
-            },
-            'review': {
-                '@type': 'Review',
-                'reviewRating': {
-                    '@type': 'Rating',
-                    'ratingValue': '4.5',
-                    'bestRating': '5',
-                    'worstRating': '1',
-                },
-                'author': {
-                    '@type': 'Organization',
-                    'name': 'DRIVE GEAR LAB',
-                },
-                'reviewBody': article.get('description', ''),
-            },
-            'aggregateRating': {
-                '@type': 'AggregateRating',
-                'ratingValue': '4.5',
-                'reviewCount': '1',
-                'bestRating': '5',
-                'worstRating': '1',
             },
         })
 
