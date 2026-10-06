@@ -105,7 +105,7 @@ STRUCTURED_DATA = {
             'keywords': 'カーナビ,CarPlay,Android Auto,9インチ,楽天',
         },
         'product': {
-            'name': 'ATOTO A6 カーナビ 9インチ CarPlay・Android Auto対応',
+            'name': 'ATOTO A6 カーナビ 9インチ＋バックカメラ セット（A6G209PF＋AC-HD03LR-A）',
             'price': '39300',
             'description': 'Apple CarPlay・Android Auto対応の2DINカーナビ。iPhoneのマップやSpotifyをそのまま9インチ大画面で使える。',
         },
